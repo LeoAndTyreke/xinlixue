@@ -1,4 +1,4 @@
-<swiper indicator-dots="true" indicator-color='#C6C6C6' indicator-active-color='#456EFF'
+<swiper indicator-dots="true" indicator-color="#C6C6C6" indicator-active-color="#456EFF"
   autoplay="true" interval="4000" duration="500">
     <swiper-item>
       <image src="" class="slide-image"/>
@@ -10,4 +10,7 @@
       <image src="" class="slide-image"/>
     </swiper-item>
 </swiper>
-<input class='search'></input>
+<input class="search" placeholder-class="search-plhd" placeholder="搜索课程或老师"></input>
+<scroll-view scroll-x="true" scroll-with-animation="true">
+	<view></view>
+</scroll-view>
