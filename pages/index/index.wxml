@@ -10,7 +10,7 @@
       <image src="" class="slide-image"/>
     </swiper-item>
 </swiper>
-<input class="search" placeholder-class="search-plhd" placeholder="搜索课程或老师"></input>
+<input class="search" placeholder-class="{{focusBool ? 'search-plhd-focus': 'search-plhd'}}" placeholder="搜索课程或老师" bindblur='inputBlur' bindfocus='inputFocus'></input>
 <scroll-view scroll-x="true" scroll-with-animation="true">
 	<view></view>
 </scroll-view>

@@ -6,6 +6,7 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
+    focusBool: false,
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -42,6 +43,18 @@ Page({
         }
       })
     }
+  },
+  inputFocus: function() {
+    console.log('onfocus')
+    this.setData({
+      focusBool: true
+    })
+  },
+  inputBlur: function() {
+    console.log('onblur')
+    this.setData({
+      focusBool: false
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
