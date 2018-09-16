@@ -1,0 +1,17 @@
+<view class='list'>
+  <view class='teacher-item'>
+    <image class='teacher-cover'></image>
+    <view class='teacher-name'>金老师</view>
+    <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
+  </view>
+  <view class='teacher-item'>
+    <image class='teacher-cover'></image>
+    <view class='teacher-name'>金老师</view>
+    <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
+  </view>
+  <view class='teacher-item'>
+    <image class='teacher-cover'></image>
+    <view class='teacher-name'>金老师</view>
+    <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
+  </view>
+</view>

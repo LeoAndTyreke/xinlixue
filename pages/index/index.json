@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "lessonList": "/components/lessonList/lessonList",
+    "teacherList": "/components/teacherList/teacherList"
+  }
+}

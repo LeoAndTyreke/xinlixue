@@ -1,0 +1,20 @@
+<view class='list'>
+  <view class='lesson-item'>
+    <image class='lesson-cover'></image>
+    <view class='lesson-title'>心理课程心理课程心理课程信了你的邪</view>
+    <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
+    <view class='teacher-name lesson-gray-info'>金老师</view>
+    <image src='../../imgs/time-icon.png' class='time-icon'></image>
+    <view class='duration lesson-gray-info'>9课时</view>
+    <view class='lesson-price'>￥36.00</view>
+  </view>
+  <view class='lesson-item'>
+    <image class='lesson-cover'></image>
+    <view class='lesson-title'>心理课程心理课程心理课程信了你的邪</view>
+    <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
+    <view class='teacher-name lesson-gray-info'>金老师</view>
+    <image src='../../imgs/time-icon.png' class='time-icon'></image>
+    <view class='duration lesson-gray-info'>9课时</view>
+    <view class='lesson-price'>￥36.00</view>
+  </view>
+</view>

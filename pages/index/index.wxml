@@ -14,3 +14,5 @@
 <scroll-view scroll-x="true" scroll-with-animation="true">
 	<view></view>
 </scroll-view>
+<lessonList id="lessonList"></lessonList>
+<teacherList id='teacherList'></teacherList>

@@ -16,6 +16,10 @@ Page({
       url: '../logs/logs'
     })
   },
+  onReady: function() {
+    this.lessonList = this.selectComponent('#lessonList');
+    this.teacherList = this.selectComponent('#teacherList');
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
