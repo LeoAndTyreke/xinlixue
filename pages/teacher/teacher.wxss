@@ -1,3 +1,13 @@
+page {
+	background-color: #F8F8F8;
+}
+
+.header {
+  width: 750rpx;
+  height: 376rpx;
+  background-color: #fff;
+}
+
 .teacher-item {
   width: 750rpx;
   height: 224rpx;
@@ -38,4 +48,13 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.teacher-intro-detail {
+  width: 690rpx;
+  height: 144rpx;
+  line-height: 48rpx;
+  font-size: 26rpx;
+  color: #666;
+  margin: 0 30rpx;
 }

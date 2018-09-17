@@ -1,11 +1,11 @@
-// pages/lesson/lesson.js
+// pages/teachers/teachers.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showDetail: true
+
   },
 
   /**
@@ -19,7 +19,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.menuList = this.selectComponent('#menuList')
+
   },
 
   /**
@@ -50,10 +50,11 @@ Page({
 
   },
 
-  toggleTab: function(){
-    this.setData({
-      showDetail: !this.data.showDetail
-    })
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
   },
 
   /**

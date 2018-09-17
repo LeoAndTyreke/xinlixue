@@ -1,0 +1,49 @@
+.menu-item {
+  width: 750rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 30rpx;
+  position: relative;
+}
+
+.menu-title {
+  background-color: #F6F7F8;
+}
+
+.title-txt {
+  margin-left: 30rpx;
+}
+
+.locked {
+  width: 33rpx;
+  height: 38rpx;
+  position: absolute;
+  left: 652rpx;
+  top: 30rpx;
+}
+
+.menu-content {
+  background-color: #fff;
+  color: #666;
+}
+
+.wave {
+  width: 35rpx;
+  height: 27rpx;
+  margin: 35rpx 10rpx 35rpx 45rpx;
+  float: left;
+}
+
+.ctt-txt {
+  float: left;
+}
+
+.free-txt {
+  height: 98rpx;
+  line-height: 98rpx;
+  color: #5695FF;
+  font-size: 26rpx;
+  position: absolute;
+  left: 616rpx;
+  top: 0;
+}

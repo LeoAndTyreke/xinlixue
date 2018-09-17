@@ -1,0 +1,40 @@
+<view class='list'>
+  <view class='menu-item menu-title'>
+    <view class='title-txt'>1.课程目录</view>
+    <image src='../../imgs/locked.png' class='locked'></image>
+  </view>
+  <view class='menu-item menu-content'>
+    <image src='../../imgs/wave.png' class='wave'></image>
+    <view class='ctt-txt'>课程目录</view>
+    <view class='free-txt'>免费试看</view>
+  </view>
+   <view class='menu-item menu-content'>
+    <image src='../../imgs/wave.png' class='wave'></image>
+    <view class='ctt-txt'>课程目录</view>
+    <image src='../../imgs/locked.png' class='locked'></image>
+  </view>
+  <view class='menu-item menu-content'>
+    <image src='../../imgs/wave.png' class='wave'></image>
+    <view class='ctt-txt'>课程目录</view>
+    <view class='free-txt'>免费试看</view>
+  </view>
+  <view class='menu-item menu-title'>
+    <view class='title-txt'>2.课程目录</view>
+    <image src='../../imgs/locked.png' class='locked'></image>
+  </view>
+  <view class='menu-item menu-content'>
+    <image src='../../imgs/wave.png' class='wave'></image>
+    <view class='ctt-txt'>课程目录</view>
+    <view class='free-txt'>免费试看</view>
+  </view>
+   <view class='menu-item menu-content'>
+    <image src='../../imgs/wave.png' class='wave'></image>
+    <view class='ctt-txt'>课程目录</view>
+    <image src='../../imgs/locked.png' class='locked'></image>
+  </view>
+  <view class='menu-item menu-content'>
+    <image src='../../imgs/wave.png' class='wave'></image>
+    <view class='ctt-txt'>课程目录</view>
+    <view class='free-txt'>免费试看</view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<view class='header'>
+  <view class='teacher-item'>
+    <image class='teacher-cover'></image>
+    <view class='teacher-name'>金老师</view>
+    <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
+  </view>
+  <view class='teacher-intro-detail'>详细介绍此人物，具体的介绍内容你们看情况办吧，我只能说这么多，后面怎么办，我一定要凑到第三行呀，怎还没到，详细介绍此人物，具体的介绍内</view>
+</view>
