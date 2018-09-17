@@ -1,4 +1,4 @@
-// pages/collecting/collecting.js
+// pages/lesson/lesson.js
 Page({
 
   /**
@@ -19,7 +19,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-	  this.lessonList = this.selectComponent('#lessonList');
+
   },
 
   /**

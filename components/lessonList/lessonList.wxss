@@ -69,3 +69,14 @@
   left: 218rpx;
   top: 203rpx;
 }
+
+.lesson-record {
+	width: 500rpx;
+	height: 26rpx;
+	line-height: 26rpx;
+	font-size: 30rpx;
+	color: #666;
+	position: absolute;
+	left: 218rpx;
+	bottom: 32rpx;
+}

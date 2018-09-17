@@ -15,6 +15,6 @@
     <view class='teacher-name lesson-gray-info'>金老师</view>
     <image src='../../imgs/time-icon.png' class='time-icon'></image>
     <view class='duration lesson-gray-info'>9课时</view>
-    <view class='lesson-price'>￥36.00</view>
+    <view class='lesson-record'>上次观看到第9课时 13:00</view>
   </view>
 </view>

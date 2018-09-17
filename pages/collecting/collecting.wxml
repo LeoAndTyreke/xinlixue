@@ -1,2 +1,1 @@
-<!--pages/collecting/collecting.wxml-->
-<text>pages/collecting/collecting.wxml</text>
+<lessonList id='lessonList'></lessonList>
