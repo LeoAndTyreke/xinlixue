@@ -1,0 +1,3 @@
+<view class='container'>
+	<lessonList id='lessonList'></lessonList>
+</view>

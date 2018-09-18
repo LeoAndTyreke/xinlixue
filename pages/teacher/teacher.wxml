@@ -6,3 +6,9 @@
   </view>
   <view class='teacher-intro-detail'>详细介绍此人物，具体的介绍内容你们看情况办吧，我只能说这么多，后面怎么办，我一定要凑到第三行呀，怎还没到，详细介绍此人物，具体的介绍内</view>
 </view>
+<view class='content'>
+	<view class='square'></view>
+	<view class='content-title'>专家课程</view>
+	<lessonList id="lessonList"></lessonList>
+</view>
+<view class='fixed-btn'>购买全部课程</view>

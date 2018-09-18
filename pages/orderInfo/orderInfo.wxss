@@ -1,0 +1,93 @@
+page {
+    background: #f8f8f8;
+}
+
+.container {
+    width: 750rpx;
+    background: #fff;
+    margin-top: 19rpx;
+}
+
+.item {
+    width: 720rpx;
+    height: 94rpx;
+    border-bottom: 1rpx solid #ddd;
+    margin-left: 30rpx;
+	position: relative;
+}
+
+.name-txt, .tel-txt, .addr-txt, .name-input, .tel-input, .picker {
+    height: 94rpx;
+    line-height: 94rpx;
+    font-size: 30rpx;
+    float: left;
+}
+
+.name-txt {
+    width: 90rpx;
+    margin-right: 30rpx;
+    color: #666;
+}
+
+textarea {
+	width: 690rpx;
+	height: 144rpx;
+	line-height: 48rpx;
+	font-size: 30rpx;
+	margin: 0 30rpx;
+}
+
+.plhd {
+	line-height: 48rpx;
+	font-size: 30rpx;
+	color: #999;
+}
+
+.tel-txt, .addr-txt {
+    width: 120rpx;
+    margin-right: 30rpx;
+    color: #666;
+}
+
+.name-input {
+    width: 600rpx;
+}
+
+.tel-input {
+    width: 570rpx;
+}
+
+.picker-icon {
+	width: 11rpx;
+	height: 20rpx;
+	position: absolute;
+	left: 660rpx;
+	top: 37rpx;
+}
+
+.fixed-btns {
+	width: 750rpx;
+	height: 110rpx;
+	line-height: 110rpx;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+}
+
+.fixed-left-btn {
+	width: 375rpx;
+	font-size: 30rpx;
+	float: left;
+}
+
+.orange {
+	font-size: 44rpx;
+}
+
+.fixed-right-btn {
+	width: 375rpx;
+	float: left;
+	background-image: linear-gradient(48deg, #FF2F2F 0%, #FF4545 100%);
+	color: #fff;
+	font-size: 36rpx;
+}

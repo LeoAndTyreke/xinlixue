@@ -1,0 +1,25 @@
+.order-item {
+	width: 750rpx;
+	height: 240rpx;
+	background: #fff;
+	margin-bottom: 9rpx;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.order-time {
+	width: 690rpx;
+	height: 26rpx;
+	font-size: 26rpx;
+	color: #666666;
+	margin: 30rpx 0 10rpx;
+}
+
+.order-ctt {
+	width: 690rpx;
+	height: 144rpx;
+	line-height: 48rpx;
+	font-size: 30rpx;
+	letter-spacing: 0.6rpx;
+}

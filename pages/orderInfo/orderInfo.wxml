@@ -1,0 +1,31 @@
+<view class='container'>
+    <form>
+        <view class='item'>
+            <label for='name'>
+                <view class='name-txt'>收货人</view>
+                <input class='name-input' id='name'></input>
+            </label>
+        </view>
+        <view class='item'>
+            <label for='tel'>
+                <view class='tel-txt'>手机号码</view>
+                <input class='tel-input' id='tel' maxlength='11' type=''></input>
+            </label>
+        </view>
+        <view class='item'>
+            <label for='addr'>
+                <view class='addr-txt'>收货地址</view>
+                <picker mode="region" bindchange="regionChange" value="{{region}}">
+                    <view class="picker">
+                        {{region[0]}}  {{region[1]}}  {{region[2]}}  <image src='../../imgs/picker.png' class='picker-icon'></image>
+                    </view>
+                </picker>
+            </label>
+        </view>
+		<textarea placeholder='请输入详细地址' placeholder-style='font-size: 30rpx; color: #999;'></textarea>
+    </form>
+	<view class='fixed-btns'>
+		<view class='fixed-left-btn'>合计：<text class='orange'>￥30.00</text></view>
+		<view class='fixed-right-btn'>立即支付</view>
+	</view>
+</view>

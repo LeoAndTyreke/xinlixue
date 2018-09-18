@@ -6,6 +6,7 @@ page {
   width: 750rpx;
   height: 376rpx;
   background-color: #fff;
+  margin-bottom: 9rpx;
 }
 
 .teacher-item {
@@ -57,4 +58,41 @@ page {
   font-size: 26rpx;
   color: #666;
   margin: 0 30rpx;
+}
+
+.content {
+	background-color: #fff;
+	width: 750rpx;
+	position: relative;
+}
+
+.square {
+	width: 8rpx;
+	height: 22rpx;
+	position: absolute;
+	left: 30rpx;
+	top: 32rpx;
+	background-color: #FF7745;
+}
+
+.content-title {
+	width: 750rpx;
+	height: 86rpx;
+	line-height: 86rpx;
+	font-size: 30rpx;
+	padding-left: 48rpx;
+	box-sizing: border-box;
+	margin-bottom: 19rpx;
+}
+
+.fixed-btn {
+	width: 750rpx;
+	height: 110rpx;
+	line-height: 110rpx;
+	font-size: 36rpx;
+	color: #fff;
+	background-color: #FF7D4F;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
 }
