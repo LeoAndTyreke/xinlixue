@@ -12,7 +12,11 @@
 <input class="search" placeholder-class="{{focusBool ? 'search-plhd-focus': 'search-plhd'}}" placeholder="搜索课程或老师" bindblur='inputBlur' bindfocus='inputFocus'></input>
 <scroll-view scroll-x="true" class="categories" scroll-into-view="category1" scroll-with-animation="true">
     <view class="category-all">
-        <view class='category' id='category1' >
+		<view wx:for='{{categories}}' class='category' id='category{{index+1}}' >
+            <image src='{{item.img}}' class='category-icon' mode='aspectFit'></image>
+            <view class='category-name'>{{item.name}}</view>
+        </view>
+        <!-- <view class='category' id='category1' >
             <image class='category-icon'></image>
             <view class='category-name'>月嫂</view>
         </view>
@@ -43,7 +47,7 @@
         <view class='category' id='category8'>
             <image class='category-icon'></image>
             <view class='category-name'>产后护理</view>
-        </view>
+        </view> -->
     </view>
 </scroll-view>
 <view class='list'>

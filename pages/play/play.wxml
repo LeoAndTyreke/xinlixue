@@ -1,29 +1,42 @@
 <video controls='false' show-center-play-btn='false'>
-  <cover-view class='controls'>
-    <cover-image src='../../imgs/play.png' class='play-btn'></cover-image>
-    <cover-view class='controls-bar'>
-      <cover-image src='../../imgs/pause.png' class='pause-btn'></cover-image>
-      <cover-view class='progress-time'>20:30/60:00</cover-view>
-      <cover-view class='progress-bar'>
-        <cover-view class='progress-played'></cover-view>
-        <cover-view class='progress-dot'></cover-view>
-      </cover-view>
-      <cover-image src='../../imgs/fullscreen.png' class='fullscreen-btn'></cover-image>
+    <cover-view class='controls'>
+        <cover-image src='../../imgs/play.png' class='play-btn'></cover-image>
+        <cover-view class='controls-bar'>
+            <cover-image src='../../imgs/pause.png' class='pause-btn'></cover-image>
+            <cover-view class='progress-time'>20:30/60:00</cover-view>
+            <cover-view class='progress-bar'>
+                <cover-view class='progress-played'></cover-view>
+                <cover-view class='progress-dot'></cover-view>
+            </cover-view>
+            <cover-image src='../../imgs/fullscreen.png' class='fullscreen-btn'></cover-image>
+        </cover-view>
     </cover-view>
-  </cover-view>
 </video>
 <view class='video-info'>
-  <view class='video-title'>这是课程标题文字打不满不要怕我可以凑文 字哈哈哈
-  </view>
-  <view class='teacher'>
-    <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
-    <view class='teacher-name'>孙老师</view>
-  </view>
+    <view class='video-title'>这是课程标题文字打不满不要怕我可以凑文 字哈哈哈
+    </view>
+    <view class='teacher'>
+        <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
+        <view class='teacher-name'>孙老师</view>
+    </view>
 </view>
 <view class='framework'>
-  <view class='framework-header'>
-    <view class='square bc-blue'></view>
-    <view class='framework-title'>框架图</view>
-    <image src='../../imgs/picker.png' class='more-icon'></image>
+    <view class='framework-header'>
+        <view class='square bc-blue'></view>
+        <view class='framework-title'>框架图</view>
+        <image src='../../imgs/more.png' class='more-icon'></image>
+        <view class='note-txt'>笔记</view>
+    </view>
+	<view class='framework-ctt'></view>
+</view>
+<view class='fixed-btns'>
+  <view class='fixed-left-btn'>
+    <image src='../../imgs/money.png' class='money-icon'></image>
+    <view class='money-num'>赚
+      <text class='orange'>20.00</text>元</view>
+  </view>
+  <view class='fixed-right-btn bc-blue'>
+	<image src='../../imgs/mylessons.png' class='mylessons'></image>
+	<view class='lessons'>课时3/18</view>
   </view>
 </view>

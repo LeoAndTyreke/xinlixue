@@ -66,7 +66,8 @@ page {
 }
 
 .category-icon {
-	/* width: 100% */
+	width: 44rpx;
+	height: 44rpx;
 }
 
 .category-name {

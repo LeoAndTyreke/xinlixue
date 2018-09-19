@@ -178,57 +178,45 @@ page {
     color: #666;
     letter-spacing: 0.5rpx;
     line-height: 48rpx;
-	margin: 0 30rpx 12rpx;
+    margin: 0 30rpx 12rpx;
 }
 
 .fixed-btns {
-	width: 750rpx;
-	height: 110rpx;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
+    width: 750rpx;
+    height: 110rpx;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
 }
 
 .fixed-left-btn {
-  width: 303rpx;
-  height: 110rpx;
-  float: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
+    width: 303rpx;
+    height: 110rpx;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
 }
 
 .fixed-right-btn {
-  width: 447rpx;
-  height: 110rpx;
-  line-height: 110rpx;
-  font-size: 36rpx;
-  float: left;
-  color: #fff;
-}
-
-.bc-orange {
-  background-color: #FF7D4F;
-}
-
-.bc-blue {
-  background-color: #5695FF;
+    width: 447rpx;
+    height: 110rpx;
+    line-height: 110rpx;
+    font-size: 36rpx;
+    float: left;
+    color: #fff;
 }
 
 .money-icon {
-  width: 37rpx;
-  height: 41rpx;
-  margin-right: 20rpx;
+    width: 37rpx;
+    height: 41rpx;
+    margin-right: 20rpx;
 }
 
 .money-num {
-  height: 48rpx;
-  line-height: 48rpx;
-  font-size: 30rpx;
-  text-align: center;
-}
-
-.orange {
-  color: #ff4d10;
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 30rpx;
+    text-align: center;
 }

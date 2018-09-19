@@ -1,136 +1,225 @@
 video {
-  width: 750rpx;
-  height: 423rpx;
-  position: relative;
+    width: 750rpx;
+    height: 423rpx;
+    position: relative;
 }
 
 .controls {
-  width: 750rpx;
-  height: 423rpx;
-  position: absolute;
+    width: 750rpx;
+    height: 423rpx;
+    position: absolute;
 }
 
 .play-btn {
-  width: 36rpx;
-  height: 42rpx;
-  position: absolute;
-  left: 358rpx;
-  top: 191rpx;
+    width: 36rpx;
+    height: 42rpx;
+    position: absolute;
+    left: 358rpx;
+    top: 191rpx;
 }
 
 .controls-bar {
-  width: 750rpx;
-  height: 60rpx;
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, .17)
+    width: 750rpx;
+    height: 60rpx;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.17);
 }
+
 .pause-btn {
-  width: 31rpx;
-  height: 42rpx;
-  position: absolute;
-  left: 30rpx;
-  top: 9rpx;
+    width: 31rpx;
+    height: 42rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 9rpx;
 }
 
 .progress-time {
-  width: 152rpx;
-  height: 26rpx;
-  line-height: 26rpx;
-  font-size: 26rpx;
-  color: #fff;
-  position: absolute;
-  left: 91rpx;
-  top: 17rpx;
+    width: 152rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color: #fff;
+    position: absolute;
+    left: 91rpx;
+    top: 17rpx;
 }
 
 .progress-bar {
-  width: 397rpx;
-  height: 4rpx;
-  background: rgba(0, 0, 0, .2);
-  border-radius: 100rpx;
-  position: absolute;
-  left: 263rpx;
-  top: 28rpx;
-  overflow: visible;
+    width: 397rpx;
+    height: 4rpx;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 100rpx;
+    position: absolute;
+    left: 263rpx;
+    top: 28rpx;
+    overflow: visible;
 }
 
 .progress-played {
-  width: 100rpx;
-  height: 4rpx;
-  background: #4573FF;
-  border-radius: 100rpx;
-  position: absolute;
+    width: 100rpx;
+    height: 4rpx;
+    background: #4573ff;
+    border-radius: 100rpx;
+    position: absolute;
 }
 
 .progress-dot {
-  width: 18rpx;
-  height: 18rpx;
-  border-radius: 9rpx;
-  background: #4573FF;
-  box-shadow: 0 2px 7px 0 rgba(0,10,139,0.10);
-  position: absolute;
-  top: -7rpx;
-  left: 91rpx;
+    width: 18rpx;
+    height: 18rpx;
+    border-radius: 9rpx;
+    background: #4573ff;
+    box-shadow: 0 2px 7px 0 rgba(0, 10, 139, 0.10);
+    position: absolute;
+    top: -7rpx;
+    left: 91rpx;
 }
 
 .fullscreen-btn {
-  width: 40rpx;
-  height: 40rpx;
-  position: absolute;
-  left: 680rpx;
-  top: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    left: 680rpx;
+    top: 10rpx;
 }
 
 .video-info {
-  width: 750rpx;
-  height: 192rpx;
-  background: #fff;
-  margin-bottom: 10rpx;
-  overflow: hidden;
+    width: 750rpx;
+    height: 192rpx;
+    background: #fff;
+    margin-bottom: 10rpx;
+    overflow: hidden;
 }
 
 .video-title {
-  width: 690rpx;
-  height: 96rpx;
-  line-height: 48rpx;
-  font-size: 36rpx;
-  margin: 20rpx 30rpx;
+    width: 690rpx;
+    height: 96rpx;
+    line-height: 48rpx;
+    font-size: 36rpx;
+    margin: 20rpx 30rpx;
 }
 
 .teacher {
-  width: 750rpx;
-  height: 26rpx;
+    width: 750rpx;
+    height: 26rpx;
 }
 
 .teacher-icon {
-  width: 24rpx;
-  height: 18rpx;
-  float: left;
-  margin: 4rpx 16rpx 4rpx 30rpx;
+    width: 24rpx;
+    height: 18rpx;
+    float: left;
+    margin: 4rpx 16rpx 4rpx 30rpx;
 }
 
 .teacher-name {
-  width: 300rpx;
-  height: 26rpx;
-  line-height: 26rpx;
-  font-size: 26rpx;
-  color: #666;
-  float: left;
+    width: 300rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color: #666;
+    float: left;
 }
 
 .framework {
-width: 750rpx;
-background: #fff;
+    width: 750rpx;
+    background: #fff;
+    overflow: hidden;
 }
 
 .framework-header {
-  width: 750rpx;
-  height: 84rpx;
+    width: 750rpx;
+    height: 84rpx;
+	line-height: 84rpx;
+	font-size: 30rpx;
 }
 
 .square {
-  width: 8rpx;
-  height: 22rpx;
-  margin: 31rpx 16rpx 31rpx 30rpx;
+    width: 8rpx;
+    height: 22rpx;
+    margin: 31rpx 16rpx 31rpx 30rpx;
+	float: left;
+}
+
+.framework-title {
+	width: 120rpx;
+	height: 84rpx;
+	float: left;
+}
+
+.more-icon {
+	width: 13rpx;
+	height: 17rpx;
+	margin: 34rpx 30rpx 0 10rpx;
+	float: right;
+}
+
+.note-txt {
+	width: 60rpx;
+	height: 84rpx;
+	color: #666;
+	float: right;
+}
+
+.framework-ctt {
+	width: 690rpx;
+	height: 567rpx;
+	background: #F2F2F2;
+	border-radius: 24rpx;
+	margin: 0 30rpx 110rpx;
+}
+
+.fixed-btns {
+    width: 750rpx;
+    height: 110rpx;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.fixed-left-btn {
+    width: 303rpx;
+    height: 110rpx;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.fixed-right-btn {
+    width: 447rpx;
+    height: 110rpx;
+    line-height: 110rpx;
+    font-size: 36rpx;
+    float: left;
+    color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.money-icon {
+    width: 37rpx;
+    height: 41rpx;
+    margin-right: 20rpx;
+}
+
+.money-num {
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.mylessons {
+	width: 46rpx;
+	height: 32rpx;
+	margin-right: 12rpx;
+}
+
+.lessons {
+	height: 110rpx;
+	line-height: 110rpx;
+	font-size: 36rpx;
+	color: #fff;
 }
