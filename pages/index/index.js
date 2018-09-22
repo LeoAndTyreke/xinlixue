@@ -88,6 +88,12 @@ Page({
 			url: '../logs/logs'
 		})
 	},
+  binLes:function(e){
+    wx.navigateTo({ url: '/pages/lessons/lessons' });
+  },
+  binTea: function (e) {
+    wx.navigateTo({ url: '/pages/teachers/teachers' });
+  },
 	onReady: function () {
 		this.lessonList = this.selectComponent('#lessonList');
 		this.teacherList = this.selectComponent('#teacherList');

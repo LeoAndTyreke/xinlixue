@@ -1,0 +1,24 @@
+.category {
+	width: 134rpx;
+	height: 100rpx;
+	position: relative;
+  margin: 30rpx 18rpx;
+}
+
+.category-icon {
+	width: 44rpx;
+	height: 44rpx;
+  position: absolute;
+  left: 45rpx;
+  top: 10rpx;
+}
+
+.category-name {
+	width: 100%;
+	height: 30rpx;
+	line-height: 30rpx;
+	font-size: 28rpx;
+	color: #333;
+	position: absolute;
+	bottom: 0;
+}

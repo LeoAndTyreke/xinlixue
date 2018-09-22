@@ -1,37 +1,41 @@
 <import src="../../temp/search.wxml"/>
+<import src="../../temp/indLab.wxml"/>
+<import src="../../temp/indLess.wxml"/>
+<import src="../../temp/indTea.wxml"/>
 <swiper indicator-dots="true" indicator-color="#C6C6C6" indicator-active-color="#456EFF" autoplay="true" interval="4000" duration="500" class='index-slider'>
-    <swiper-item wx:for='{{ads}}'>
+    <swiper-item wx:for='{{ads}}' wx:key='indAds'>
         <image src="{{item.img}}" class="slide-image" mode='aspectFill' />
     </swiper-item>
 </swiper>
 <template is="search" data="{{focusBool}}"/>
 <scroll-view scroll-x="true" class="categories" scroll-into-view="category1" scroll-with-animation="true">
-    <view class="category-all">
-        <view wx:for='{{categories}}' class='category' id='category{{index+1}}'>
-            <image src='{{item.img}}' class='category-icon' mode='aspectFit'></image>
-            <view class='category-name'>{{item.name}}</view>
-        </view>
+    <view class="category-all" style='width:{{categories.length*170}}rpx'>
+        <template is="indLab" wx:for='{{categories}}' wx:key='indCategories' data="{{item}}"/>
     </view>
 </scroll-view>
 <view class='list'>
     <view class='list-header'>
         <view class='square bc-blue'></view>
         <view class='list-title'>推荐课程</view>
-        <navigator class='list-more' hover-class='none' url='/pages/lessons/lessons'>
+        <view class='list-more actob' bindtap='binLes' >
             <view class='more-txt'>全部课程</view>
             <image src='../../imgs/more.png' class='more-icon'></image>
-        </navigator>
+        </view>
     </view>
-    <lessonList id="lessonList" listData='{{lessonListData}}'></lessonList>
+    <view class='list'>
+      <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
+    </view>
 </view>
 <view class='list'>
     <view class='list-header'>
         <view class='square bc-orange'></view>
         <view class='list-title'>专家讲师</view>
-        <navigator class='list-more' hover-class='none' url='/pages/teachers/teachers'>
+        <view class='list-more actob' bindtap='binTea' >
             <view class='more-txt'>全部讲师</view>
             <image src='../../imgs/more.png' class='more-icon'></image>
-        </navigator>
+        </view>
     </view>
-    <teacherList id='teacherList' listData='{{teacherListData}}'></teacherList>
+    <view class='list'>
+      <template is="indTea" wx:for='{{teacherListData}}' wx:key='indTeacher' data="{{item}}"/>
+    </view>
 </view>

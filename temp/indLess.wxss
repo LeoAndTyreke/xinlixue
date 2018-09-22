@@ -1,0 +1,94 @@
+.lesson-item {
+    position: relative;
+    width: 750rpx;
+    height: 273rpx;
+}
+
+.lesson-cover {
+    width: 168rpx;
+    height: 213rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 30rpx;
+    background-color: lightblue;
+}
+
+.lesson-title {
+    width: 502rpx;
+    height: 96rpx;
+    line-height: 48rpx;
+    font-size: 34rpx;
+    position: absolute;
+    left: 218rpx;
+    top: 30rpx;
+}
+
+.teacher-icon {
+    width: 24rpx;
+    height: 18rpx;
+    position: absolute;
+    left: 218rpx;
+    top: 150rpx;
+}
+
+.les-teacher-name {
+    width: 106rpx;
+    left: 252rpx;
+}
+
+.time-icon {
+    width: 20rpx;
+    height: 20rpx;
+    position: absolute;
+    left: 363rpx;
+    top: 150rpx;
+}
+
+.duration {
+    width: 150rpx;
+    left: 393rpx;
+}
+
+.lesson-gray-info {
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color: #666;
+    position: absolute;
+    top: 150rpx;
+}
+
+.lesson-price {
+    width: 300rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 36rpx;
+    color: #ff4d10;
+    position: absolute;
+    left: 218rpx;
+    top: 203rpx;
+}
+
+.lesson-record {
+    width: 500rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 30rpx;
+    color: #666;
+    position: absolute;
+    left: 218rpx;
+    bottom: 32rpx;
+}
+
+.lesson-earn {
+	height: 46rpx;
+	line-height: 46rpx;
+	position: absolute;
+	left: 552rpx;
+	bottom: 30rpx;
+	font-size: 26rpx;
+	color: #5695FF;
+	border-radius: 100rpx;
+	background-color: rgba(86, 149, 255, .1);
+	padding: 0 12rpx;
+}
