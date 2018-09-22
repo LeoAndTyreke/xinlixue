@@ -18,3 +18,12 @@ page {
 .bc-orange {
 	background-color: #FF4D10;
 }
+
+.square {
+    width: 8rpx;
+    height: 22rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 50%;
+    margin-top: -11rpx;
+}

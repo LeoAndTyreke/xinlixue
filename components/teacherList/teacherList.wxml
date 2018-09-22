@@ -1,17 +1,22 @@
 <view class='list'>
-  <view class='teacher-item'>
-    <image class='teacher-cover'></image>
-    <view class='teacher-name'>金老师</view>
-    <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
-  </view>
-  <view class='teacher-item'>
-    <image class='teacher-cover'></image>
-    <view class='teacher-name'>金老师</view>
-    <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
-  </view>
-  <view class='teacher-item'>
-    <image class='teacher-cover'></image>
-    <view class='teacher-name'>金老师</view>
-    <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
-  </view>
+    <view class='teacher-item' wx:for='{{listData}}'>
+        <image src='{{item.avatar}}' class='teacher-cover'></image>
+        <view class='teacher-name'>{{item.teacher}}</view>
+        <view class='teacher-intro'>{{item.intro}}</view>
+    </view>
+    <view class='teacher-item'>
+        <image class='teacher-cover'></image>
+        <view class='teacher-name'>金老师</view>
+        <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
+    </view>
+    <view class='teacher-item'>
+        <image class='teacher-cover'></image>
+        <view class='teacher-name'>金老师</view>
+        <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
+    </view>
+    <view class='teacher-item'>
+        <image class='teacher-cover'></image>
+        <view class='teacher-name'>金老师</view>
+        <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
+    </view>
 </view>

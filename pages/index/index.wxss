@@ -7,7 +7,6 @@ page {
 	margin: 0;
 }
 .slide-image {
-  background-color: red;
   width: 750rpx;
   height: 290rpx;
 }
@@ -45,9 +44,7 @@ page {
 }
 
 .categories {
-	/* width: 750rpx; */
 	height: 161rpx;
-	background-color: lavender;
 	text-align: center;
 }
 
@@ -60,14 +57,15 @@ page {
 .category {
 	width: 170rpx;
 	height: 161rpx;
-	/* float: left; */
-	background-color: lightseagreen;
 	position: relative;
 }
 
 .category-icon {
 	width: 44rpx;
 	height: 44rpx;
+    position: absolute;
+    left: 66rpx;
+    top: 41rpx;
 }
 
 .category-name {
@@ -88,33 +86,37 @@ page {
 .list-header {
 	width: 750rpx;
 	height: 44rpx;
+    position: relative;
 }
 
 .list-title {
-	float: left;
-	margin: 7rpx 432rpx 7rpx 30rpx;
 	width: 130rpx;
-	height: 30rpx;
-	line-height: 30rpx;
+	height: 44rpx;
+	line-height: 44rpx;
 	font-size: 28rpx;
-	padding-left: 10rpx;
-	box-sizing: border-box;
+    position: absolute;
+    left: 48rpx;
 }
 
 .list-more {
-	float: left;
 	width: 150rpx;
-	height: 30rpx;
-	line-height: 30rpx;
+	height: 44rpx;
+    position: absolute;
+    left: 593rpx;
+}
+
+.more-txt {
+    width: 104rpx;
+    height: 44rpx;
+	line-height: 44rpx;
 	font-size: 26rpx;
 	color: #666;
-	margin:  7rpx 0;
 }
 
-.blue-border {
-	border-left: 8rpx solid #5695ff;
-}
-
-.red-border {
-	border-left: 8rpx solid #FF4D10;
+.more-icon {
+    width: 13rpx;
+    height: 17rpx;
+    position: absolute;
+    left: 114rpx;
+    top: 14rpx;
 }

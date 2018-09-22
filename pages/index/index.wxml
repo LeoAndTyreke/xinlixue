@@ -1,66 +1,36 @@
 <swiper indicator-dots="true" indicator-color="#C6C6C6" indicator-active-color="#456EFF" autoplay="true" interval="4000" duration="500" class='index-slider'>
-    <swiper-item>
-        <image src="" class="slide-image" />
-    </swiper-item>
-    <swiper-item>
-        <image src="" class="slide-image" />
-    </swiper-item>
-    <swiper-item>
-        <image src="" class="slide-image" />
+    <swiper-item wx:for='{{ads}}'>
+        <image src="{{item.img}}" class="slide-image" mode='aspectFill' />
     </swiper-item>
 </swiper>
 <input class="search" placeholder-class="{{focusBool ? 'search-plhd-focus': 'search-plhd'}}" placeholder="搜索课程或老师" bindblur='inputBlur' bindfocus='inputFocus'></input>
 <scroll-view scroll-x="true" class="categories" scroll-into-view="category1" scroll-with-animation="true">
     <view class="category-all">
-		<view wx:for='{{categories}}' class='category' id='category{{index+1}}' >
+        <view wx:for='{{categories}}' class='category' id='category{{index+1}}'>
             <image src='{{item.img}}' class='category-icon' mode='aspectFit'></image>
             <view class='category-name'>{{item.name}}</view>
         </view>
-        <!-- <view class='category' id='category1' >
-            <image class='category-icon'></image>
-            <view class='category-name'>月嫂</view>
-        </view>
-        <view class='category' id='category2'>
-            <image class='category-icon'></image>
-            <view class='category-name'>胎教师</view>
-        </view>
-        <view class='category' id='category3'>
-            <image class='category-icon'></image>
-            <view class='category-name'>幼教师</view>
-        </view>
-        <view class='category' id='category4'>
-            <image class='category-icon'></image>
-            <view class='category-name'>营养师</view>
-        </view>
-        <view class='category' id='category5'>
-            <image class='category-icon'></image>
-            <view class='category-name'>心理师</view>
-        </view>
-        <view class='category' id='category6'>
-            <image class='category-icon'></image>
-            <view class='category-name'>育婴师</view>
-        </view>
-        <view class='category' id='category7'>
-            <image class='category-icon'></image>
-            <view class='category-name'>母婴护理</view>
-        </view>
-        <view class='category' id='category8'>
-            <image class='category-icon'></image>
-            <view class='category-name'>产后护理</view>
-        </view> -->
     </view>
 </scroll-view>
 <view class='list'>
-	<view class='list-header'>
-		<view class='list-title blue-border'>推荐课程</view>
-		<view class='list-more'>全部课程></view>	
-	</view>
-	<lessonList id="lessonList"></lessonList>
+    <view class='list-header'>
+        <view class='square bc-blue'></view>
+        <view class='list-title'>推荐课程</view>
+        <navigator class='list-more' hover-class='none' url='/pages/lessons/lessons'>
+            <view class='more-txt'>全部课程</view>
+            <image src='../../imgs/more.png' class='more-icon'></image>
+        </navigator>
+    </view>
+    <lessonList id="lessonList" listData='{{lessonListData}}'></lessonList>
 </view>
 <view class='list'>
-	<view class='list-header'>
-		<view class='list-title red-border'>专家讲师</view>
-		<view class='list-more'>全部讲师></view>	
-	</view>
-	<teacherList id='teacherList'></teacherList>
+    <view class='list-header'>
+        <view class='square bc-orange'></view>
+        <view class='list-title'>专家讲师</view>
+        <navigator class='list-more' hover-class='none' url='/pages/teachers/teachers'>
+            <view class='more-txt'>全部讲师</view>
+            <image src='../../imgs/more.png' class='more-icon'></image>
+        </navigator>
+    </view>
+    <teacherList id='teacherList' listData='{{teacherListData}}'></teacherList>
 </view>

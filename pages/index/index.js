@@ -11,7 +11,7 @@ var categories = [
 		name: '胎教师'
 	},
 	{
-		img: 'http://www.familyktv.com/images/yjs.png',
+    img: 'http://www.familyktv.com/images/xlcp.png',
 		name: '幼教师'
 	},
 	{
@@ -34,11 +34,51 @@ var categories = [
 		img: 'http://www.familyktv.com/images/xlcp.png',
 		name: '产后护理'
 	}
+];
+var ads = [
+  { img: 'http://www.familyktv.com/images/xinpic1.jpg'},
+  { img: 'http://www.familyktv.com/images/xinpic2.jpg' },
+  { img: 'http://www.familyktv.com/images/xinpic3.jpg' },
+  { img: 'http://www.familyktv.com/images/xinpic4.jpg' },
+]
+var lessonListData=[
+    {
+        cover: 'http://www.familyktv.com/images/xinpic1.jpg',
+        title: '心理课程心理课程心理课程信了你的邪',
+        teacher: '李老师',
+        duration: '10课时',
+        price: '99.00',
+        record: 8,
+        recordTime: '12:45'
+    },
+    {
+        cover: 'http://www.familyktv.com/images/xinpic2.jpg',
+        title: '信了你的邪心理课程心理课程心理课程',
+        teacher: 'liu老师',
+        duration: '12课时',
+        price: '99.00',
+        record: 0
+    }
+]
+var teacherListData = [
+    {
+        avatar: 'http://www.familyktv.com/images/xinpic1.jpg',
+        teacher: '李老师',
+        intro: '信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程'
+    },
+    {
+        avatar: 'http://www.familyktv.com/images/xinpic2.jpg',
+        teacher: '刘老师',
+        intro: '信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程'
+    },
 ]
 
 Page({
 	data: {
 		categories,
+        ads,
+        lessonListData,
+        teacherListData,
 		userInfo: {},
 		focusBool: false,
 		hasUserInfo: false,

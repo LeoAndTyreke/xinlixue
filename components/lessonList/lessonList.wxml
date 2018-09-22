@@ -1,4 +1,14 @@
 <view class='list'>
+    <view class='lesson-item'wx:for='{{listData}}'>
+        <image src='{{item.cover}}' mode='aspectFit' class='lesson-cover'></image>
+        <view class='lesson-title'>{{item.title}}</view>
+        <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
+        <view class='teacher-name lesson-gray-info'>{{item.teacher}}</view>
+        <image src='../../imgs/time-icon.png' class='time-icon'></image>
+        <view class='duration lesson-gray-info'>{{item.duration}}</view>
+        <view class='lesson-price' wx:if='{{item.record == 0}}'>￥{{item.price}}</view>
+        <view class='lesson-record'wx:else>上次观看到第{{item.record}}课时 {{item.recordTime}}</view>
+    </view>
     <view class='lesson-item'>
         <image class='lesson-cover'></image>
         <view class='lesson-title'>心理课程心理课程心理课程信了你的邪</view>
