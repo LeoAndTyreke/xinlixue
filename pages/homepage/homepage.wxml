@@ -6,6 +6,7 @@
 	<view class='item'>
 		<image class='item-icon' src='../../imgs/invite.png' mode='aspectFit'></image>
 		<view class='item-name'>邀请好友</view>
+    <button open-type="share" session-from="weapp" class='item-butn'></button>
 	</view>
 	<navigator class='item' hover-class='none' url='/pages/promote/promote'>
 		<image class='item-icon' src='../../imgs/promote.png' mode='aspectFit'></image>
@@ -18,5 +19,6 @@
 	<view class='item'>
 		<image class='item-icon' src='../../imgs/kefu.png' mode='aspectFit'></image>
 		<view class='item-name'>联系客服</view>
+    <button open-type="contact" session-from="weapp" class='item-butn'></button>
 	</view>
 </view>

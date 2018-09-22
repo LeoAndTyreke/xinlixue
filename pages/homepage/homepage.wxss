@@ -40,6 +40,7 @@
 	border-right: 2rpx solid #ddd;
 	border-bottom: 2rpx solid #ddd;
     position: relative;
+    background-color: #eee;
 }
 
 .item:nth-child(2n) {
@@ -66,4 +67,12 @@
     position: absolute;
     top: 225rpx;
     text-align: center;
+}
+.item-butn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  opacity:0;
 }

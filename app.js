@@ -3,7 +3,7 @@ let mPh = require('utils/iPhone.js');
 let user = require('utils/user.js');
 let err = require('utils/inteError.js');
 App({
-  onLaunch: function () {
+  onLaunch: function (e) {
     let that = this;
     //系统信息
     mPh.obtain();
@@ -17,5 +17,8 @@ App({
       //console.log('mToken::' + mToken);
       console.log('uObj:' + JSON.stringify(mLogin.getUser()))
     });
+
+    console.log(JSON.stringify(e.query.shid));
+
   }
 })
