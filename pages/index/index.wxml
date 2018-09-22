@@ -1,9 +1,10 @@
+<import src="../../temp/search.wxml"/>
 <swiper indicator-dots="true" indicator-color="#C6C6C6" indicator-active-color="#456EFF" autoplay="true" interval="4000" duration="500" class='index-slider'>
     <swiper-item wx:for='{{ads}}'>
         <image src="{{item.img}}" class="slide-image" mode='aspectFill' />
     </swiper-item>
 </swiper>
-<input class="search" placeholder-class="{{focusBool ? 'search-plhd-focus': 'search-plhd'}}" placeholder="搜索课程或老师" bindblur='inputBlur' bindfocus='inputFocus'></input>
+<template is="search" data="{{focusBool}}"/>
 <scroll-view scroll-x="true" class="categories" scroll-into-view="category1" scroll-with-animation="true">
     <view class="category-all">
         <view wx:for='{{categories}}' class='category' id='category{{index+1}}'>

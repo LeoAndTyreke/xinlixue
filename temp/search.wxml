@@ -1,0 +1,9 @@
+<template name="search">
+  <view class='search'>
+    <view wx:if="{{focusBool}}" class='search-ss'>
+      <image src="../../imgs/search.png" class='search-tp'></image>
+      <input class="search-inp" focus="{{focusBool}}" placeholder-class="search-inp-pla" placeholder="搜索课程或老师" confirm-type="搜索" bindblur='inputBlur'></input>
+    </view>
+    <view wx:else class='search-ts' bindtap='inputFocus'><image src="../../imgs/search.png" class='search-tp'></image>搜索课程或老师</view>
+  </view>
+</template>

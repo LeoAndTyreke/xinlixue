@@ -120,3 +120,5 @@ page {
     left: 114rpx;
     top: 14rpx;
 }
+
+@import "../../temp/search.wxss";
