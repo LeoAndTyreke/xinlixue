@@ -95,8 +95,6 @@ Page({
     wx.navigateTo({ url: '/pages/teachers/teachers' });
   },
 	onReady: function () {
-		this.lessonList = this.selectComponent('#lessonList');
-		this.teacherList = this.selectComponent('#teacherList');
 	},
 	onLoad: function () {
 		

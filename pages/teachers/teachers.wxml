@@ -1,1 +1,4 @@
-<teacherList id='teacherList'></teacherList>
+<import src="../../temp/indTea.wxml"/>
+<view class='list'>
+  <template is="indTea" wx:for='{{teacherListData}}' wx:key='indTeacher' data="{{item}}"/>
+</view>
