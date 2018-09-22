@@ -1,3 +1,4 @@
+<import src="../../temp/indLess.wxml"/>
 <view class='header'>
 	<view class='gains'>
 		<view class='gains-txt g-txt1'>累计收益</view>
@@ -17,5 +18,7 @@
 		<view class='square bc-blue'></view>
 		<view class='title-txt'>推广课程</view>
 	</view>
-	<lessonList id='lessonList'></lessonList>
+	<view class='list'>
+    <template is="indTea" wx:for='{{teacherListData}}' wx:key='indTeacher' data="{{item}}"/>
+  </view>
 </view>

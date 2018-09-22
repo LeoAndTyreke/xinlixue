@@ -96,3 +96,5 @@ page {
 	position: fixed;
 	bottom: 0;
 }
+
+@import "../../temp/indLess.wxss";

@@ -1,3 +1,4 @@
+<import src="../../temp/indLess.wxml"/>
 <view class='header'>
   <view class='teacher-item'>
     <image class='teacher-cover'></image>
@@ -9,6 +10,8 @@
 <view class='content'>
 	<view class='square'></view>
 	<view class='content-title'>专家课程</view>
-	<lessonList id="lessonList"></lessonList>
+	<view class='list'>
+    <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
+  </view>
 </view>
 <view class='fixed-btn'>购买全部课程</view>

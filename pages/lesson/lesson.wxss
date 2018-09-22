@@ -220,3 +220,18 @@ page {
     font-size: 30rpx;
     text-align: center;
 }
+
+
+.menu-item {
+  width: 750rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 30rpx;
+  position: relative;
+}
+
+.menu-title {
+  background-color: #F6F7F8;
+}
+
+@import "../../temp/men.wxss";

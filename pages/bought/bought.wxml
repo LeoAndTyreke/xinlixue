@@ -1,3 +1,4 @@
-<view class='container'>
-	<lessonList id='lessonList'></lessonList>
+<import src="../../temp/indLess.wxml"/>
+<view class='list'>
+  <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
 </view>

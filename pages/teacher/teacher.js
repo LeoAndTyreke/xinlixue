@@ -1,65 +1,32 @@
-// pages/teacher/teacher.js
-Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+var lessonListData = [
+  {
+    cover: 'http://www.familyktv.com/images/xinpic1.jpg',
+    title: '心理课程心理课程心理课程信了你的邪',
+    teacher: '李老师',
+    duration: '10课时',
+    price: '99.00',
+    record: 8,
+    recordTime: '12:45'
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  {
+    cover: 'http://www.familyktv.com/images/xinpic2.jpg',
+    title: '信了你的邪心理课程心理课程心理课程',
+    teacher: 'liu老师',
+    duration: '12课时',
+    price: '99.00',
+    record: 0
+  }
+]
+Page({
+  data: {
+    lessonListData
+  },
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   }
