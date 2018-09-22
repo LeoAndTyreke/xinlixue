@@ -18,7 +18,7 @@
 		<view class='square bc-blue'></view>
 		<view class='title-txt'>推广课程</view>
 	</view>
-	<view class='list'>
-    <template is="indTea" wx:for='{{teacherListData}}' wx:key='indTeacher' data="{{item}}"/>
+	<view class='list' bindtap='bindLess'>
+    <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
   </view>
 </view>

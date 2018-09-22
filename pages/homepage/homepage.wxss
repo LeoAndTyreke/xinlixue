@@ -40,7 +40,6 @@
 	border-right: 2rpx solid #ddd;
 	border-bottom: 2rpx solid #ddd;
     position: relative;
-    background-color: #eee;
 }
 
 .item:nth-child(2n) {

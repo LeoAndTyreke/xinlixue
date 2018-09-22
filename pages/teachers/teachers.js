@@ -14,6 +14,10 @@ Page({
   data: {
     teacherListData
   },
+  bindTeac: function (e) {
+    console.log(e.target.id);
+    wx.navigateTo({ url: '/pages/teacher/teacher' });
+  },
   onLoad: function (options) {
 
   },

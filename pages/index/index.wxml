@@ -9,7 +9,7 @@
 </swiper>
 <template is="search" data="{{focusBool}}"/>
 <scroll-view scroll-x="true" class="categories" scroll-into-view="category1" scroll-with-animation="true">
-    <view class="category-all" style='width:{{categories.length*170}}rpx'>
+    <view class="category-all" style='width:{{categories.length*170}}rpx' bindtap='bindType'>
         <template is="indLab" wx:for='{{categories}}' wx:key='indCategories' data="{{item}}"/>
     </view>
 </scroll-view>
@@ -22,7 +22,7 @@
             <image src='../../imgs/more.png' class='more-icon'></image>
         </view>
     </view>
-    <view class='list'>
+    <view class='list' bindtap='bindLess'>
       <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
     </view>
 </view>
@@ -35,7 +35,7 @@
             <image src='../../imgs/more.png' class='more-icon'></image>
         </view>
     </view>
-    <view class='list'>
+    <view class='list' bindtap='bindTeac'>
       <template is="indTea" wx:for='{{teacherListData}}' wx:key='indTeacher' data="{{item}}"/>
     </view>
 </view>

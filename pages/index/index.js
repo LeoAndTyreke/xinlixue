@@ -82,7 +82,6 @@ Page({
 		focusBool: false,
 		hasUserInfo: false
 	},
-	//事件处理函数
 	bindViewTap: function () {
 		wx.navigateTo({
 			url: '../logs/logs'
@@ -94,8 +93,18 @@ Page({
   binTea: function (e) {
     wx.navigateTo({ url: '/pages/teachers/teachers' });
   },
-	onReady: function () {
-	},
+  bindLess:function(e){
+    console.log(e.target.id);
+    wx.navigateTo({ url: '/pages/lesson/lesson' });
+  },
+  bindTeac: function (e) {
+    console.log(e.target.id);
+    wx.navigateTo({ url: '/pages/teacher/teacher' });
+  },
+  bindType:function(e){
+    console.log(e.target.id);
+    wx.navigateTo({ url: '/pages/lessons/lessons' });
+  },
 	onLoad: function () {
 		
 	},

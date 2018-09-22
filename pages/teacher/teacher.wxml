@@ -10,7 +10,7 @@
 <view class='content'>
 	<view class='square'></view>
 	<view class='content-title'>专家课程</view>
-	<view class='list'>
+	<view class='list' bindtap='bindLess'>
     <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
   </view>
 </view>

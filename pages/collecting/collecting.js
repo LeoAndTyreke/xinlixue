@@ -21,6 +21,10 @@ Page({
   data: {
     lessonListData
   },
+  bindLess: function (e) {
+    console.log(e.target.id);
+    wx.navigateTo({ url: '/pages/lesson/lesson' });
+  },
   onLoad: function (options) {
 
   },
