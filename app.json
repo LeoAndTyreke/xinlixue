@@ -13,8 +13,8 @@
     "pages/lesson/lesson",
     "pages/lessons/lessons",
     "pages/teachers/teachers",
-    "pages/login/logph",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/login/logph"
   ],
   "window": {
     "backgroundTextStyle": "light",

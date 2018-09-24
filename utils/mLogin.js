@@ -4,6 +4,8 @@ let mToken = '';
 let mUser = null;
 let pageLogin = true;
 let userFunt = [];
+let shareId = '';
+let userId = '';
 
 function mLogin(sucFun) {
   wx.checkSession({
@@ -25,7 +27,7 @@ function loginCode(sucFun) {
   wx.login({
     success: function (res) {
       if (res.code) {
-        let mSendObj = { action: 'code', code: res.code};
+        let mSendObj = { code: res.code};
         mUserCode(mSendObj, sucFun);
       } else {
         console.log('获取用户登录态失败！' + res.errMsg)
@@ -34,12 +36,16 @@ function loginCode(sucFun) {
   });
 }
 function mUserCode(mSend, sucFun) {
-  mServer.serverReq(mServer.serAdd('mLogin.php'), mSend, function (data) {
+  mServer.serverReq('wx/login', mSend, function (data) {
     //console.log('login:'+JSON.stringify(data));
-    if (data.status === 'success') {
-      mToken = data.cont.token;
+    if (data.result === 'success') {
+      mToken = data.items.token;
+      userId = data.items.userId;
       try {
         wx.setStorageSync('userToken', mToken);
+      } catch (e) { }
+      try {
+        wx.setStorageSync('userId', userId);
       } catch (e) { }
       
       mUserToken(mToken, function (mToken){
@@ -60,10 +66,10 @@ function mUserToken(mToken, sucFun) {
       return;
     }
   }
-  mServer.serverReq(mServer.serAdd('mLogin.php'), { action: 'info', token: mToken }, function (data) {
+  mServer.serverReq('user/get', { token: mToken }, function (data) {
     //console.log('getUser:' +JSON.stringify(data));
-    if (data.status === 'success') {
-      mUser = data.cont.userInfo;
+    if (data.result === 'success' && data.items.authedFlag == '1') {
+      mUser = data.items;
       try {
         wx.setStorageSync('userInfo', JSON.stringify(mUser));
       } catch (e) {}
@@ -100,9 +106,9 @@ function bGUinfo(detail, sucFun) {
   } catch (error) {}
 
   let mSendObj = {};
-  mSendObj.action = 'code';
-  if (detail.encryptedData) mSendObj.encry = detail.encryptedData;
-  if (detail.iv) mSendObj.iv = detail.iv;
+  mSendObj.recommenderId = shareId;
+  if (detail.encryptedData) mSendObj.encrpytdata = detail.encryptedData;
+  if (detail.iv) mSendObj.encrpytiv = detail.iv;
   wx.login({
     success: function (res) {
       if (res.code) {
@@ -164,11 +170,29 @@ function getUserInfo(infoFun) {
   }
 }
 ////////////////////////////////////////////////////////////
+function setShareid(mId){
+  shareId = mId;
+}
+function getUserId() {
+  let mId = '';
+  if (userId) {
+    mId = userId;
+  }else{
+    let value = wx.getStorageSync('userId');
+    if (value) {
+      mId = value;
+    }
+  }
+  return mId;
+}
+
 module.exports = {
   mLogin: mLogin,
   getToken: getToken,
   setToken: setToken,
   getUser: getUser,
   bGUinfo: bGUinfo,
-  getUserInfo: getUserInfo
+  getUserInfo: getUserInfo,
+  setShareid: setShareid,
+  getUserId: getUserId
 }

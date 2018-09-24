@@ -1,4 +1,4 @@
-// pages/homepage/homepage.js
+let mLogin = require('../../utils/mLogin.js');
 Page({
   data: {
 
@@ -13,7 +13,7 @@ Page({
     return {
       title: '知识付费',
       desc: '知识付费',
-      path: 'pages/index/index?shid=1234567890'
+      path: 'pages/index/index?shid=' + mLogin.getUserId()
     }
   }
 })

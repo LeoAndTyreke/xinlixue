@@ -1,4 +1,5 @@
-//index.js
+let mLogin = require('../../utils/mLogin.js');
+let mIndD = require('../../utils/indexData.js');
 //获取应用实例
 const app = getApp()
 var categories = [
@@ -106,12 +107,28 @@ Page({
     wx.navigateTo({ url: '/pages/lessons/lessons' });
   },
 	onLoad: function () {
-		
+    let that = this;
+    // mIndD.setIndSwi(function(data){
+      
+    // })
+
+
+
+    if (mIndD.getIndSwi().length >0){
+      console.log('aaaa');
+    }else{
+      mLogin.getUserInfo(function (mToken) {
+        console.log('mToken::' + mToken);
+      });
+    }
 	},
 	inputFocus: function () {
 		this.setData({focusBool: true});
 	},
 	inputBlur: function () {
 		this.setData({focusBool: false});
-	}
+	},
+  onShareAppMessage: function () {
+
+  }
 })

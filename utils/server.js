@@ -1,6 +1,6 @@
 function serverReq(mUrl,mData,sucFun,errFun) {
     wx.request({
-      url: mUrl,
+      url: serAdd(mUrl),
       data: mData,
       header: {
         "content-type": "application/x-www-form-urlencoded"
@@ -31,22 +31,23 @@ function getNetType(){
   });
 }
 function serAdd(addres){
-	var serInter = 'https://51coach.com/xcxcl/';
+  var serInter = 'http://47.99.45.170/';
 	
-	var kc = 'interface/';
+  var kc = 'biz/wxapp/';
 	var returnStr = serInter;
 	switch (addres){
-    case 'mLogin.php':
-    case 'uLogin.php':
-    case 'count.php':
+    case 'wx/login':
+    case 'user/get':
+    case 'teacher/list':
+    case 'wx/phone/bind':
 			returnStr = serInter+kc+addres;
 			break;
     case 'findSwi.php':
     case 'web.php':
-      returnStr = 'https://51coach.com/xcx/interfac/' + addres;
+      returnStr = 'http://app.psyrogers.org/' + addres;
       break;  		
 		case 'local':
-			returnStr = 'http://v.51coach.com/xcxcl/';
+      returnStr = 'http://app.psyrogers.org/';
 			break;	
 		default:
 			returnStr = serInter;

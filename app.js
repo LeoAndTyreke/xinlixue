@@ -8,17 +8,18 @@ App({
     //系统信息
     mPh.obtain();
     mPh.verDet();
-    err.inteE({ resultCode:102});
+    //err.inteE({ resultCode:102});
     //调试
     //wx.setEnableDebug({ enableDebug: true });
     //登录（获取用户信息）
     mLogin.getUserInfo(function (mToken) {
-      user.getUser(mToken);
       //console.log('mToken::' + mToken);
-      console.log('uObj:' + JSON.stringify(mLogin.getUser()))
+      //console.log('uObj:' + JSON.stringify(mLogin.getUser()))
     });
 
-    console.log(JSON.stringify(e.query.shid));
+    if (e.query.shid){
+      mLogin.setShareid(e.query.shid);
+    }
 
   }
 })
