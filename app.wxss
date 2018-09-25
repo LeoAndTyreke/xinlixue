@@ -22,6 +22,7 @@ page {
 .square {
     width: 8rpx;
     height: 22rpx;
+    border-radius: 4rpx;
     position: absolute;
     left: 30rpx;
     top: 50%;

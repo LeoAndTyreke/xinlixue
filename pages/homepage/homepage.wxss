@@ -19,6 +19,7 @@
 	height: 34rpx;
 	line-height: 34rpx;
 	font-size: 34rpx;
+    color: #fff;
 	position: absolute;
 	left: 0;
 	top: 272rpx;

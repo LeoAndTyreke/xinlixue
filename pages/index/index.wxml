@@ -13,7 +13,7 @@
         <template is="indLab" wx:for='{{categories}}' wx:key='indCategories' data="{{item}}"/>
     </view>
 </scroll-view>
-<view class='list'>
+<view class='index-list'>
     <view class='list-header'>
         <view class='square bc-blue'></view>
         <view class='list-title'>推荐课程</view>
@@ -26,7 +26,7 @@
       <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
     </view>
 </view>
-<view class='list'>
+<view class='index-list'>
     <view class='list-header'>
         <view class='square bc-orange'></view>
         <view class='list-title'>专家讲师</view>

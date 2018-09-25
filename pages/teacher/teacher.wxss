@@ -11,7 +11,7 @@ page {
 
 .teacher-item {
   width: 750rpx;
-  height: 224rpx;
+  height: 210rpx;
   position: relative;
 }
 
@@ -36,13 +36,13 @@ page {
 
 .teacher-intro {
   width: 502rpx;
-  height: 60rpx;
-  line-height: 30rpx;
+  height: 80rpx;
+  line-height: 40rpx;
   font-size: 26rpx;
   color: #666;
   position: absolute;
   left: 218rpx;
-  top: 102rpx;
+  top: 92rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   /* white-space: nowrap; */

@@ -4,7 +4,6 @@ page {
 .index-slider {
 	width: 750rpx;
 	height: 290rpx;
-	margin: 0;
 }
 .slide-image {
   width: 750rpx;
@@ -14,6 +13,7 @@ page {
 .categories {
 	height: 160rpx;
 	text-align: center;
+    background-color: #fff;
 }
 
 .category-all {
@@ -23,37 +23,40 @@ page {
 }
 @import "../../temp/indLab.wxss";
 
-.list {
+.index-list {
 	width: 750rpx;
-	margin-top: 6rpx; 
+	margin-top: 10rpx; 
+    overflow: hidden;
+    background: #fff;
 }
 
 .list-header {
 	width: 750rpx;
-	height: 44rpx;
+	height: 90rpx;
     position: relative;
 }
 
 .list-title {
 	width: 130rpx;
-	height: 44rpx;
-	line-height: 44rpx;
+	height: 90rpx;
+	line-height: 90rpx;
 	font-size: 28rpx;
     position: absolute;
     left: 48rpx;
+    font-weight: 300;
 }
 
 .list-more {
 	width: 150rpx;
-	height: 44rpx;
+	height: 90rpx;
     position: absolute;
     left: 593rpx;
 }
 
 .more-txt {
     width: 104rpx;
-    height: 44rpx;
-	line-height: 44rpx;
+    height: 90rpx;
+	line-height: 90rpx;
 	font-size: 26rpx;
 	color: #666;
 }
@@ -63,7 +66,7 @@ page {
     height: 17rpx;
     position: absolute;
     left: 114rpx;
-    top: 14rpx;
+    top: 38rpx;
 }
 
 @import "../../temp/search.wxss";
