@@ -1,12 +1,13 @@
 <template name="indLess">
-  <view class='lesson-item' id='dsdfsfsdfs'>
-      <image src='{{item.cover}}' mode='aspectFit' class='lesson-cover enone'></image>
-      <view class='lesson-title enone'>{{item.title}}</view>
+  <view class='lesson-item' id='{{item.uid}}'>
+      <image src='{{item.frontPage}}' mode='aspectFit' class='lesson-cover enone'></image>
+      <view class='lesson-title enone'>{{item.name}}</view>
       <image src='../../imgs/teacher-icon.png' class='teacher-icon enone'></image>
-      <view class='les-teacher-name lesson-gray-info enone'>{{item.teacher}}</view>
+      <view class='les-teacher-name lesson-gray-info enone'>{{item.tags[0].name}}</view>
       <image src='../../imgs/time-icon.png' class='time-icon enone'></image>
-      <view class='duration lesson-gray-info enone'>{{item.duration}}</view>
-      <view class='lesson-price enone' wx:if='{{item.record == 0}}'>￥{{item.price}}</view>
-      <view class='lesson-record enone' wx:else>上次观看到第{{item.record}}课时 {{item.recordTime}}</view>
+      <view class='duration lesson-gray-info enone'>{{item.coursewareCount}}课时</view>
+      <view class='lesson-price enone'>￥{{item.price}}</view>
+      <!-- <view class='lesson-price enone' wx:if='{{item.record == 0}}'>￥{{item.price}}</view>
+      <view class='lesson-record enone' wx:else>上次观看到第{{item.record}}课时 {{item.recordTime}}</view> -->
   </view>
 </template>

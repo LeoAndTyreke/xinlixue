@@ -1,5 +1,5 @@
 <template name="indLab">
-  <view class='category actob' id='category'>
+  <view class='category actob' id='{{item.id}}'>
       <image src='{{item.img}}' class='category-icon enone' mode='aspectFit'></image>
       <view class='category-name enone'>{{item.name}}</view>
   </view>

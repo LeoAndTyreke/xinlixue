@@ -5,7 +5,7 @@ function inteE(mCode){
       wx.showToast({ title: '聊天室密码错误', icon:'none', duration: 1500 });
       break; 
     default:
-      wx.showToast({ title: mCode.resultMsg, icon: 'none', duration: 1500 });
+      wx.showToast({ title: mCode.returnMsg, icon: 'none', duration: 1500 });
       break;      
   }
 }

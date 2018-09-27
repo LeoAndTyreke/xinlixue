@@ -1,93 +1,21 @@
 let mLogin = require('../../utils/mLogin.js');
 let mIndD = require('../../utils/indexData.js');
-//获取应用实例
-const app = getApp()
-var categories = [
-	{
-		img: 'http://www.familyktv.com/images/ys.png',
-		name: '月嫂'
-	},
-	{
-		img: 'http://www.familyktv.com/images/zntj.png',
-		name: '胎教师'
-	},
-	{
-    img: 'http://www.familyktv.com/images/xlcp.png',
-		name: '幼教师'
-	},
-	{
-		img: 'http://www.familyktv.com/images/yycd.png',
-		name: '营养师'
-	},
-	{
-		img: 'http://www.familyktv.com/images/xlcp.png',
-		name: '心理师'
-	},
-	{
-		img: 'http://www.familyktv.com/images/xlcp.png',
-		name: '育婴师'
-	},
-	{
-		img: 'http://www.familyktv.com/images/xlcp.png',
-		name: '母婴护理'
-	},
-	{
-		img: 'http://www.familyktv.com/images/xlcp.png',
-		name: '产后护理'
-	}
-];
-var ads = [
-  { img: 'http://www.familyktv.com/images/xinpic1.jpg'},
-  { img: 'http://www.familyktv.com/images/xinpic2.jpg' },
-  { img: 'http://www.familyktv.com/images/xinpic3.jpg' },
-  { img: 'http://www.familyktv.com/images/xinpic4.jpg' },
-]
-var lessonListData=[
-    {
-        cover: 'http://www.familyktv.com/images/xinpic1.jpg',
-        title: '心理课程心理课程心理课程信了你的邪',
-        teacher: '李老师',
-        duration: '10课时',
-        price: '99.00',
-        record: 8,
-        recordTime: '12:45'
-    },
-    {
-        cover: 'http://www.familyktv.com/images/xinpic2.jpg',
-        title: '信了你的邪心理课程心理课程心理课程',
-        teacher: 'liu老师',
-        duration: '12课时',
-        price: '99.00',
-        record: 0
-    }
-]
-var teacherListData = [
-    {
-        avatar: 'http://www.familyktv.com/images/xinpic1.jpg',
-        teacher: '李老师',
-        intro: '信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程'
-    },
-    {
-        avatar: 'http://www.familyktv.com/images/xinpic2.jpg',
-        teacher: '刘老师',
-        intro: '信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程'
-    },
-]
-
 Page({
-	data: {
-		categories,
-        ads,
-        lessonListData,
-        teacherListData,
-		focusBool: false,
-		hasUserInfo: false
+  data: {
+    ads: [],
+    focusBool: false,
+		categories:[],
+    lessonListData:[],
+    teacherListData:[]
 	},
-	bindViewTap: function () {
-		wx.navigateTo({
-			url: '../logs/logs'
-		})
-	},
+  binSwi:function(e){
+    let mTag = e.target;
+    if (mTag.dataset.linktyp == '1'){
+      wx.navigateTo({ url: '/pages/web/web?link=' + mTag.dataset.link});
+    } else if (mTag.dataset.linktyp == '2'){
+      wx.navigateTo({ url: mTag.dataset.link});
+    }
+  },
   binLes:function(e){
     wx.navigateTo({ url: '/pages/lessons/lessons' });
   },
@@ -108,19 +36,36 @@ Page({
   },
 	onLoad: function () {
     let that = this;
-    // mIndD.setIndSwi(function(data){
-      
-    // })
-
-
 
     if (mIndD.getIndSwi().length >0){
-      console.log('aaaa');
-    }else{
-      mLogin.getUserInfo(function (mToken) {
-        console.log('mToken::' + mToken);
-      });
+      that.setData({ ads: mIndD.getIndSwi()});
     }
+    mIndD.setIndSwi(function(data){
+      that.setData({ ads: data });
+    })
+
+    if (mIndD.getIndTag().length > 0) {
+      that.setData({ categories: mIndD.getIndTag() });
+    }
+    mIndD.setIndTag(function (data) {
+      that.setData({ categories: data });
+    })
+
+    if (mIndD.getIndCou().cc && mIndD.getIndCou().cc.length > 0){
+      that.setData({ lessonListData: mIndD.getIndCou().cc });
+    }
+    if (mIndD.getIndCou().tc && mIndD.getIndCou().tc.length > 0) {
+      that.setData({ teacherListData: mIndD.getIndCou().tc });
+    }
+    mIndD.setIndCou(function (data) {
+      if (data.cc && data.cc.length >0){
+        that.setData({ lessonListData: data.cc });
+      }
+      if (data.tc && data.tc.length > 0) {
+        that.setData({ teacherListData: data.tc });
+      }
+    })
+
 	},
 	inputFocus: function () {
 		this.setData({focusBool: true});

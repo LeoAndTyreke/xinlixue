@@ -38,8 +38,10 @@ function serAdd(addres){
 	switch (addres){
     case 'wx/login':
     case 'user/get':
-    case 'teacher/list':
     case 'wx/phone/bind':
+    case 'slideshow/list':
+    case 'tags/list':
+    case 'resources/list':
 			returnStr = serInter+kc+addres;
 			break;
     case 'findSwi.php':

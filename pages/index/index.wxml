@@ -2,9 +2,9 @@
 <import src="../../temp/indLab.wxml"/>
 <import src="../../temp/indLess.wxml"/>
 <import src="../../temp/indTea.wxml"/>
-<swiper indicator-dots="true" indicator-color="#C6C6C6" indicator-active-color="#456EFF" autoplay="true" interval="4000" duration="500" class='index-slider'>
+<swiper indicator-dots="true" bindtap='binSwi' indicator-color="#C6C6C6" indicator-active-color="#456EFF" autoplay="true" interval="4000" duration="500" class='index-slider'>
     <swiper-item wx:for='{{ads}}' wx:key='indAds'>
-        <image src="{{item.img}}" class="slide-image" mode='aspectFill' />
+        <image src="{{item.frontPage}}" class="slide-image" mode='aspectFill' data-linktyp='{{item.linkType}}' data-link='{{item.linkUrl}}'/>
     </swiper-item>
 </swiper>
 <template is="search" data="{{focusBool}}"/>
