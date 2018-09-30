@@ -43,6 +43,8 @@ function serAdd(addres){
     case 'tags/list':
     case 'resources/list':
     case 'resources/search':
+    case 'cc/list':
+    case 'teacher/list':
 			returnStr = serInter+kc+addres;
 			break;
     case 'findSwi.php':

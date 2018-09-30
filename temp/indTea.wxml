@@ -5,3 +5,9 @@
       <view class='teacher-intro enone'>{{item.introduction}}</view>
   </view>
 </template>
+
+<template name="listT0">
+  <view class='teacher-null' >
+      没有更多的数据~~
+  </view>
+</template>

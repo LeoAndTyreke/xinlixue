@@ -1,28 +1,34 @@
-var teacherListData = [
-  {
-    avatar: 'http://www.familyktv.com/images/xinpic1.jpg',
-    teacher: '李老师',
-    intro: '信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程'
-  },
-  {
-    avatar: 'http://www.familyktv.com/images/xinpic2.jpg',
-    teacher: '刘老师',
-    intro: '信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程信了你的邪心理课程心理课程心理课程'
-  },
-]
+let mTeac = require('../../utils/teachersData.js');
+let mLogin = require('../../utils/mLogin.js');
 Page({
   data: {
-    teacherListData
+    teacherListData:[]
   },
   bindTeac: function (e) {
     console.log(e.target.id);
     wx.navigateTo({ url: '/pages/teacher/teacher' });
   },
   onLoad: function (options) {
-
+    let that = this;
+    mTeac.mInit();
+    that.updataList();
   },
   onShow: function () {
 
+  },
+  onReachBottom: function () {
+    let that = this;
+    let mJZ = mTeac.getJZ();
+    if (mJZ.jBool) {
+      mTeac.setJZ(false, 0);
+      that.updataList();
+    }
+  },
+  updataList: function () {
+    let that = this;
+    mTeac.teacherServer(mLogin.getToken(), function (mList) {
+      that.setData({ teacherListData: mList });
+    });
   },
   onShareAppMessage: function () {
 

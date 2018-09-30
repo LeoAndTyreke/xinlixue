@@ -1,4 +1,9 @@
 <import src="../../temp/indTea.wxml"/>
 <view class='list' bindtap='bindTeac'>
-  <template is="indTea" wx:for='{{teacherListData}}' wx:key='indTeacher' data="{{item}}"/>
+  <block wx:if="{{teacherListData.length >0}}">
+    <template is="indTea" wx:for='{{teacherListData}}' wx:key='indTeacher' data="{{item}}"/>
+  </block>   
+  <block wx:else>
+    <template is="listT0"/>
+  </block> 
 </view>

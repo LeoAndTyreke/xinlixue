@@ -17,7 +17,7 @@ Page({
     }
   },
   binLes:function(e){
-    wx.navigateTo({ url: '/pages/lessons/lessons' });
+    wx.navigateTo({ url: '/pages/lessons/lessons?type=more' });
   },
   binTea: function (e) {
     wx.navigateTo({ url: '/pages/teachers/teachers' });

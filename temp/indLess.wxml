@@ -11,3 +11,8 @@
       <view class='lesson-record enone' wx:else>上次观看到第{{item.record}}课时 {{item.recordTime}}</view> -->
   </view>
 </template>
+<template name="list0">
+  <view class='lesson-null' >
+      没有更多的数据~~
+  </view>
+</template>

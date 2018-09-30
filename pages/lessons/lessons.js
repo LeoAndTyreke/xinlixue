@@ -1,30 +1,47 @@
 let mLess = require('../../utils/lessonsData.js');
+let mLogin = require('../../utils/mLogin.js');
 Page({
   data: {
     lessonListData:[]
   },
   page:{
-    sea:''
+    typ:'',
+    val:''
   },
   bindLess: function (e) {
     console.log(e.target.id);
     wx.navigateTo({ url: '/pages/lesson/lesson' });
   },
   onLoad: function (options) {
+    let that = this;
+    that.page.typ = options.type;
+    that.page.val = options.value;
     mLess.seaInit();
-    if (options.type == 'search'){
-      this.page.sea = options.value;
-      mLess.searchServer(options.value);
-    }
+    that.updataList();
   },
   onShow: function () {
 
   },
   onReachBottom: function () {
+    let that = this;
     let mJZ = mLess.getJZ();
     if (mJZ.jBool) {
       mLess.setJZ(false, 0);
-      this.searchServer(this.page.sea);
+      that.updataList();
+    }
+  },
+  updataList:function(){
+    let that = this;
+    if (that.page.typ == 'search') {
+      mLess.searchServer(that.page.val, function (mList) {
+        that.setData({ lessonListData: mList });
+      });
+    } else if (that.page.typ == 'more') {
+      mLess.moreServer(mLogin.getToken(), function (mList) {
+        that.setData({ lessonListData: mList });
+      });
+    } else if (that.page.typ == 'type') {
+
     }
   },
   onShareAppMessage: function () {
