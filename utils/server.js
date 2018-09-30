@@ -42,6 +42,7 @@ function serAdd(addres){
     case 'slideshow/list':
     case 'tags/list':
     case 'resources/list':
+    case 'resources/search':
 			returnStr = serInter+kc+addres;
 			break;
     case 'findSwi.php':

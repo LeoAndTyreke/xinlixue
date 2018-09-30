@@ -73,6 +73,11 @@ Page({
 	inputBlur: function () {
 		this.setData({focusBool: false});
 	},
+  confirmButn:function(e){
+    if (e.detail.value != ''){
+      wx.navigateTo({ url: '/pages/lessons/lessons?type=search&value=' + e.detail.value });
+    }
+  },
   onShareAppMessage: function () {
 
   }
