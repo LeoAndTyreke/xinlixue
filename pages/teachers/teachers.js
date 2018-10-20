@@ -6,7 +6,7 @@ Page({
   },
   bindTeac: function (e) {
     console.log(e.target.id);
-    wx.navigateTo({ url: '/pages/teacher/teacher' });
+    wx.navigateTo({ url: '/pages/teacher/teacher?id=' + e.target.id });
   },
   onLoad: function (options) {
     let that = this;

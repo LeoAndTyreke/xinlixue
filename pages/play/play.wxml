@@ -1,4 +1,4 @@
-<video controls='false' show-center-play-btn='false'>
+<video controls='false' src='{{mObj.fileUrl}}' show-center-play-btn='false'>
     <cover-view class='controls'>
         <cover-image src='../../imgs/play.png' class='play-btn'></cover-image>
         <cover-view class='controls-bar'>
@@ -13,8 +13,7 @@
     </cover-view>
 </video>
 <view class='video-info'>
-    <view class='video-title'>这是课程标题文字打不满不要怕我可以凑文 字哈哈哈
-    </view>
+    <view class='video-title'>{{mObj.name}}</view>
     <view class='teacher'>
         <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
         <view class='teacher-name'>孙老师</view>
@@ -27,16 +26,15 @@
         <image src='../../imgs/more.png' class='more-icon'></image>
         <view class='note-txt'>笔记</view>
     </view>
-	<view class='framework-ctt'></view>
+	<view class='framework-ctt'>{{mObj.subjectNote}}</view>
 </view>
 <view class='fixed-btns'>
-  <view class='fixed-left-btn'>
-    <image src='../../imgs/money.png' class='money-icon'></image>
-    <view class='money-num'>赚
-      <text class='orange'>20.00</text>元</view>
+  <view bindtap='binPay' class='fixed-left-btn'>
+    <image src='../../imgs/money.png' class='money-icon enone'></image>
+    <view class='money-num'>赚<text class='orange enone'>{{mObj.pid}}</text>元</view>
   </view>
-  <view class='fixed-right-btn bc-blue'>
-	<image src='../../imgs/mylessons.png' class='mylessons'></image>
-	<view class='lessons'>课时3/18</view>
+  <view bindtap='binMen' class='fixed-right-btn bc-blue'>
+	  <image src='../../imgs/mylessons.png' class='mylessons enone'></image>
+	  <view class='lessons enone'>课时3/18</view>
   </view>
 </view>

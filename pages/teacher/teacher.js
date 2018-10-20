@@ -26,7 +26,9 @@ Page({
     wx.navigateTo({ url: '/pages/lesson/lesson' });
   },
   onLoad: function (options) {
-
+    let that = this;
+    let mTid = options.id;
+    console.log(mTid)
   },
   onShow: function () {
 

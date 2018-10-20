@@ -23,16 +23,13 @@ Page({
     wx.navigateTo({ url: '/pages/teachers/teachers' });
   },
   bindLess:function(e){
-    console.log(e.target.id);
-    wx.navigateTo({ url: '/pages/lesson/lesson' });
+    wx.navigateTo({ url: '/pages/lesson/lesson?id=' + e.target.id });
   },
   bindTeac: function (e) {
-    console.log(e.target.id);
-    wx.navigateTo({ url: '/pages/teacher/teacher' });
+    wx.navigateTo({ url: '/pages/teacher/teacher?id=' + e.target.id });
   },
   bindType:function(e){
-    console.log(e.target.id);
-    wx.navigateTo({ url: '/pages/lessons/lessons' });
+    wx.navigateTo({ url: '/pages/lessons/lessons?type=type&tgid=' + e.target.id });
   },
 	onLoad: function () {
     let that = this;

@@ -1,24 +1,23 @@
 <import src="../../temp/men.wxml"/>
 <view class='header'>
-  <image class='cover'></image>
-  <view class='title'>课程标题课程标题课程标题课程标题</view>
+  <image src='{{mObj.frontPage}}' class='cover'></image>
+  <view class='title'>{{mObj.name}}</view>
   <view class='info'>
     <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
-    <view class='teacher-name info-txt'>金老师</view>
+    <view class='teacher-name info-txt'>{{mObj.teacherVO.name}}</view>
     <image src='../../imgs/time-icon.png' class='time-icon'></image>
-    <view class='duration info-txt'>9课时</view>
+    <view class='duration info-txt'>{{mObj.coursewareCount}}课时</view>
     <view class='collect-txt info-txt'>收藏</view>
     <image src='../../imgs/collect-icon.png' class='collect-icon'></image>
   </view>
-  <view class='price'>￥30.00</view>
+  <view class='price'>￥{{mObj.price}}</view>
 </view>
 <view class='tabs'>
   <view class='tab tab-left {{showDetail ? "active" : ""}}' bindtap='toggleTab'>课程详情</view>
   <view class='tab tab-right {{showDetail ? "" : "active"}}' bindtap='toggleTab'>课程目录</view>
 </view>
 <view class='tab-content' wx:if='{{showDetail}}'>
-  <view class='detail'>这里是课程介绍内容部分，课程介绍内容部分，课程内容介 绍部分
-  </view>
+  <view class='detail'>{{mObj.note}}</view>
   <view class='notice'>
     <view class='notice-header'>
       <image src='../../imgs/notice-icon.png' class='notice-icon'></image>
@@ -28,29 +27,20 @@
     </view>
   </view>
 </view>
-<view class='tab-content' wx:else>
-  <view class='menu-item menu-title'>
-    <view class='title-txt'>1.课程目录</view>
-    <image src='../../imgs/locked.png' class='locked'></image>
-  </view>
-  <template is="men"  data="{{ind:1}}"/>
-  <template is="men"  data="{{ind:2}}"/>
-  <template is="men"  data="{{ind:2}}"/>
-  <template is="men"  data="{{ind:2}}"/>
-  <view class='menu-item menu-title'>
-    <view class='title-txt'>2.课程目录</view>
-    <image src='../../imgs/locked.png' class='locked'></image>
-  </view>
-  <template is="men"  data="{{ind:1}}"/>
-  <template is="men"  data="{{ind:1}}"/>
-  <template is="men"  data="{{ind:1}}"/>
-  <template is="men"  data="{{ind:2}}"/>
+<view bindtap='binWCList' class='tab-content' wx:else>
+  <block wx:for='{{wcList}}' wx:key='wcLeList' data="{{item}}">
+    <view class='menu-item menu-title'>
+      <view class='title-txt'>{{item.name}}</view>
+      <image src='../../imgs/locked.png' class='locked'></image>
+    </view>
+    <template is="men" wx:for='{{item.children}}' wx:for-index="idx" wx:key='wcChLeList' data="{{item,ind:idx}}"/>
+  </block>
 </view>
 <view class='fixed-btns'>
   <view class='fixed-left-btn'>
     <image src='../../imgs/money.png' class='money-icon'></image>
     <view class='money-num'>赚
-      <text class='orange'>20.00</text>元</view>
+      <text class='orange'>{{mObj.price}}</text>元</view>
   </view>
-  <view class='fixed-right-btn bc-orange'>购买</view>
+  <view bindtap='binPay' class='fixed-right-btn bc-orange'>购买</view>
 </view>

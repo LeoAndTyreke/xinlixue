@@ -45,6 +45,9 @@ function serAdd(addres){
     case 'resources/search':
     case 'cc/list':
     case 'teacher/list':
+    case 'curriculum/get':
+    case 'cwChild/list':
+    case 'cw/get':
 			returnStr = serInter+kc+addres;
 			break;
     case 'findSwi.php':

@@ -6,16 +6,17 @@ Page({
   },
   page:{
     typ:'',
-    val:''
+    val:'',
+    tgid:''
   },
   bindLess: function (e) {
-    console.log(e.target.id);
-    wx.navigateTo({ url: '/pages/lesson/lesson' });
+    wx.navigateTo({ url: '/pages/lesson/lesson?id=' + e.target.id });
   },
   onLoad: function (options) {
     let that = this;
     that.page.typ = options.type;
     that.page.val = options.value;
+    that.page.tgid = options.tgid;
     mLess.seaInit();
     that.updataList();
   },
@@ -37,11 +38,13 @@ Page({
         that.setData({ lessonListData: mList });
       });
     } else if (that.page.typ == 'more') {
-      mLess.moreServer(mLogin.getToken(), function (mList) {
+      mLess.moreServer(mLogin.getToken(),'', function (mList) {
         that.setData({ lessonListData: mList });
       });
     } else if (that.page.typ == 'type') {
-
+      mLess.moreServer(mLogin.getToken(), that.page.tgid, function (mList) {
+        that.setData({ lessonListData: mList });
+      });
     }
   },
   onShareAppMessage: function () {

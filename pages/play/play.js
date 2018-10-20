@@ -1,65 +1,30 @@
-// pages/play/play.js
+let mLogin = require('../../utils/mLogin.js');
+let mPlaD = require('../../utils/playData.js');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    mObj:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  binPay:function(e){
+    console.log(this.data.mObj.pid)
+    console.log(this.data.mObj.uid)
+  },
+  binMen: function (e) {
+    wx.navigateTo({ url: '/pages/menus/menus?id=' + this.data.mObj.uid });
+  },
   onLoad: function (options) {
-
+    let that = this;
+    let mChid = options.id;
+    mLogin.getUserInfo(function (mToken) {
+      mPlaD.getPlayData(mToken, mChid, function (data) {
+        console.log(JSON.stringify(data));
+        wx.setNavigationBarTitle({ title: data.name });
+        that.setData({ mObj: data });
+      })
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   }

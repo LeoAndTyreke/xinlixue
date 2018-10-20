@@ -1,8 +1,8 @@
 <template name="men">
-  <view class='menu-item menu-content'>
-    <image src='../../imgs/wave.png' class='wave'></image>
-    <view class='ctt-txt'>课程目录</view>
-    <image wx:if="{{ind == 2}}" src='../../imgs/locked.png' class='locked'></image>
-    <view wx:else class='free-txt'>免费试看</view>
+  <view id='wcch' data-uid='{{item.uid}}' class='menu-item menu-content'>
+    <image src='../../imgs/wave.png' class='wave enone'></image>
+    <view class='ctt-txt enone'>{{item.name}}</view>
+    <image wx:if="{{ind == 1}}" src='../../imgs/locked.png' class='locked enone'></image>
+    <view wx:else class='free-txt enone'>免费试看</view>
   </view>
 </template>

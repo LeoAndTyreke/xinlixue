@@ -53,8 +53,8 @@ function getSeList(){
 }
 
 //更多接口//////////////////////////////////////////////
-function moreServer(mToken, sucFun) {
-  mServer.serverReq('cc/list', { token: '', start: jiaZai.jNum, count: 10 }, function (data) {
+function moreServer(mToken, mTagId,sucFun) {
+  mServer.serverReq('cc/list', { token: mToken, tagIds: mTagId, start: jiaZai.jNum, count: 10 }, function (data) {
     console.log('listMore:' + JSON.stringify(data));
     if (data.result === 'success') {
       if (data.items && data.items.cc) {
