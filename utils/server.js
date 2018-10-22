@@ -31,7 +31,7 @@ function getNetType(){
   });
 }
 function serAdd(addres){
-  var serInter = 'http://47.99.45.170/';
+  var serInter = 'https://app.psyrogers.vip/';
 	
   var kc = 'biz/wxapp/';
 	var returnStr = serInter;
