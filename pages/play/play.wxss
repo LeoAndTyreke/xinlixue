@@ -3,7 +3,18 @@ video {
     height: 423rpx;
     position: relative;
 }
-
+.vid-bs{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  top:10rpx;
+  right: 10rpx;
+  font-size: 20rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #666;
+  background-color: #fff;
+}
 .controls {
     width: 750rpx;
     height: 423rpx;

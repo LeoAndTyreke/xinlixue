@@ -1,16 +1,5 @@
-<video controls='false' src='{{mObj.fileUrl}}' show-center-play-btn='false'>
-    <cover-view class='controls'>
-        <cover-image src='../../imgs/play.png' class='play-btn'></cover-image>
-        <cover-view class='controls-bar'>
-            <cover-image src='../../imgs/pause.png' class='pause-btn'></cover-image>
-            <cover-view class='progress-time'>20:30/60:00</cover-view>
-            <cover-view class='progress-bar'>
-                <cover-view class='progress-played'></cover-view>
-                <cover-view class='progress-dot'></cover-view>
-            </cover-view>
-            <cover-image src='../../imgs/fullscreen.png' class='fullscreen-btn'></cover-image>
-        </cover-view>
-    </cover-view>
+<video id='myVideo' src='{{mObj.fileUrl}}' controls>
+    <cover-view wx:if='{{mBs.mbool}}' bindtap='binBS' class="vid-bs">{{mBs.num}}</cover-view>
 </video>
 <view class='video-info'>
     <view class='video-title'>{{mObj.name}}</view>
