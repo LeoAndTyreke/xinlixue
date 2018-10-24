@@ -36,7 +36,7 @@
     <template is="men" wx:for='{{item.children}}' wx:for-index="idx" wx:key='wcChLeList' data="{{item,ind:idx}}"/>
   </block>
 </view>
-<view class='fixed-btns'>
+<view wx:if='{{mObj.purchasedFlag != 1}}' class='fixed-btns'>
   <view class='fixed-left-btn'>
     <image src='../../imgs/money.png' class='money-icon'></image>
     <view class='money-num'>赚

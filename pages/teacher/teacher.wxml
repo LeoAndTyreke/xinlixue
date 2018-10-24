@@ -1,17 +1,22 @@
 <import src="../../temp/indLess.wxml"/>
 <view class='header'>
   <view class='teacher-item'>
-    <image class='teacher-cover'></image>
-    <view class='teacher-name'>金老师</view>
-    <view class='teacher-intro'>大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家大专家</view>
+    <image src='{{mObj.profilePic}}' class='teacher-cover'></image>
+    <view class='teacher-name'>{{mObj.name}}</view>
+    <view class='teacher-intro'>{{mObj.introduction}}</view>
   </view>
-  <view class='teacher-intro-detail'>详细介绍此人物，具体的介绍内容你们看情况办吧，我只能说这么多，后面怎么办，我一定要凑到第三行呀，怎还没到，详细介绍此人物，具体的介绍内</view>
+  <view class='teacher-intro-detail'>{{mObj.remark}}</view>
 </view>
 <view class='content'>
 	<view class='square'></view>
 	<view class='content-title'>专家课程</view>
 	<view class='list' bindtap='bindLess'>
-    <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
+    <block wx:if="{{ccList.length >0}}">
+      <template is="indLess" wx:for='{{ccList}}' wx:key='indLesson' data="{{item}}"/>
+    </block>   
+    <block wx:else>
+      <template is="list0"/>
+    </block>
   </view>
 </view>
-<view class='fixed-btn'>购买全部课程</view>
+<view wx:if='{{ccIds != ""}}' bindtap='payList' class='fixed-btn'>购买全部课程</view>

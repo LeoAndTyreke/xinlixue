@@ -1,5 +1,6 @@
 let mLogin = require('../../utils/mLogin.js');
 let mLesD = require('../../utils/lesData.js');
+let mPay = require('../../utils/pay.js');
 Page({
   data: {
     showDetail: true,
@@ -12,6 +13,12 @@ Page({
     })
   },
   binPay:function(e){
+    mPay.getOrders(mLogin.getToken(), this.data.mObj.uid,function(data){
+      console.log(JSON.stringify(data))
+      // mPay.pollingPay(ordId,function(data){
+
+      // })
+    });
     console.log(this.data.mObj.price)
     console.log(this.data.mObj.uid)
   },

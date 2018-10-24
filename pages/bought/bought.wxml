@@ -1,4 +1,9 @@
 <import src="../../temp/indLess.wxml"/>
 <view class='list' bindtap='bindLess'>
-  <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
+  <block wx:if="{{ccList.length >0}}">
+    <template is="indLess" wx:for='{{ccList}}' wx:key='indPayLesson' data="{{item}}"/>
+  </block>   
+  <block wx:else>
+    <template is="list0"/>
+  </block> 
 </view>

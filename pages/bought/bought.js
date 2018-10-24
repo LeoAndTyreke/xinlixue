@@ -1,32 +1,19 @@
-var lessonListData = [
-  {
-    cover: 'http://www.familyktv.com/images/xinpic1.jpg',
-    title: '心理课程心理课程心理课程信了你的邪',
-    teacher: '李老师',
-    duration: '10课时',
-    price: '99.00',
-    record: 8,
-    recordTime: '12:45'
-  },
-  {
-    cover: 'http://www.familyktv.com/images/xinpic2.jpg',
-    title: '信了你的邪心理课程心理课程心理课程',
-    teacher: 'liu老师',
-    duration: '12课时',
-    price: '99.00',
-    record: 0
-  }
-]
+let mLogin = require('../../utils/mLogin.js');
+let mBouD = require('../../utils/boughtData.js');
 Page({
   data: {
-    lessonListData
+    ccList:[]
   },
   bindLess: function (e) {
-    console.log(e.target.id);
-    wx.navigateTo({ url: '/pages/lesson/lesson' });
+    wx.navigateTo({ url: '/pages/lesson/lesson?id=' + e.target.id });
   },
   onLoad: function (options) {
-
+    let that = this;
+    mLogin.getUserInfo(function (mToken) {
+      mBouD.getPayData(mToken, function (data) {
+        that.setData({ ccList: data });
+      })
+    });
   },
   onShow: function () {
 

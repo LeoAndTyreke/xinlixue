@@ -7,8 +7,8 @@
       <image src='../../imgs/time-icon.png' class='time-icon enone'></image>
       <view class='duration lesson-gray-info enone'>{{item.coursewareCount}}课时</view>
       <view class='lesson-price enone'>￥{{item.price}}</view>
-      <!-- <view class='lesson-price enone' wx:if='{{item.record == 0}}'>￥{{item.price}}</view>
-      <view class='lesson-record enone' wx:else>上次观看到第{{item.record}}课时 {{item.recordTime}}</view> -->
+      <view class='lesson-record enone' wx:if='{{item.purchasedFlag == 1}}'>上次观看到第{{item.price}}课时 {{item.price}}</view>
+      <view class='lesson-price enone' wx:else>￥{{item.price}}</view>
   </view>
 </template>
 <template name="list0">

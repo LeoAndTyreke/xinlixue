@@ -48,6 +48,10 @@ function serAdd(addres){
     case 'curriculum/get':
     case 'cwChild/list':
     case 'cw/get':
+    case 'order/create':
+    case 'order/notify':
+    case 'teacher/detail':
+    case 'user/listCC':
 			returnStr = serInter+kc+addres;
 			break;
     case 'findSwi.php':
