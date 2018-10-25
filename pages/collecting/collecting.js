@@ -1,38 +1,36 @@
-var lessonListData = [
-  {
-    cover: 'http://www.familyktv.com/images/xinpic1.jpg',
-    title: '心理课程心理课程心理课程信了你的邪',
-    teacher: '李老师',
-    duration: '10课时',
-    price: '99.00',
-    record: 8,
-    recordTime: '12:45'
-  },
-  {
-    cover: 'http://www.familyktv.com/images/xinpic2.jpg',
-    title: '信了你的邪心理课程心理课程心理课程',
-    teacher: 'liu老师',
-    duration: '12课时',
-    price: '99.00',
-    record: 0
-  }
-]
+let mLogin = require('../../utils/mLogin.js');
+let mColD = require('../../utils/colleData.js');
 Page({
   data: {
-    lessonListData
+    mList:[]
   },
   bindLess: function (e) {
-    console.log(e.target.id);
-    wx.navigateTo({ url: '/pages/lesson/lesson' });
+    wx.navigateTo({ url: '/pages/lesson/lesson?id=' + e.target.id });
   },
   onLoad: function (options) {
-
-  },
-  onReady: function () {
-	  
-  },
+    let that = this;
+    
+    mLogin.getUserInfo(function (mToken) {
+      mColD.seaInit();
+      that.updataList();
+    });
+  }, 
   onShow: function () {
 
+  },
+  onReachBottom: function () {
+    let that = this;
+    let mJZ = mColD.getJZ();
+    if (mJZ.jBool) {
+      mColD.setJZ(false, 0);
+      that.updataList();
+    }
+  },
+  updataList: function () {
+    let that = this;
+    mColD.searFolServer(mLogin.getToken(), function (data) {
+      that.setData({ mList: data });
+    });
   },
   onShareAppMessage: function () {
 

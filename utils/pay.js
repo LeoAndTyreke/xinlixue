@@ -1,10 +1,13 @@
 let mServer = require('server.js');
 let err = require('inteError.js');
 
+let mOrder = '';
+
 function getOrders(mToken,mSpIds,sucFun){
   mServer.serverReq('order/create', { token: mToken, productIds: mSpIds }, function (data){
     console.log(JSON.stringify(data))
     if (data.result === 'success') {
+      mOrder = data.items.order.orderNO;
       hyPay(data.items.request, sucFun);
     } else {
       err.inteE(data);
@@ -29,23 +32,30 @@ function hyPay(mObj,sucFun){
         }
     })
 }
-function pollingPay(ordId,sucFun){
+function pollingPay(mToken,sucFun){
     var mLoop = 0;
     polling();
     function polling(){
-      mServer.serverReq('order/notify',{orders:ordId},function(msg){
-            console.log(JSON.stringify(msg));
-            if(msg.status === 'success'){
-                if(typeof sucFun == 'function')sucFun(msg);
-            }else{
-                if(mLoop < 10){
-                    setTimeout(polling,1000);
-                }else{
-                    if(typeof sucFun == 'function')sucFun(msg);
-                }
-                mLoop ++;
+      mServer.serverReq('order/getStatus', { token: mToken, orderNO: mOrder }, function (data){
+        console.log(JSON.stringify(data));
+        if (data.result === 'success'){
+          if (data.items && data.items.status == '9'){
+            if (typeof sucFun == 'function') sucFun(data.items);
+          } else if (data.items && data.items.status == '1'){
+            if (mLoop < 10) {
+              setTimeout(polling, 1000);
+            } else {
+              if (typeof sucFun == 'function') sucFun(data.items);
             }
-        });
+            mLoop++;
+          }else{
+            if (typeof sucFun == 'function') sucFun(data.items);
+          }
+        }else{
+          if (typeof sucFun == 'function') sucFun(data.items);
+                
+        }
+      });
     }
 }
 

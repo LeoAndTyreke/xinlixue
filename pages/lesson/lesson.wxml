@@ -7,8 +7,10 @@
     <view class='teacher-name info-txt'>{{mObj.teacherVO.name}}</view>
     <image src='../../imgs/time-icon.png' class='time-icon'></image>
     <view class='duration info-txt'>{{mObj.coursewareCount}}课时</view>
-    <view class='collect-txt info-txt'>收藏</view>
-    <image src='../../imgs/collect-icon.png' class='collect-icon'></image>
+    <view bindtap='binCol' class='collect-txt info-txt'>
+      <image src='../../imgs/collect-icon.png' class='collect-icon enone'></image>
+      收藏
+    </view>
   </view>
   <view class='price'>￥{{mObj.price}}</view>
 </view>
@@ -33,7 +35,7 @@
       <view class='title-txt'>{{item.name}}</view>
       <image src='../../imgs/locked.png' class='locked'></image>
     </view>
-    <template is="men" wx:for='{{item.children}}' wx:for-index="idx" wx:key='wcChLeList' data="{{item,ind:idx}}"/>
+    <template is="men" wx:for='{{item.children}}' wx:for-index="idx" wx:key='wcChLeList' data="{{item,ind:idx,flag:mObj.purchasedFlag}}"/>
   </block>
 </view>
 <view wx:if='{{mObj.purchasedFlag != 1}}' class='fixed-btns'>

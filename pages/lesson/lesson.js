@@ -1,5 +1,6 @@
 let mLogin = require('../../utils/mLogin.js');
 let mLesD = require('../../utils/lesData.js');
+let mColD = require('../../utils/colleData.js');
 let mPay = require('../../utils/pay.js');
 Page({
   data: {
@@ -13,11 +14,16 @@ Page({
     })
   },
   binPay:function(e){
-    mPay.getOrders(mLogin.getToken(), this.data.mObj.uid,function(data){
-      console.log(JSON.stringify(data))
-      // mPay.pollingPay(ordId,function(data){
-
-      // })
+    let that = this;
+    mPay.getOrders(mLogin.getToken(), that.data.mObj.uid,function(data){
+      mPay.pollingPay(mLogin.getToken(),function(data){
+        if (data.status == '9'){
+          wx.showToast({ title: '支付成功', icon: 'none', duration: 1500 });
+          that.updataPay('1');
+        }else{
+          wx.showToast({ title: '支付失败', icon: 'none', duration: 1500 });
+        }
+      })
     });
     console.log(this.data.mObj.price)
     console.log(this.data.mObj.uid)
@@ -31,6 +37,12 @@ Page({
       console.log(mTag.dataset.uid)
     }
   },
+  binCol:function(e){
+    let that = this;
+    mColD.setFol(mLogin.getToken(), that.data.mObj.uid,function(data){
+      console.log(data)
+    })
+  },
   onLoad: function (options) {
     let that = this;
     let mLid = options.id;
@@ -41,6 +53,11 @@ Page({
         that.setData({ wcList: data.cwList });
       })
     });
+  },
+  updataPay:function(mNum){
+    let myObj = this.data.mObj;
+    myObj.purchasedFlag = mNum;
+    this.setData({ mObj: myObj});
   },
   onShow: function () {
 

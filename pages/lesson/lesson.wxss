@@ -58,16 +58,20 @@ page {
 }
 
 .collect-txt {
-    width: 52rpx;
+    position: relative;
+    width: 92rpx;
     float: right;
     margin-right: 30rpx;
+    text-indent: 40rpx;
+    background-color: #eee;
 }
 
 .collect-icon {
+    position: absolute;
+    left: 0;
+    top:1rpx;
     width: 24rpx;
     height: 24rpx;
-    margin: 1rpx 16rpx;
-    float: right;
 }
 
 .price {

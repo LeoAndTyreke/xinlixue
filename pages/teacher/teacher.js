@@ -14,10 +14,14 @@ Page({
     let mIds = this.data.ccIds;
     if (mIds != ''){
       mPay.getOrders(mLogin.getToken(), mIds, function (data) {
-        console.log(JSON.stringify(data))
-        // mPay.pollingPay(ordId,function(data){
-
-        // })
+        mPay.pollingPay(mLogin.getToken(), function (data) {
+          if (data.status == '9') {
+            wx.showToast({ title: '支付成功', icon: 'none', duration: 1500 });
+            that.updataPay('1');
+          } else {
+            wx.showToast({ title: '支付失败', icon: 'none', duration: 1500 });
+          }
+        })
       });
     }
     console.log(mIds)
@@ -45,6 +49,14 @@ Page({
     })
     mIds = mIds.substr(0, mIds.length - 1);
     that.setData({ ccIds:mIds});
+  },
+  updataPay:function(mNum){
+    let mCcList = this.data.ccList;
+    mCcList.forEach(function (val, ind) {
+      val.purchasedFlag = mNum;
+    })
+    this.setData({ ccList: mCcList});
+    this.setData({ ccIds: '' });
   },
   onShow: function () {
 
