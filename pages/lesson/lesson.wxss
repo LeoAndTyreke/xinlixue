@@ -63,7 +63,6 @@ page {
     float: right;
     margin-right: 30rpx;
     text-indent: 40rpx;
-    background-color: #eee;
 }
 
 .collect-icon {

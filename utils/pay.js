@@ -5,7 +5,7 @@ let mOrder = '';
 
 function getOrders(mToken,mSpIds,sucFun){
   mServer.serverReq('order/create', { token: mToken, productIds: mSpIds }, function (data){
-    console.log(JSON.stringify(data))
+    //console.log(JSON.stringify(data))
     if (data.result === 'success') {
       mOrder = data.items.order.orderNO;
       hyPay(data.items.request, sucFun);
@@ -37,7 +37,7 @@ function pollingPay(mToken,sucFun){
     polling();
     function polling(){
       mServer.serverReq('order/getStatus', { token: mToken, orderNO: mOrder }, function (data){
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         if (data.result === 'success'){
           if (data.items && data.items.status == '9'){
             if (typeof sucFun == 'function') sucFun(data.items);

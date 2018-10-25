@@ -16,7 +16,7 @@ function seaInit() {
 }
 function searFolServer(mToken, sucFun) {
   mServer.serverReq('userFolder/list', { token: mToken, start: jiaZai.jNum, count: 10 }, function (data) {
-    console.log('userFolder:' + JSON.stringify(data));
+    //console.log('userFolder:' + JSON.stringify(data));
     if (data.result === 'success') {
       if (data.items) {
         let mArr = data.items;
@@ -54,7 +54,7 @@ function getSeList() {
 
 function setFol(mToken, mId, sucFun) {
   mServer.serverReq('userFolder/toggle', { token: mToken, targetId:mId}, function (data) {
-    console.log('toggle:' + JSON.stringify(data));
+    //console.log('toggle:' + JSON.stringify(data));
     if (data.result === 'success') {
       if (typeof sucFun == 'function') sucFun(data.items);
     } else {

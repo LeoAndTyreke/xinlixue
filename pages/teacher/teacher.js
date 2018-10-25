@@ -11,7 +11,8 @@ Page({
     wx.navigateTo({ url: '/pages/lesson/lesson?id=' + e.target.id });
   },
   payList:function(e){
-    let mIds = this.data.ccIds;
+    let that = this;
+    let mIds = that.data.ccIds;
     if (mIds != ''){
       mPay.getOrders(mLogin.getToken(), mIds, function (data) {
         mPay.pollingPay(mLogin.getToken(), function (data) {
@@ -24,7 +25,6 @@ Page({
         })
       });
     }
-    console.log(mIds)
   },
   onLoad: function (options) {
     let that = this;

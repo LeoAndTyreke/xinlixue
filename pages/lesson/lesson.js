@@ -39,8 +39,14 @@ Page({
   },
   binCol:function(e){
     let that = this;
+    let myObj = this.data.mObj;
     mColD.setFol(mLogin.getToken(), that.data.mObj.uid,function(data){
-      console.log(data)
+      if (myObj.folderFlag == 1){
+        myObj.folderFlag = 0;
+      }else{
+        myObj.folderFlag = 1;
+      }
+      that.setData({ mObj: myObj});
     })
   },
   onLoad: function (options) {

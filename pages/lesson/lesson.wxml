@@ -8,7 +8,8 @@
     <image src='../../imgs/time-icon.png' class='time-icon'></image>
     <view class='duration info-txt'>{{mObj.coursewareCount}}课时</view>
     <view bindtap='binCol' class='collect-txt info-txt'>
-      <image src='../../imgs/collect-icon.png' class='collect-icon enone'></image>
+      <image wx:if='{{mObj.folderFlag == 1}}' src='../../imgs/collect-icon2.png' class='collect-icon enone'></image>
+      <image wx:else src='../../imgs/collect-icon.png' class='collect-icon enone'></image>
       收藏
     </view>
   </view>
