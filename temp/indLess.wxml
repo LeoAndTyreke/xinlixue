@@ -7,7 +7,17 @@
       <image src='../../imgs/time-icon.png' class='time-icon enone'></image>
       <view class='duration lesson-gray-info enone'>{{item.coursewareCount}}课时</view>
       <view class='lesson-price enone'>￥{{item.price}}</view>
-      <view class='lesson-record enone' wx:if='{{item.purchasedFlag == 1}}'>上次观看到第{{item.price}}课时 {{item.price}}</view>
+  </view>
+</template>
+<template name="myLess">
+  <view class='lesson-item' id='{{item.uid}}'>
+      <image src='{{item.frontPage}}' mode='aspectFit' class='lesson-cover enone'></image>
+      <view class='lesson-title enone'>{{item.name}}</view>
+      <image src='../../imgs/teacher-icon.png' class='teacher-icon enone'></image>
+      <view class='les-teacher-name lesson-gray-info enone'>{{item.tags[0].name}}</view>
+      <image src='../../imgs/time-icon.png' class='time-icon enone'></image>
+      <view class='duration lesson-gray-info enone'>{{item.coursewareCount}}课时</view>
+      <view class='lesson-record enone' wx:if='{{item.purchasedFlag == 1}}'>上次观看到第{{item.lastPsRate.showOrder}}课时 {{item.lastPsRate.psRate}}</view>
       <view class='lesson-price enone' wx:else>￥{{item.price}}</view>
   </view>
 </template>
