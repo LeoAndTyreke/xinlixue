@@ -2,6 +2,7 @@ let mLogin = require('../../utils/mLogin.js');
 let mMenD = require('../../utils/menusData.js');
 Page({
   data: {
+    mObj:{},
     mList:[]
   },
   onLoad: function (options) {
@@ -9,8 +10,8 @@ Page({
     let mChid = options.id;
     mLogin.getUserInfo(function (mToken) {
       mMenD.getMenData(mToken, mChid, function (data) {
-        console.log(JSON.stringify(data));
-        that.setData({ mList: data });
+        that.setData({ mObj: data.cc });
+        that.setData({ mList: data.cwList });
       })
     });
   },

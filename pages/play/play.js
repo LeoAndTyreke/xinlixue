@@ -1,9 +1,11 @@
 let mLogin = require('../../utils/mLogin.js');
 let mPlaD = require('../../utils/playData.js');
+let mPlaS = require('../../utils/playSend.js');
 let net = require('../../utils/network.js');
 Page({
   data: {
     mObj:{},
+    mCObj:{},
     mBs:{mbool:false,num:1.0}
   },
   page:{
@@ -14,7 +16,7 @@ Page({
     console.log(this.data.mObj.uid)
   },
   binMen: function (e) {
-    wx.navigateTo({ url: '/pages/menus/menus?id=' + this.data.mObj.uid });
+    wx.navigateTo({ url: '/pages/menus/menus?id=' + this.data.mCObj.uid });
   },
   binBS:function(e){
     let myBs = this.data.mBs;
@@ -28,16 +30,25 @@ Page({
       if (this.videoContext) this.videoContext.playbackRate(1.0);
     }
   },
+  vidEve:function(e){
+    mPlaS.sendEve();
+    console.log(JSON.stringify(e));
+  },
+  vidTim:function(e){
+    mPlaS.setVidTim(e.detail.currentTime);
+  },
   onLoad: function (options) {
     let that = this;
     let mChid = options.id;
 
     mLogin.getUserInfo(function (mToken) {
       mPlaD.getPlayData(mToken, mChid, function (data) {
-        console.log(JSON.stringify(data));
-        wx.setNavigationBarTitle({ title: data.name });
-        that.setData({ mObj: data });
-        that.page.mTyp = that.extName(data.fileUrl)
+        wx.setNavigationBarTitle({ title: data.cw.name });
+        that.setData({ mObj: data.cw });
+        that.setData({ mCObj: data.cc });
+        mPlaS.init(mToken, mChid);
+
+        that.page.mTyp = that.extName(data.cw.fileUrl)
         that.autoplay(that.page.mTyp);
       })
     });

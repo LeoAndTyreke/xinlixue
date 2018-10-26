@@ -1,4 +1,4 @@
-<video id='myVideo' src='{{mObj.fileUrl}}' controls>
+<video id='myVideo' src='{{mObj.fileUrl}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
     <cover-view wx:if='{{mBs.mbool}}' bindtap='binBS' class="vid-bs">{{mBs.num}}</cover-view>
 </video>
 <view class='video-info'>
@@ -20,10 +20,10 @@
 <view class='fixed-btns'>
   <view bindtap='binPay' class='fixed-left-btn'>
     <image src='../../imgs/money.png' class='money-icon enone'></image>
-    <view class='money-num'>赚<text class='orange enone'>{{mObj.pid}}</text>元</view>
+    <view class='money-num'>赚<text class='orange enone'>{{mCObj.commissionInfo}}</text>元</view>
   </view>
   <view bindtap='binMen' class='fixed-right-btn bc-blue'>
 	  <image src='../../imgs/mylessons.png' class='mylessons enone'></image>
-	  <view class='lessons enone'>课时3/18</view>
+	  <view class='lessons enone'>课时{{mObj.type}}/{{mCObj.coursewareCount}}</view>
   </view>
 </view>

@@ -34,7 +34,6 @@ Page({
       if (mTag.dataset.uid != ''){
         wx.navigateTo({ url: '/pages/play/play?id=' + mTag.dataset.uid });
       }
-      console.log(mTag.dataset.uid)
     }
   },
   binCol:function(e){

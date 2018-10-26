@@ -1,19 +1,10 @@
 <import src="../../temp/men.wxml"/>
-<view class='list'>
-  <view class='menu-item menu-title'>
-    <view class='title-txt'>1.课程目录</view>
-    <image src='../../imgs/locked.png' class='locked'></image>
-  </view>
-  <template is="men"  data="{{ind:1}}"/>
-  <template is="men"  data="{{ind:2}}"/>
-  <template is="men"  data="{{ind:2}}"/>
-  <template is="men"  data="{{ind:2}}"/>
-  <view class='menu-item menu-title'>
-    <view class='title-txt'>2.课程目录</view>
-    <image src='../../imgs/locked.png' class='locked'></image>
-  </view>
-  <template is="men"  data="{{ind:1}}"/>
-  <template is="men"  data="{{ind:1}}"/>
-  <template is="men"  data="{{ind:1}}"/>
-  <template is="men"  data="{{ind:2}}"/>
+<view bindtap='binWCList' class='list'>
+  <block wx:for='{{mList}}' wx:key='wcLeList' data="{{item}}">
+    <view class='menu-item menu-title'>
+      <view class='title-txt'>{{item.name}}</view>
+      <image src='../../imgs/locked.png' class='locked'></image>
+    </view>
+    <template is="men" wx:for='{{item.children}}' wx:for-index="idx" wx:key='wcChLeList' data="{{item,flag:mObj.purchasedFlag}}"/>
+  </block>
 </view>
