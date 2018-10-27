@@ -10,6 +10,7 @@
   position: absolute;
   left: 30rpx;
   top: 28rpx;
+  border-radius: 8rpx;
   background-color: lightgreen;
 }
 

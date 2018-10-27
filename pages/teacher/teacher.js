@@ -7,6 +7,9 @@ Page({
     ccList:[],
     ccIds:''
   },
+  page:{
+    myMon:0
+  },
   bindLess: function (e) {
     wx.navigateTo({ url: '/pages/lesson/lesson?id=' + e.target.id });
   },
@@ -14,16 +17,7 @@ Page({
     let that = this;
     let mIds = that.data.ccIds;
     if (mIds != ''){
-      mPay.getOrders(mLogin.getToken(), mIds, function (data) {
-        mPay.pollingPay(mLogin.getToken(), function (data) {
-          if (data.status == '9') {
-            wx.showToast({ title: '支付成功', icon: 'none', duration: 1500 });
-            that.updataPay('1');
-          } else {
-            wx.showToast({ title: '支付失败', icon: 'none', duration: 1500 });
-          }
-        })
-      });
+      wx.navigateTo({ url: '/pages/orderInfo/orderInfo?ids=' + mIds + '&moe=' + that.page.myMon });
     }
   },
   onLoad: function (options) {
@@ -35,6 +29,7 @@ Page({
         wx.setNavigationBarTitle({ title: data.teacher.name });
         that.setData({ mObj: data.teacher });
         that.setData({ ccList: data.cc });
+        console.log(data.cc)
         that.ccIdStr(data.cc);
       })
     });
@@ -42,24 +37,26 @@ Page({
   ccIdStr:function(mArr){
     let that = this;
     let mIds = '';
+    let mMoney = 0;
     mArr.forEach(function (val, ind) {
       if (val.purchasedFlag == 0){
         mIds += val.uid + ',';
+        mMoney += parseFloat(val.priceInfo);
       }
     })
     mIds = mIds.substr(0, mIds.length - 1);
     that.setData({ ccIds:mIds});
+    that.page.myMon = mMoney;
   },
   updataPay:function(mNum){
-    let mCcList = this.data.ccList;
-    mCcList.forEach(function (val, ind) {
-      val.purchasedFlag = mNum;
-    })
-    this.setData({ ccList: mCcList});
     this.setData({ ccIds: '' });
   },
   onShow: function () {
-
+    let that = this;
+    let mPIds = mPay.getPayId();
+    if (mPIds == that.data.ccIds) {
+      that.updataPay('1');
+    }
   },
   onShareAppMessage: function () {
 

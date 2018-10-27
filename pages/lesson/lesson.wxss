@@ -25,29 +25,36 @@ page {
 }
 
 .teacher-icon {
-    float: left;
+    position: absolute;
     width: 24rpx;
     height: 18rpx;
-    margin: 4rpx 16rpx 4rpx 30rpx;
+    left: 0;
+    top:5rpx;
 }
 
 .teacher-name {
+  position: relative;
     float: left;
     width: 110rpx;
-    margin-right: 24rpx;
+    margin-left: 30rpx;
+    margin-right: 15rpx;
+    text-indent: 25rpx;
 }
 
 .time-icon {
-    float: left;
+    position: absolute;
     width: 20rpx;
     height: 20rpx;
-    margin: 3rpx 0;
+    left: 0;
+    top:5rpx;
 }
 
 .duration {
+  position: relative;
     float: left;
     width: 120rpx;
     margin: 0 16rpx;
+    text-indent: 25rpx;
 }
 
 .info-txt {
@@ -59,10 +66,10 @@ page {
 
 .collect-txt {
     position: relative;
-    width: 92rpx;
+    width: 100rpx;
     float: right;
     margin-right: 30rpx;
-    text-indent: 40rpx;
+    text-indent: 30rpx;
 }
 
 .collect-icon {

@@ -21,6 +21,7 @@ page {
   position: absolute;
   left: 30rpx;
   top: 28rpx;
+  border-radius: 8rpx;
   background-color: lightgreen;
 }
 
@@ -53,29 +54,36 @@ page {
 
 .teacher-intro-detail {
   width: 690rpx;
-  height: 144rpx;
+  height: 140rpx;
   line-height: 48rpx;
   font-size: 26rpx;
   color: #666;
   margin: 0 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .content {
 	background-color: #fff;
 	width: 750rpx;
 	position: relative;
+  padding-bottom: 120rpx;
 }
 
 .square {
+  position: absolute;
 	width: 8rpx;
 	height: 22rpx;
-	position: absolute;
 	left: 30rpx;
-	top: 32rpx;
+	top: 46rpx;
 	background-color: #FF7745;
 }
 
 .content-title {
+  position: relative;
 	width: 750rpx;
 	height: 86rpx;
 	line-height: 86rpx;
@@ -83,6 +91,7 @@ page {
 	padding-left: 48rpx;
 	box-sizing: border-box;
 	margin-bottom: 19rpx;
+  text-indent: 8rpx;
 }
 
 .fixed-btn {

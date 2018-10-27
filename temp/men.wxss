@@ -1,7 +1,9 @@
 
 
 .title-txt {
+  width: 75%;
   margin-left: 30rpx;
+  overflow: hidden;
 }
 
 .locked {

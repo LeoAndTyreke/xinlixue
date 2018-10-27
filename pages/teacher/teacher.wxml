@@ -8,8 +8,7 @@
   <view class='teacher-intro-detail'>{{mObj.remark}}</view>
 </view>
 <view class='content'>
-	<view class='square'></view>
-	<view class='content-title'>专家课程</view>
+	<view class='content-title'><view class='square'></view>专家课程</view>
 	<view class='list' bindtap='bindLess'>
     <block wx:if="{{ccList.length >0}}">
       <template is="indLess" wx:for='{{ccList}}' wx:key='indLesson' data="{{item}}"/>

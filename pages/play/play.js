@@ -16,7 +16,8 @@ Page({
     console.log(this.data.mObj.uid)
   },
   binMen: function (e) {
-    wx.navigateTo({ url: '/pages/menus/menus?id=' + this.data.mCObj.uid });
+    let mObj = this.data.mObj;
+    wx.navigateTo({ url: '/pages/menus/menus?id=' + this.data.mCObj.uid +'&cid='+ mObj.uid});
   },
   binBS:function(e){
     let myBs = this.data.mBs;
@@ -32,7 +33,6 @@ Page({
   },
   vidEve:function(e){
     mPlaS.sendEve();
-    console.log(JSON.stringify(e));
   },
   vidTim:function(e){
     mPlaS.setVidTim(e.detail.currentTime);

@@ -10,21 +10,20 @@
 }
 .search-ts{
   position: relative;
-  width: 280rpx;
+  width: 170rpx;
   height: 60rpx;
   margin: 0 auto;
   font-size: 30rpx;
   color: #fff;
   line-height: 60rpx;
   text-indent: 40rpx;
-  padding: 0 150rpx;
 }
 .search-tp{
   position: absolute;
   display:block;
   width: 32rpx;
   height: 32rpx;
-  top:14rpx;
+  top:15rpx;
 }
 .search-ss{
   position: relative;

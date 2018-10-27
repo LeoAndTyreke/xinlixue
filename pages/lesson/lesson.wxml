@@ -1,19 +1,23 @@
 <import src="../../temp/men.wxml"/>
 <view class='header'>
-  <image src='{{mObj.frontPage}}' class='cover'></image>
+  <image src='{{mObj.frontPage}}' mode='aspectFill' class='cover'></image>
   <view class='title'>{{mObj.name}}</view>
   <view class='info'>
-    <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
-    <view class='teacher-name info-txt'>{{mObj.teacherVO.name}}</view>
-    <image src='../../imgs/time-icon.png' class='time-icon'></image>
-    <view class='duration info-txt'>{{mObj.coursewareCount}}课时</view>
+    <view class='teacher-name info-txt'>
+      <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
+      {{mObj.teacherVO.name}}
+    </view>
+    <view class='duration info-txt'>
+      <image src='../../imgs/time-icon.png' class='time-icon'></image>
+      {{mObj.coursewareCount}}课时
+    </view>
     <view bindtap='binCol' class='collect-txt info-txt'>
       <image wx:if='{{mObj.folderFlag == 1}}' src='../../imgs/collect-icon2.png' class='collect-icon enone'></image>
       <image wx:else src='../../imgs/collect-icon.png' class='collect-icon enone'></image>
       收藏
     </view>
   </view>
-  <view class='price'>￥{{mObj.price}}</view>
+  <view class='price'>￥{{mObj.priceInfo}}</view>
 </view>
 <view class='tabs'>
   <view class='tab tab-left {{showDetail ? "active" : ""}}' bindtap='toggleTab'>课程详情</view>
@@ -26,24 +30,24 @@
       <image src='../../imgs/notice-icon.png' class='notice-icon'></image>
       <view class='notice-title'>购买须知</view>
     </view>
-    <view class='notice-content'>这里是课程介绍内容部分，课程介绍内容部分，课程内容介 绍部分
-    </view>
+    <view class='notice-content'>本产品为购买实物产品附赠的音/视频资料，支付完成后，我们会寄送实物资料给您</view>
   </view>
 </view>
 <view bindtap='binWCList' class='tab-content' wx:else>
   <block wx:for='{{wcList}}' wx:key='wcLeList' data="{{item}}">
-    <view class='menu-item menu-title'>
-      <view class='title-txt'>{{item.name}}</view>
-      <image src='../../imgs/locked.png' class='locked'></image>
+    <view id='wcchbt' data-uid='{{item.uid}}' data-fee='{{item.feeFlag}}' data-url='{{item.fileUrl}}' class='menu-item menu-title'>
+      <view class='title-txt enone'>{{item.rowIdx}}.{{item.name}}</view>
+      <image wx:if="{{item.feeFlag != 1 && mObj.purchasedFlag != 1}}" src='../../imgs/locked.png' class='locked enone'></image>
     </view>
     <template is="men" wx:for='{{item.children}}' wx:for-index="idx" wx:key='wcChLeList' data="{{item,ind:idx,flag:mObj.purchasedFlag}}"/>
   </block>
 </view>
-<view wx:if='{{mObj.purchasedFlag != 1}}' class='fixed-btns'>
+<view class='fixed-btns'>
   <view class='fixed-left-btn'>
     <image src='../../imgs/money.png' class='money-icon'></image>
     <view class='money-num'>赚
-      <text class='orange'>{{mObj.price}}</text>元</view>
+      <text class='orange'>{{mObj.commissionInfo}}</text>元</view>
   </view>
-  <view bindtap='binPay' class='fixed-right-btn bc-orange'>购买</view>
+  <view wx:if="{{mObj.purchasedFlag == 1}}" bindtap='binPlay' class='fixed-right-btn bc-blue'>立即播放</view>
+  <view wx:else bindtap='binPay' class='fixed-right-btn bc-orange'>购买</view>
 </view>

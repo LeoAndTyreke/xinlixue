@@ -1,5 +1,5 @@
 <video id='myVideo' src='{{mObj.fileUrl}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
-    <cover-view wx:if='{{mBs.mbool}}' bindtap='binBS' class="vid-bs">{{mBs.num}}</cover-view>
+    <cover-view  bindtap='binBS' class="vid-bs">{{mBs.num}}</cover-view>
 </video>
 <view class='video-info'>
     <view class='video-title'>{{mObj.name}}</view>
@@ -24,6 +24,6 @@
   </view>
   <view bindtap='binMen' class='fixed-right-btn bc-blue'>
 	  <image src='../../imgs/mylessons.png' class='mylessons enone'></image>
-	  <view class='lessons enone'>课时{{mObj.type}}/{{mCObj.coursewareCount}}</view>
+	  <view class='lessons enone'>课时{{mObj.showOrder}}/{{mCObj.coursewareCount}}</view>
   </view>
 </view>

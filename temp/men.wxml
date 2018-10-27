@@ -1,9 +1,10 @@
 <template name="men">
-  <view id='wcch' data-uid='{{item.uid}}' data-fee='{{item.feeFlag}}' class='menu-item menu-content'>
-    <image src='../../imgs/wave.png' class='wave enone'></image>
+  <view id='wcch' data-uid='{{item.uid}}' data-fee='{{item.feeFlag}}' data-url='{{item.fileUrl}}' class='menu-item menu-content'>
+    <image wx:if='{{item.vbool}}' src='../../imgs/wave2.png' class='wave enone'></image>
+    <image wx:else src='../../imgs/wave.png' class='wave enone'></image>
     <view class='ctt-txt enone'>{{item.name}}</view>
     <block wx:if="{{flag != 1}}">
-      <image wx:if="{{item.feeFlag == 1}}" src='../../imgs/locked.png' class='locked enone'></image>
+      <image wx:if='{{item.feeFlag == 1}}' src='../../imgs/locked.png' class='locked enone'></image>
       <view wx:else class='free-txt enone'>免费试看</view>
     </block>  
   </view>

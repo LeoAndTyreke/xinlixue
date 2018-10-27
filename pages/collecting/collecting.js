@@ -8,15 +8,15 @@ Page({
     wx.navigateTo({ url: '/pages/lesson/lesson?id=' + e.target.id });
   },
   onLoad: function (options) {
-    let that = this;
     
+  }, 
+  onShow: function () {
+    let that = this;
+
     mLogin.getUserInfo(function (mToken) {
       mColD.seaInit();
       that.updataList();
     });
-  }, 
-  onShow: function () {
-
   },
   onReachBottom: function () {
     let that = this;

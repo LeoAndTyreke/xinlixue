@@ -2,9 +2,12 @@ let mServer = require('server.js');
 let err = require('inteError.js');
 
 let mOrder = '';
+let mProIds = '';
+let mProEnd = '';
 
-function getOrders(mToken,mSpIds,sucFun){
-  mServer.serverReq('order/create', { token: mToken, productIds: mSpIds }, function (data){
+function getOrders(mToken,mSpIds,mAdd,sucFun){
+  mProIds = mSpIds;
+  mServer.serverReq('order/create', { token: mToken, productIds: mSpIds, userAddress: mAdd}, function (data){
     //console.log(JSON.stringify(data))
     if (data.result === 'success') {
       mOrder = data.items.order.orderNO;
@@ -40,6 +43,7 @@ function pollingPay(mToken,sucFun){
         //console.log(JSON.stringify(data));
         if (data.result === 'success'){
           if (data.items && data.items.status == '9'){
+            mProEnd = mProIds;
             if (typeof sucFun == 'function') sucFun(data.items);
           } else if (data.items && data.items.status == '1'){
             if (mLoop < 10) {
@@ -59,7 +63,12 @@ function pollingPay(mToken,sucFun){
     }
 }
 
+function getPayId(){
+  return mProEnd;
+}
+
 module.exports = {
   getOrders:getOrders,
-  pollingPay:pollingPay
+  pollingPay:pollingPay,
+  getPayId: getPayId
 }
