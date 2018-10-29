@@ -11,7 +11,8 @@
 	position: absolute;
 	left: 315rpx;
 	top: 123rpx;
-	border: 8rpx solid rgba(255, 255, 255, .7)
+	border: 8rpx solid rgba(255, 255, 255, .7);
+  background-color: #ccc;
 }
 
 .username {

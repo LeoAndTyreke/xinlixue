@@ -8,16 +8,18 @@
     </swiper-item>
 </swiper>
 <template is="search" data="{{focusBool}}"/>
-<scroll-view scroll-x="true" class="categories" scroll-into-view="category1" scroll-with-animation="true">
-    <view class="category-all" style='width:{{categories.length*170}}rpx' bindtap='bindType'>
-        <template is="indLab" wx:for='{{categories}}' wx:key='indCategories' data="{{item}}"/>
-    </view>
-</scroll-view>
+<view class="categories">
+  <scroll-view scroll-x="true" class="categories2" scroll-into-view="category1" scroll-with-animation="true">
+      <view class="category-all" style='width:{{categories.length*170}}rpx' bindtap='bindType'>
+          <template is="indLab" wx:for='{{categories}}' wx:key='indCategories' data="{{item}}"/>
+      </view>
+  </scroll-view>
+</view>
 <view class='index-list'>
     <view class='list-header'>
         <view class='square bc-blue'></view>
         <view class='list-title'>推荐课程</view>
-        <view class='list-more actob' bindtap='binLes' >
+        <view class='list-more' bindtap='binLes' >
             <view class='more-txt'>全部课程</view>
             <image src='../../imgs/more.png' class='more-icon'></image>
         </view>
@@ -35,7 +37,7 @@
     <view class='list-header'>
         <view class='square bc-orange'></view>
         <view class='list-title'>专家讲师</view>
-        <view class='list-more actob' bindtap='binTea' >
+        <view class='list-more' bindtap='binTea' >
             <view class='more-txt'>全部讲师</view>
             <image src='../../imgs/more.png' class='more-icon'></image>
         </view>

@@ -22,7 +22,7 @@ page {
   left: 30rpx;
   top: 28rpx;
   border-radius: 8rpx;
-  background-color: lightgreen;
+  background-color:#ccc;
 }
 
 .teacher-name {

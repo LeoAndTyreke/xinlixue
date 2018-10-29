@@ -11,7 +11,7 @@
     left: 30rpx;
     top: 30rpx;
     border-radius: 8rpx;
-    background-color: lightblue;
+    background-color:#ccc;
 }
 
 .lesson-title {
@@ -28,26 +28,28 @@
     width: 24rpx;
     height: 18rpx;
     position: absolute;
-    left: 218rpx;
-    top: 150rpx;
+    left:0;
+    top: 2rpx;
 }
 
 .les-teacher-name {
-    width: 106rpx;
-    left: 252rpx;
+    width: 126rpx;
+    left: 230rpx;
+    overflow: hidden;
 }
 
 .time-icon {
     width: 20rpx;
     height: 20rpx;
     position: absolute;
-    left: 363rpx;
-    top: 150rpx;
+    left: 0;
+    top: 2rpx;
 }
 
 .duration {
     width: 150rpx;
-    left: 393rpx;
+    left: 370rpx;
+    overflow: hidden;
 }
 
 .lesson-gray-info {
@@ -57,17 +59,22 @@
     color: #666;
     position: absolute;
     top: 150rpx;
+    text-indent: 30rpx;
 }
 
 .lesson-price {
     width: 300rpx;
     height: 40rpx;
     line-height: 40rpx;
-    font-size: 44rpx;
+    font-size: 30rpx;
     color: #ff4d10;
     position: absolute;
     left: 218rpx;
     top: 203rpx;
+}
+.lesson-price2 {
+    font-size: 44rpx;
+    font-weight: bold;
 }
 
 .lesson-record {

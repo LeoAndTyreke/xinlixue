@@ -8,12 +8,18 @@ page {
 .slide-image {
   width: 750rpx;
   height: 290rpx;
+  background-image: #ccc;
 }
 
 .categories {
 	height: 160rpx;
 	text-align: center;
-    background-color: #fff;
+  background-color: #fff;
+  overflow: hidden;
+}
+.categories2 {
+	height: 170rpx;
+	text-align: center;
 }
 
 .category-all {
@@ -44,6 +50,7 @@ page {
     position: absolute;
     left: 48rpx;
     font-weight: 300;
+    font-weight: bold;
 }
 
 .list-more {
