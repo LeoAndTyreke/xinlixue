@@ -3,8 +3,8 @@
 	<view class='gains'>
 		<view class='gains-txt g-txt1'>累计收益</view>
 		<view class='gains-txt g-txt2'>当前余额</view>
-		<view class='gains-num g-num1'>￥400.00</view>
-		<view class='gains-num g-num2'>￥600.00</view>
+		<view class='gains-num g-num1'>￥{{mObj.totalDebitInfo}}</view>
+		<view class='gains-num g-num2'>￥{{mObj.balanceInfo}}</view>
 		<view class='tips'>- 收益可以在购买课程时直接抵扣现金 -</view>
 	</view>
 </view>
@@ -19,6 +19,6 @@
 		<view class='title-txt'>推广课程</view>
 	</view>
 	<view class='list' bindtap='bindLess'>
-    <template is="indLess" wx:for='{{lessonListData}}' wx:key='indLesson' data="{{item}}"/>
+    <template is="indLess" wx:for='{{mList}}' wx:key='indLesson' data="{{item}}"/>
   </view>
 </view>

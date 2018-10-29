@@ -56,6 +56,8 @@ function serAdd(addres){
     case 'userFolder/list':
     case 'userFolder/toggle':
     case 'userResPsRate/send':
+    case 'spread/detail':
+    case 'spread/list':
 			returnStr = serInter+kc+addres;
 			break;
     case 'findSwi.php':

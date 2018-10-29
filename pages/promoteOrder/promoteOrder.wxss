@@ -23,3 +23,12 @@
 	font-size: 30rpx;
 	letter-spacing: 0.6rpx;
 }
+
+.order-ts {
+	width: 750rpx;
+	line-height: 48rpx;
+	font-size: 30rpx;
+  color: #ccc;
+	text-align: center;
+  margin-top: 80rpx;
+}

@@ -75,7 +75,7 @@
 	height: 22rpx;
 	position: absolute;
 	left: 30rpx;
-	top: 44rpx;
+	top: 55rpx;
 }
 
 .title-txt {
@@ -99,6 +99,7 @@
 	width: 750rpx;
 	background: #fff;
 	margin-top: 9rpx;
+  padding-bottom: 15rpx;
 }
 
 
