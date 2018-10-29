@@ -1,9 +1,9 @@
 <view class='container'>
   <block wx:if="{{mList.length >0}}">
     <view class='order-item' wx:for='{{mList}}' wx:key='proOrdl'>
-      <view class='order-time'>2018/05/05 13:45</view>
-      <view class='order-ctt'>您的好友【好友名】通过您的分享订阅了【课程名】，您获得了
-      <text class='orange'>￥3.00</text>的分享佣金，真是 太棒了！</view>
+      <view class='order-time'>{{item.updatedDate}}</view>
+      <view class='order-ctt'>您的好友【{{item.userName}}】通过您的分享订阅了【{{item.productName}}】，您获得了
+      <text class='orange'>￥{{item.bonusInfo}}</text>的分享佣金，真是 太棒了！</view>
     </view>
   </block>   
   <block wx:else>
