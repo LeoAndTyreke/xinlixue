@@ -10,9 +10,10 @@ Page({
 	},
   binSwi:function(e){
     let mTag = e.target;
-    if (mTag.dataset.linktyp == '1'){
+    console.log(mTag)
+    if (mTag.dataset.linktyp == '2'){
       wx.navigateTo({ url: '/pages/web/web?link=' + mTag.dataset.link});
-    } else if (mTag.dataset.linktyp == '2'){
+    } else if (mTag.dataset.linktyp == '1'){
       wx.navigateTo({ url: mTag.dataset.link});
     }
   },
