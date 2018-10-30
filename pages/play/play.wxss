@@ -5,15 +5,16 @@ video {
 }
 .vid-bs{
   position: absolute;
-  width: 50rpx;
-  height: 50rpx;
+  width: 112rpx;
+  height: 36rpx;
   top:10rpx;
   right: 10rpx;
+  border: 2rpx solid #fff;
+  border-radius: 18rpx;
   font-size: 20rpx;
-  line-height: 50rpx;
+  line-height: 36rpx;
   text-align: center;
-  color: #666;
-  background-color: #fff;
+  color: #fff;
 }
 .controls {
     width: 750rpx;
@@ -138,6 +139,7 @@ video {
 }
 
 .framework-header {
+  position: relative;
     width: 750rpx;
     height: 84rpx;
 	line-height: 84rpx;
@@ -145,30 +147,38 @@ video {
 }
 
 .square {
-    width: 8rpx;
-    height: 22rpx;
-    margin: 31rpx 16rpx 31rpx 30rpx;
-	float: left;
+  position: absolute;
+  width: 8rpx;
+  height: 22rpx;
+  left: 0;
+  top:44rpx;
 }
 
 .framework-title {
+  position: relative;
 	width: 120rpx;
 	height: 84rpx;
-	float: left;
+  left: 20rpx;
+  text-indent: 15rpx;
 }
 
 .more-icon {
+  position: absolute;
 	width: 13rpx;
 	height: 17rpx;
-	margin: 34rpx 30rpx 0 10rpx;
-	float: right;
+  right: 0;
+  top:34rpx;
 }
 
 .note-txt {
+  position: absolute;
 	width: 60rpx;
 	height: 84rpx;
 	color: #666;
-	float: right;
+  line-height: 84rpx;
+	right: 20rpx;
+  top:0;
+  padding-right: 20rpx;
 }
 
 .framework-ctt {
@@ -234,3 +244,5 @@ video {
 	font-size: 36rpx;
 	color: #fff;
 }
+
+@import "../../temp/pick.wxss";

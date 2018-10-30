@@ -6,14 +6,14 @@ Page({
   data: {
     mObj:{},
     mCObj:{},
-    mBs:{mbool:false,num:1.0}
+    mBs:{mbool:false,num:1.0},
+    mPic:true
   },
   page:{
     mTyp:''
   },
   binPay:function(e){
-    console.log(this.data.mObj.pid)
-    console.log(this.data.mObj.uid)
+    this.setData({ mPic: false });
   },
   binMen: function (e) {
     let mObj = this.data.mObj;
@@ -36,6 +36,13 @@ Page({
   },
   vidTim:function(e){
     mPlaS.setVidTim(e.detail.currentTime);
+  },
+  picBind:function(e){
+    let mTarg = e.target;
+    if (mTarg.id == 'yqcard'){
+      wx.navigateTo({ url: '/pages/card/card'});
+    }
+    this.setData({ mPic: true});
   },
   onLoad: function (options) {
     let that = this;
@@ -78,6 +85,10 @@ Page({
     }
   },
   onShareAppMessage: function () {
-
+    return {
+      title: '知识付费',
+      desc: '知识付费',
+      path: 'pages/index/index?shid=' + mLogin.getUserId()
+    }
   }
 })

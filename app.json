@@ -15,6 +15,7 @@
     "pages/teachers/teachers",
     "pages/login/login",
     "pages/login/logph",
+    "pages/card/card",
     "pages/web/web"
   ],
   "window": {

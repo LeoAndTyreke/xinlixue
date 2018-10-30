@@ -1,0 +1,7 @@
+<swiper class='con-sw' previous-margin='35rpx' next-margin='35rpx' bindtap='monbind'>
+    <swiper-item wx:for="{{mList}}" wx:key="momList">
+      <view class='con-sw-one' ></view>
+    </swiper-item>
+</swiper>
+<view class='con-but actob'>保存到相册</view>
+

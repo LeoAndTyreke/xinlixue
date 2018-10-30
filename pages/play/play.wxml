@@ -1,5 +1,6 @@
+<import src="../../temp/pick.wxml"/>
 <video id='myVideo' src='{{mObj.fileUrl}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
-    <cover-view  bindtap='binBS' class="vid-bs">{{mBs.num}}</cover-view>
+    <cover-view  bindtap='binBS' class="vid-bs">倍速X{{mBs.num}}</cover-view>
 </video>
 <view class='video-info'>
     <view class='video-title'>{{mObj.name}}</view>
@@ -10,10 +11,10 @@
 </view>
 <view class='framework'>
     <view class='framework-header'>
-        <view class='square bc-blue'></view>
-        <view class='framework-title'>框架图</view>
-        <image src='../../imgs/more.png' class='more-icon'></image>
-        <view class='note-txt'>笔记</view>
+        <view class='framework-title'><view class='square bc-blue'></view>框架图</view>
+        <view class='note-txt'>
+          笔记<image src='../../imgs/more.png' class='more-icon'></image>
+        </view>
     </view>
 	<view class='framework-ctt'>{{mObj.subjectNote}}</view>
 </view>
@@ -27,3 +28,4 @@
 	  <view class='lessons enone'>课时{{mObj.showOrder}}/{{mCObj.coursewareCount}}</view>
   </view>
 </view>
+<template is="playPick" data="{{mPic}}" />

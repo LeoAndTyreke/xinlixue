@@ -55,36 +55,23 @@ function mUserCode(mSend, sucFun) {
   });
 }
 function mUserToken(mToken, sucFun) {
-  if (mUser){
-    if (typeof sucFun == 'function') sucFun(mToken);
-    return;
-  } else {
-    let uInfo = wx.getStorageSync('userInfo');
-    if (uInfo) {
-      mUser = JSON.parse(uInfo);;
-      if (typeof sucFun == 'function') sucFun(mToken);
-      return;
-    }
-  }
   mServer.serverReq('user/get', { token: mToken }, function (data) {
     //console.log('getUser:' +JSON.stringify(data));
-    if (data.result === 'success' && data.items.authedFlag == '1') {
+    if (data.result === 'success') {
       mUser = data.items;
-      try {
-        wx.setStorageSync('userInfo', JSON.stringify(mUser));
-      } catch (e) {}
       if (typeof sucFun == 'function') sucFun(mToken);
-    } else {
-      console.log('重新授权');
-      if (typeof sucFun == 'function') sucFun(mToken);
-      
-      if (getCurrentPages().length >= 1){
-        let mCur = getCurrentPages()[(getCurrentPages().length - 1)];
-        if (mCur.route !== 'pages/login/login' && pageLogin){
-          pageLogin = false;
-          wx.reLaunch({ url: '/pages/login/login' });
+      if (data.items.authedFlag != '1'){
+        if (getCurrentPages().length >= 1) {
+          let mCur = getCurrentPages()[(getCurrentPages().length - 1)];
+          if (mCur.route !== 'pages/login/login' && pageLogin) {
+            pageLogin = false;
+            wx.reLaunch({ url: '/pages/login/login' });
+          }
         }
       }
+    } else {
+      console.log('重新授权');
+      loginCode(sucFun);
     }
   });
 }
@@ -101,9 +88,6 @@ function bGUinfo(detail, sucFun) {
     city: mInfo.city,
     avatarUrl: mInfo.avatarUrl
   }
-  try {
-    wx.setStorageSync('userInfo', JSON.stringify(mUser));
-  } catch (error) {}
 
   let mSendObj = {};
   mSendObj.recommenderId = shareId;

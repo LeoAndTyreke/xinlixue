@@ -1,0 +1,37 @@
+page{
+  background-color: #fff;
+}
+.con-sw{
+  position: absolute;
+  width: 100%;
+  height: 1020rpx;
+  top:10rpx;
+}
+.con-sw-one{
+  position: absolute;
+  width: 660rpx;
+  height: 1000rpx;
+  top:10rpx;
+  left: 10rpx;
+  background-color:#e9e9e9;
+  box-shadow: 0px 0px 10rpx #e9e9e9;
+  overflow: hidden;
+}
+
+.con-but{
+  position: absolute;
+  width: 650rpx;
+  height: 110rpx;
+  bottom: 20rpx;
+  left: 50rpx;
+  border-radius: 8rpx;
+  font-size: 40rpx;
+  color: #fff;
+  line-height: 110rpx;
+  text-align: center;
+  overflow: hidden;
+  background-color: #ff7d4f;
+}
+
+
+

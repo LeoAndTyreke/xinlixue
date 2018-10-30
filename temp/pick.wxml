@@ -1,0 +1,9 @@
+<template name="playPick">
+  <view class='mon-picker' bindtap="picBind"  hidden='{{mPic}}'>
+    <view class='mon-pic-one'>
+      <view id='fenxiang' class='mon-pic-but'>转发好友<button open-type="share" session-from="weapp" class='share-butn'></button></view>
+      <view id='yqcard' class='mon-pic-but'>定制邀请卡</view>
+      <view id='quxiao' class='mon-pic-but mon-pic-f'>取消</view>
+    </view>
+  </view>
+</template>

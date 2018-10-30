@@ -101,7 +101,6 @@ page {
 .tab {
     width: 375rpx;
     height: 80rpx;
-    border-bottom: 2rpx solid #f2f2f2;
     color: #999;
     line-height: 80rpx;
     font-size: 30rpx;
