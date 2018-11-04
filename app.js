@@ -15,13 +15,9 @@ App({
     //wx.setEnableDebug({ enableDebug: true });
     //登录（获取用户信息）
     mLogin.getUserInfo(function (mToken) {
-      console.log('mToken::' + mToken);
-      console.log('uObj:' + JSON.stringify(mLogin.getUser()))
+      //console.log('mToken::' + mToken);
+      //console.log('uObj:' + JSON.stringify(mLogin.getUser()))
     });
-
-    if (e.query.shid){
-      mLogin.setShareid(e.query.shid);
-    }
 
   }
 })

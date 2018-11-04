@@ -25,7 +25,11 @@
         <image src='../../imgs/time-icon.png' class='time-icon enone'></image>
         {{item.coursewareCount}}课时
       </view>
-      <view class='lesson-record enone' wx:if='{{item.purchasedFlag == 1}}'>上次观看到第{{item.lastPsRate.showOrder}}课时 {{item.lastPsRate.psRate}}</view>
+      <view class='lesson-record enone' wx:if='{{item.purchasedFlag == 1}}'>
+        <block wx:if="{{item.lastPsRate.psRate >0}}">
+          上次观看到第{{item.lastPsRate.showOrder}}课时 {{item.lastPsRate.psRate}}
+        </block> 
+      </view>
       <view class='lesson-price enone' wx:else>￥<text class='lesson-price2'>{{item.priceInfo}}</text></view>
   </view>
 </template>

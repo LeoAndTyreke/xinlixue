@@ -1,7 +1,12 @@
-<swiper class='con-sw' previous-margin='35rpx' next-margin='35rpx' bindtap='monbind'>
+<canvas canvas-id="myCanvas" style="position:absolute;width:750px;height:1072px;top:-1072px;left:-750px" />
+<swiper class='con-sw' previous-margin='35rpx' next-margin='35rpx' bindchange='bindchange' >
     <swiper-item wx:for="{{mList}}" wx:key="momList">
-      <view class='con-sw-one' ></view>
+      <view class='con-sw-one'>
+        <image src='{{item}}' mode='aspectFill' class='con-sw-onei'></image>
+        <image src='{{mEr}}' mode='aspectFill' class='con-sw-onee'></image>
+      </view>
     </swiper-item>
 </swiper>
-<view class='con-but actob'>保存到相册</view>
+<!-- <image src="{{canUrl}}" mode="widthFix" class="cont-img" ></image> -->
+<view bindtap='savebind' class='con-but actob'>保存到相册</view>
 

@@ -24,7 +24,7 @@
         </view>
 		<textarea placeholder='请输入详细地址' name='mXXDZ' value="{{mInp.mXXDZ}}" placeholder-style='font-size: 30rpx; color: #999;'></textarea>
 	<view class='fixed-btns'>
-		<view class='fixed-left-btn'>合计：<text class='orange'>￥{{mMoe}}</text></view>
+		<view class='fixed-left-btn'>合计：<text class='orange'>￥<text class='orange2'>{{mMoe}}</text></text></view>
 		<view class='fixed-right-btn'>立即支付<button class='submit' formType="submit">Submit</button></view>
 	</view>
     </form>

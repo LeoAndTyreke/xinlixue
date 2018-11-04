@@ -12,12 +12,12 @@ Page({
   page:{
     mTyp:''
   },
-  binPay:function(e){
+  binSha:function(e){
     this.setData({ mPic: false });
   },
   binMen: function (e) {
     let mObj = this.data.mObj;
-    wx.navigateTo({ url: '/pages/menus/menus?id=' + this.data.mCObj.uid +'&cid='+ mObj.uid});
+    wx.redirectTo({ url: '/pages/menus/menus?id=' + this.data.mCObj.uid +'&cid='+ mObj.uid});
   },
   binBS:function(e){
     let myBs = this.data.mBs;
@@ -39,8 +39,9 @@ Page({
   },
   picBind:function(e){
     let mTarg = e.target;
+    let myObj = this.data.mCObj;
     if (mTarg.id == 'yqcard'){
-      wx.navigateTo({ url: '/pages/card/card'});
+      wx.navigateTo({ url: '/pages/card/card?id=' + myObj.uid});
     }
     this.setData({ mPic: true});
   },
@@ -54,7 +55,7 @@ Page({
         that.setData({ mObj: data.cw });
         that.setData({ mCObj: data.cc });
         mPlaS.init(mToken, mChid);
-
+        
         that.page.mTyp = that.extName(data.cw.fileUrl)
         that.autoplay(that.page.mTyp);
       })
@@ -85,10 +86,11 @@ Page({
     }
   },
   onShareAppMessage: function () {
+    let myObj = this.data.mCObj;
     return {
-      title: '知识付费',
-      desc: '知识付费',
-      path: 'pages/index/index?shid=' + mLogin.getUserId()
+      title: '快和Rogers一起来学考研心理～',
+      desc: '快和Rogers一起来学考研心理～',
+      path: 'pages/lesson/lesson?id=' + myObj.uid + '&shid=' + mLogin.getUserId()
     }
   }
 })

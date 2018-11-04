@@ -7,8 +7,8 @@ video {
   position: absolute;
   width: 112rpx;
   height: 36rpx;
-  top:10rpx;
-  right: 10rpx;
+  top:20rpx;
+  right: 20rpx;
   border: 2rpx solid #fff;
   border-radius: 18rpx;
   font-size: 20rpx;
@@ -172,10 +172,11 @@ video {
 
 .note-txt {
   position: absolute;
-	width: 60rpx;
+	width: 100rpx;
 	height: 84rpx;
 	color: #666;
   line-height: 84rpx;
+  text-align: right;
 	right: 20rpx;
   top:0;
   padding-right: 20rpx;

@@ -10,12 +10,27 @@ page{
 .con-sw-one{
   position: absolute;
   width: 660rpx;
-  height: 1000rpx;
+  height: 943rpx;
   top:10rpx;
   left: 10rpx;
+  border-radius: 8rpx;
   background-color:#e9e9e9;
-  box-shadow: 0px 0px 10rpx #e9e9e9;
+  box-shadow: 0px 0px 20rpx #e9e9e9;
   overflow: hidden;
+}
+.con-sw-onei{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+}
+.con-sw-onee{
+  position: absolute;
+  width: 190rpx;
+  height: 190rpx;
+  bottom:24rpx;
+  left: 236rpx;
 }
 
 .con-but{
@@ -33,5 +48,13 @@ page{
   background-color: #ff7d4f;
 }
 
-
+.cont-img{
+  position:absolute;
+  display: block;
+  width:50%;
+  top:0;
+  left: 0;
+  background-color: #eee;
+  z-index: 3;
+}
 

@@ -1,4 +1,5 @@
 <import src="../../temp/men.wxml"/>
+<import src="../../temp/pick.wxml"/>
 <view class='header'>
   <image src='{{mObj.frontPage}}' mode='aspectFill' class='cover'></image>
   <view class='title'>{{mObj.name}}</view>
@@ -17,7 +18,7 @@
       收藏
     </view>
   </view>
-  <view class='price'>￥{{mObj.priceInfo}}</view>
+  <view class='price'>￥<text class='priceT'>{{mObj.priceInfo}}</text></view>
 </view>
 <view class='tabs'>
   <view class='tab tab-left {{showDetail ? "active" : ""}}' bindtap='toggleTab'>课程详情</view>
@@ -43,11 +44,13 @@
   </block>
 </view>
 <view class='fixed-btns'>
-  <view class='fixed-left-btn'>
-    <image src='../../imgs/money.png' class='money-icon'></image>
-    <view class='money-num'>赚
-      <text class='orange'>{{mObj.commissionInfo}}</text>元</view>
+  <view wx:if='{{mObj.commissionInfo}}' bindtap='binSha' class='fixed-left-btn'>
+    <image src='../../imgs/money.png' class='money-icon enone'></image>
+    <view class='money-num enone'>赚
+      <text class='orange'>{{mObj.commissionInfo}}</text>元
+    </view>
   </view>
   <view wx:if="{{mObj.purchasedFlag == 1}}" bindtap='binPlay' class='fixed-right-btn bc-blue'>立即播放</view>
   <view wx:else bindtap='binPay' class='fixed-right-btn bc-orange'>购买</view>
 </view>
+<template is="playPick" data="{{mPic}}" />

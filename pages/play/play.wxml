@@ -19,7 +19,7 @@
 	<view class='framework-ctt'>{{mObj.subjectNote}}</view>
 </view>
 <view class='fixed-btns'>
-  <view bindtap='binPay' class='fixed-left-btn'>
+  <view wx:if='{{mCObj.commissionInfo}}' bindtap='binSha' class='fixed-left-btn'>
     <image src='../../imgs/money.png' class='money-icon enone'></image>
     <view class='money-num'>赚<text class='orange enone'>{{mCObj.commissionInfo}}</text>元</view>
   </view>

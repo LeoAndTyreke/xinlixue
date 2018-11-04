@@ -20,7 +20,18 @@ function getOrdData(){
   return mData;
 }
 
+////////////////////////////////////////////////////////////
+let shareId = '';
+function setShareid(mId) {
+  shareId = mId;
+}
+function getShareId(){
+  return shareId;
+}
+
 module.exports = {
   setOrdData: setOrdData,
-  getOrdData: getOrdData
+  getOrdData: getOrdData,
+  setShareid: setShareid,
+  getShareId: getShareId
 }

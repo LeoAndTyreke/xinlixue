@@ -34,7 +34,7 @@
 
 .les-teacher-name {
     width: 126rpx;
-    left: 230rpx;
+    left: 222rpx;
     overflow: hidden;
 }
 

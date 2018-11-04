@@ -41,6 +41,7 @@ page {
     margin-left: 30rpx;
     margin-right: 15rpx;
     text-indent: 25rpx;
+    overflow: hidden;
 }
 
 .time-icon {
@@ -86,9 +87,13 @@ page {
     width: 300rpx;
     height: 44rpx;
     line-height: 44rpx;
-    font-size: 44rpx;
+    font-size: 33rpx;
     color: #ff4d10;
     margin: 28rpx 30rpx 19rpx;
+}
+.priceT {
+    font-size: 44rpx;
+    font-weight: bold;
 }
 
 .tabs {
@@ -250,3 +255,4 @@ page {
 }
 
 @import "../../temp/men.wxss";
+@import "../../temp/pick.wxss";

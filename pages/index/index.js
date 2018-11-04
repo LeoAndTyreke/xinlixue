@@ -77,6 +77,10 @@ Page({
     }
   },
   onShareAppMessage: function () {
-
+    return {
+      title: '快和Rogers一起来学考研心理～',
+      desc: '快和Rogers一起来学考研心理～',
+      path: 'pages/index/index'
+    }
   }
 })

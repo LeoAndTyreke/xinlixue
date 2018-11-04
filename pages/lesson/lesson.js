@@ -2,11 +2,13 @@ let mLogin = require('../../utils/mLogin.js');
 let mLesD = require('../../utils/lesData.js');
 let mColD = require('../../utils/colleData.js');
 let mPay = require('../../utils/pay.js');
+let mOrdD = require('../../utils/orderData.js');
 Page({
   data: {
     showDetail: true,
     mObj:{},
-    wcList:[]
+    wcList:[],
+    mPic: true
   },
   toggleTab: function () {
     this.setData({
@@ -22,6 +24,9 @@ Page({
   binPay:function(e){
     let myObj = this.data.mObj;
     wx.navigateTo({ url: '/pages/orderInfo/orderInfo?ids=' + myObj.uid + '&moe=' + myObj.priceInfo});
+  },
+  binSha: function (e) {
+    this.setData({ mPic: false });
   },
   binWCList:function(e){
     let mTag = e.target;
@@ -48,9 +53,23 @@ Page({
       that.setData({ mObj: myObj});
     })
   },
+  picBind: function (e) {
+    let mTarg = e.target;
+    let myObj = this.data.mObj;
+    if (mTarg.id == 'yqcard') {
+      wx.navigateTo({ url: '/pages/card/card?id=' + myObj.uid});
+    }
+    this.setData({ mPic: true });
+  },
   onLoad: function (options) {
     let that = this;
     let mLid = options.id;
+    if (options.shid){
+      mOrdD.setShareid(options.shid);
+    }else{
+      mOrdD.setShareid('');
+    }
+    
     mLogin.getUserInfo(function (mToken) {
       mLesD.getLesData(mToken, mLid,function(data){
         wx.setNavigationBarTitle({ title: data.cc.name });
@@ -72,6 +91,11 @@ Page({
     }
   },
   onShareAppMessage: function () {
-
+    let myObj = this.data.mObj;
+    return {
+      title: '快和Rogers一起来学考研心理～',
+      desc: '快和Rogers一起来学考研心理～',
+      path: 'pages/lesson/lesson?id=' + myObj.uid+'&shid=' + mLogin.getUserId()
+    }
   }
 })

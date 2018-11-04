@@ -5,20 +5,32 @@ let mOrder = '';
 let mProIds = '';
 let mProEnd = '';
 
-function getOrders(mToken,mSpIds,mAdd,sucFun){
+function getOrders(mToken,mSpIds,mAdd,mshaid,sucFun){
   mProIds = mSpIds;
-  mServer.serverReq('order/create', { token: mToken, productIds: mSpIds, userAddress: mAdd}, function (data){
+  let mSend = {
+    token: mToken,
+    productIds: mSpIds,
+    userAddress: mAdd
+  }
+  if (mshaid != ''){
+    mSend.refId = mshaid;
+  }
+  mServer.serverReq('order/create', mSend, function (data){
     //console.log(JSON.stringify(data))
     if (data.result === 'success') {
       mOrder = data.items.order.orderNO;
-      hyPay(data.items.request, sucFun);
+      if (data.items.order.cFlag == 1){
+        mProEnd = mProIds;
+        sucFun({ status:'9'});
+      } else {
+        hyPay(data.items.request, mToken, sucFun);
+      }
     } else {
       err.inteE(data);
     }
   });
 }
-function hyPay(mObj,sucFun){
-    var mres = {status:'failure'};
+function hyPay(mObj,mToken,sucFun){
     wx.requestPayment({
         'timeStamp': mObj.timeStamp,
         'nonceStr': mObj.nonceStr,
@@ -26,9 +38,7 @@ function hyPay(mObj,sucFun){
         'signType': mObj.signType,
         'paySign': mObj.sign,
         'success':function(res){
-            mres.status = 'success';
-            mres.data = res;
-            if(typeof sucFun == 'function')sucFun(mres);
+          pollingPay(mToken, sucFun)
         },
         'fail':function(res){
             if(typeof sucFun == 'function')sucFun(mres);

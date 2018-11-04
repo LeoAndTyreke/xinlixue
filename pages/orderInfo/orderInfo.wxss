@@ -81,7 +81,11 @@ textarea {
 }
 
 .orange {
+	font-size: 33rpx;
+}
+.orange2 {
 	font-size: 44rpx;
+  font-weight: bold;
 }
 
 .fixed-right-btn {

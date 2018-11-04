@@ -23,13 +23,11 @@ Page({
   onLoad: function (options) {
     let that = this;
     let mTid = options.id;
-    console.log(mTid)
     mLogin.getUserInfo(function (mToken) {
       mTeaD.getTeaData(mToken, mTid, function (data) {
         wx.setNavigationBarTitle({ title: data.teacher.name });
         that.setData({ mObj: data.teacher });
         that.setData({ ccList: data.cc });
-        console.log(data.cc)
         that.ccIdStr(data.cc);
       })
     });

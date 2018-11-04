@@ -29,15 +29,13 @@ Page({
       wx.showToast({ title: '信息不全', icon: 'none', duration: 1500 });
       return;
     }
-    mPay.getOrders(mLogin.getToken(), that.page.mIds, JSON.stringify(mData),function(data){
-      mPay.pollingPay(mLogin.getToken(),function(data){
-        if (data.status == '9'){
-          wx.showToast({ title: '支付成功', icon: 'none', duration: 1500 });
-          wx.navigateBack();
-        }else{
-          wx.showToast({ title: '支付失败', icon: 'none', duration: 1500 });
-        }
-      })
+    mPay.getOrders(mLogin.getToken(), that.page.mIds, JSON.stringify(mData), mOrdD.getShareId(),function(data){
+      if (data.status == '9'){
+        wx.showToast({ title: '支付成功', icon: 'none', duration: 1500 });
+        wx.navigateBack();
+      }else{
+        wx.showToast({ title: '支付失败', icon: 'none', duration: 1500 });
+      }
     });
   },
   onLoad: function (options) {
@@ -72,6 +70,10 @@ Page({
 		})
 	},
   onShareAppMessage: function () {
-
+    return {
+      title: '快和Rogers一起来学考研心理～',
+      desc: '快和Rogers一起来学考研心理～',
+      path: 'pages/index/index'
+    }
   }
 })

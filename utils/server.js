@@ -58,6 +58,7 @@ function serAdd(addres){
     case 'userResPsRate/send':
     case 'spread/detail':
     case 'spread/list':
+    case 'qrCode/get':
 			returnStr = serInter+kc+addres;
 			break;
     case 'findSwi.php':
