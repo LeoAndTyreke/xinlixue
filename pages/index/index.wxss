@@ -20,13 +20,9 @@ page {
 .categories2 {
 	height: 170rpx;
 	text-align: center;
+  white-space: nowrap;
 }
 
-.category-all {
-	width: 750rpx;
-	display: flex;
-	position: relative;
-}
 @import "../../temp/indLab.wxss";
 
 .index-list {

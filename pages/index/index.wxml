@@ -9,10 +9,8 @@
 </swiper>
 <template is="search" data="{{focusBool}}"/>
 <view class="categories">
-  <scroll-view scroll-x="true" class="categories2" scroll-into-view="category1" scroll-with-animation="true">
-      <view class="category-all" style='width:{{categories.length*170}}rpx' bindtap='bindType'>
-          <template is="indLab" wx:for='{{categories}}' wx:key='indCategories' data="{{item}}"/>
-      </view>
+  <scroll-view bindtap='bindType' scroll-x="true" class="categories2" scroll-into-view="category1" scroll-with-animation="true">
+      <template is="indLab" wx:for='{{categories}}' wx:key='indCategories' data="{{item}}"/>
   </scroll-view>
 </view>
 <view class='index-list'>

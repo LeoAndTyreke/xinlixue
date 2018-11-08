@@ -2,6 +2,7 @@
 	width: 134rpx;
 	height: 100rpx;
 	position: relative;
+  display: inline-block;
   margin: 30rpx 18rpx;
 }
 
