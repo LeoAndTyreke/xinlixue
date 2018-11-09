@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/play/play",
+    "pages/play/pnote",
     "pages/bought/bought",
     "pages/promoteOrder/promoteOrder",
     "pages/promote/promote",

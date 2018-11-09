@@ -12,11 +12,11 @@
 <view class='framework'>
     <view class='framework-header'>
         <view class='framework-title'><view class='square bc-blue'></view>框架图</view>
-        <view class='note-txt'>
+        <view bindtap='binNote' class='note-txt'>
           笔记<image src='../../imgs/more.png' class='more-icon'></image>
         </view>
     </view>
-	<view class='framework-ctt'>{{mObj.subjectNote}}</view>
+	<view class='framework-ctt'><rich-text nodes="{{mObj.subjectNote}}" bindtap="tap"></rich-text></view>
 </view>
 <view class='fixed-btns'>
   <view wx:if='{{mCObj.commissionInfo}}' bindtap='binSha' class='fixed-left-btn'>

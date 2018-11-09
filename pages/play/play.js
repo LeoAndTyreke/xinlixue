@@ -45,6 +45,9 @@ Page({
     }
     this.setData({ mPic: true});
   },
+  binNote:function(e){
+    wx.navigateTo({ url: 'pnote'});
+  },
   onLoad: function (options) {
     let that = this;
     let mChid = options.id;
@@ -55,7 +58,7 @@ Page({
         that.setData({ mObj: data.cw });
         that.setData({ mCObj: data.cc });
         mPlaS.init(mToken, mChid);
-        
+        console.log(data.cw.subjectNote);
         that.page.mTyp = that.extName(data.cw.fileUrl)
         that.autoplay(that.page.mTyp);
       })
