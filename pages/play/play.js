@@ -2,6 +2,7 @@ let mLogin = require('../../utils/mLogin.js');
 let mPlaD = require('../../utils/playData.js');
 let mPlaS = require('../../utils/playSend.js');
 let net = require('../../utils/network.js');
+let glo = require('../../utils/gloData.js');
 Page({
   data: {
     mObj:{},
@@ -10,7 +11,8 @@ Page({
     mPic:true
   },
   page:{
-    mTyp:''
+    mTyp:'',
+    mPlT:0
   },
   binSha:function(e){
     this.setData({ mPic: false });
@@ -35,7 +37,23 @@ Page({
     mPlaS.sendEve();
   },
   vidTim:function(e){
-    mPlaS.setVidTim(e.detail.currentTime);
+    let mTnum = e.detail.currentTime;
+    mPlaS.setVidTim(mTnum);
+    if (this.data.mObj.feeFlag != 1 || this.data.mCObj.purchasedFlag == 1){
+      return;
+    }
+    if (mTnum > this.page.mPlT){
+      this.videoContext.pause();
+      wx.showModal({
+        content: '试试看结束，喜欢请购买',
+        showCancel:false,
+        success(res) {
+          if (res.confirm) {
+            wx.navigateBack();
+          }
+        }
+      })
+    }
   },
   picBind:function(e){
     let mTarg = e.target;
@@ -58,11 +76,11 @@ Page({
         that.setData({ mObj: data.cw });
         that.setData({ mCObj: data.cc });
         mPlaS.init(mToken, mChid);
-        console.log(data.cw.subjectNote);
         that.page.mTyp = that.extName(data.cw.fileUrl)
         that.autoplay(that.page.mTyp);
       })
     });
+    that.page.mPlT = glo.getGlo().trailTime;
   },
   onShow: function () {
 

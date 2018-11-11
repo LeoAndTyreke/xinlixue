@@ -187,7 +187,6 @@ video {
   position: relative;
 	width: 690rpx;
   padding: 10rpx;
-	background: #F2F2F2;
 	border-radius: 10rpx;
 	margin: 0 30rpx 20rpx;
   box-sizing: border-box;

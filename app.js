@@ -3,6 +3,7 @@ let mPh = require('utils/iPhone.js');
 let user = require('utils/user.js');
 let err = require('utils/inteError.js');
 let net = require('utils/network.js');
+let glo = require('utils/gloData.js');
 App({
   onLaunch: function (e) {
     let that = this;
@@ -18,6 +19,7 @@ App({
       //console.log('mToken::' + mToken);
       //console.log('uObj:' + JSON.stringify(mLogin.getUser()))
     });
-
+    //全局参数
+    glo.getGloData();
   }
 })

@@ -25,7 +25,7 @@
   <view class='tab tab-right {{showDetail ? "" : "active"}}' bindtap='toggleTab'>课程目录</view>
 </view>
 <view class='tab-content' wx:if='{{showDetail}}'>
-  <view class='detail'>{{mObj.note}}</view>
+  <view class='detail'><rich-text nodes="{{mObj.note}}" bindtap="tap"></rich-text></view>
   <view class='notice'>
     <view class='notice-header'>
       <image src='../../imgs/notice-icon.png' class='notice-icon'></image>
@@ -38,7 +38,7 @@
   <block wx:for='{{wcList}}' wx:key='wcLeList' data="{{item}}">
     <view id='wcchbt' data-uid='{{item.uid}}' data-fee='{{item.feeFlag}}' data-url='{{item.fileUrl}}' class='menu-item menu-title'>
       <view class='title-txt enone'>{{item.rowIdx}}.{{item.name}}</view>
-      <image wx:if="{{item.feeFlag != 1 && mObj.purchasedFlag != 1}}" src='../../imgs/locked.png' class='locked enone'></image>
+      <image wx:if="{{item.feeFlag == 1 && mObj.purchasedFlag != 1}}" src='../../imgs/locked.png' class='locked enone'></image>
     </view>
     <template is="men" wx:for='{{item.children}}' wx:for-index="idx" wx:key='wcChLeList' data="{{item,ind:idx,flag:mObj.purchasedFlag}}"/>
   </block>

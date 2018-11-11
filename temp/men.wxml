@@ -5,7 +5,7 @@
     <view class='ctt-txt enone'>{{item.name}}</view>
     <block wx:if="{{flag != 1}}">
       <image wx:if='{{item.feeFlag == 1}}' src='../../imgs/locked.png' class='locked enone'></image>
-      <view wx:else class='free-txt enone'>免费试看</view>
+      <view wx:else class='free-txt enone'>免费观看</view>
     </block>  
   </view>
 </template>
