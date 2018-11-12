@@ -34,6 +34,14 @@ Page({
     }
   },
   vidEve:function(e){
+    let myBs = this.data.mBs;
+    if (e.type == 'play'){
+      myBs.mbool = true;
+      this.setData({ mBs: myBs });
+    } else if (e.type == 'pause' || e.type == 'ended'){
+      myBs.mbool = false;
+      this.setData({ mBs: myBs });
+    }
     mPlaS.sendEve();
   },
   vidTim:function(e){
@@ -103,7 +111,7 @@ Page({
         if (net.getType() == 'wifi' && that.videoContext) that.videoContext.play();
       },500)
     } else if (mTyp == 'mp4'){
-      that.setData({ mBs: { mbool: true, num: 1.0 } });
+      that.setData({ mBs: { mbool: false, num: 1.0 } });
     }
   },
   onShareAppMessage: function () {

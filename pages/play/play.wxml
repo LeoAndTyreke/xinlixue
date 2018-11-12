@@ -1,6 +1,6 @@
 <import src="../../temp/pick.wxml"/>
 <video id='myVideo' src='{{mObj.fileUrl}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
-    <cover-view  bindtap='binBS' class="vid-bs">倍速X{{mBs.num}}</cover-view>
+    <cover-view wx:if='{{mBs.mbool}}'  bindtap='binBS' class="vid-bs">倍速X{{mBs.num}}</cover-view>
 </video>
 <view class='video-info'>
     <view class='video-title'>{{mObj.name}}</view>
