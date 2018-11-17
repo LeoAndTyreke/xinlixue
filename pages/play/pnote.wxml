@@ -1,1 +1,5 @@
-<view class='note-all'><rich-text nodes="{{nodes}}" bindtap="tap"></rich-text></view>
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='note-all'>
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+<!-- <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text> -->
+</view>

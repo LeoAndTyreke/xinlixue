@@ -207,24 +207,26 @@ page {
     text-align: center;
     position: fixed;
     bottom: 0;
-}
-
-.fixed-left-btn {
-    width: 303rpx;
-    height: 110rpx;
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #fff;
 }
 
+.fixed-left-btn {
+    position: absolute;
+    width: 303rpx;
+    height: 110rpx;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .fixed-right-btn {
+  position: absolute;
     width: 447rpx;
     height: 110rpx;
+    right: 0;
     line-height: 110rpx;
     font-size: 36rpx;
-    float: left;
     color: #fff;
 }
 
@@ -256,3 +258,4 @@ page {
 
 @import "../../temp/men.wxss";
 @import "../../temp/pick.wxss";
+@import "../../wxParse/wxParse.wxss";

@@ -250,3 +250,4 @@ video {
 }
 
 @import "../../temp/pick.wxss";
+@import "../../wxParse/wxParse.wxss";

@@ -3,6 +3,7 @@ let mPlaD = require('../../utils/playData.js');
 let mPlaS = require('../../utils/playSend.js');
 let net = require('../../utils/network.js');
 let glo = require('../../utils/gloData.js');
+let WxParse = require('../../wxParse/wxParse.js');
 Page({
   data: {
     mObj:{},
@@ -83,6 +84,7 @@ Page({
         wx.setNavigationBarTitle({ title: data.cw.name });
         that.setData({ mObj: data.cw });
         that.setData({ mCObj: data.cc });
+        WxParse.wxParse('article', 'html', data.cw.subjectNote, that, 5);
         mPlaS.init(mToken, mChid);
         that.page.mTyp = that.extName(data.cw.fileUrl)
         that.autoplay(that.page.mTyp);

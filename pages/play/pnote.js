@@ -1,4 +1,5 @@
 let mPlaD = require('../../utils/playData.js');
+let WxParse = require('../../wxParse/wxParse.js');
 Page({
   data: {
     nodes:[]
@@ -7,6 +8,7 @@ Page({
     let that = this;
     let mNote = mPlaD.getNot();
     that.setData({ nodes: mNote});
+    WxParse.wxParse('article', 'html', mNote, that, 5);
   },
   onShow: function () {
 

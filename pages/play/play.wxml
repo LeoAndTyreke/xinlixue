@@ -1,5 +1,6 @@
 <import src="../../temp/pick.wxml"/>
-<video id='myVideo' src='{{mObj.fileUrl}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
+<import src="../../wxParse/wxParse.wxml"/>
+<video id='myVideo' src='{{mObj.fileUrl}}' poster='{{mCObj.frontPage}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
     <cover-view wx:if='{{mBs.mbool}}'  bindtap='binBS' class="vid-bs">倍速X{{mBs.num}}</cover-view>
 </video>
 <view class='video-info'>
@@ -16,7 +17,10 @@
           笔记<image src='../../imgs/more.png' class='more-icon'></image>
         </view>
     </view>
-	<view class='framework-ctt'><rich-text nodes="{{mObj.subjectNote}}" bindtap="tap"></rich-text></view>
+	<view class='framework-ctt'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <!-- <rich-text nodes="{{mObj.subjectNote}}"></rich-text> -->
+  </view>
 </view>
 <view class='fixed-btns'>
   <view wx:if='{{mCObj.commissionInfo}}' bindtap='binSha' class='fixed-left-btn'>

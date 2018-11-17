@@ -3,6 +3,7 @@ let mLesD = require('../../utils/lesData.js');
 let mColD = require('../../utils/colleData.js');
 let mPay = require('../../utils/pay.js');
 let mOrdD = require('../../utils/orderData.js');
+let WxParse = require('../../wxParse/wxParse.js');
 Page({
   data: {
     showDetail: true,
@@ -74,6 +75,7 @@ Page({
       mLesD.getLesData(mToken, mLid,function(data){
         wx.setNavigationBarTitle({ title: data.cc.name });
         that.setData({ mObj: data.cc});
+        WxParse.wxParse('article', 'html', data.cc.note, that, 5);
         that.setData({ wcList: data.cwList });
       })
     });

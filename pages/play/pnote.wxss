@@ -11,3 +11,4 @@ page{
   box-sizing: border-box;
   overflow: hidden;
 }
+@import "../../wxParse/wxParse.wxss";

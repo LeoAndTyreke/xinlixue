@@ -1,5 +1,6 @@
 <import src="../../temp/men.wxml"/>
 <import src="../../temp/pick.wxml"/>
+<import src="../../wxParse/wxParse.wxml"/>
 <view class='header'>
   <image src='{{mObj.frontPage}}' mode='aspectFill' class='cover'></image>
   <view class='title'>{{mObj.name}}</view>
@@ -25,7 +26,10 @@
   <view class='tab tab-right {{showDetail ? "" : "active"}}' bindtap='toggleTab'>课程目录</view>
 </view>
 <view class='tab-content' wx:if='{{showDetail}}'>
-  <view class='detail'><rich-text nodes="{{mObj.note}}" bindtap="tap"></rich-text></view>
+  <view class='detail'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <!-- <rich-text nodes="{{mObj.note}}" bindtap="tap"></rich-text> -->
+  </view>
   <view class='notice'>
     <view class='notice-header'>
       <image src='../../imgs/notice-icon.png' class='notice-icon'></image>
