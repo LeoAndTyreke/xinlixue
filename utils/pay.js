@@ -41,7 +41,7 @@ function hyPay(mObj,mToken,sucFun){
           pollingPay(mToken, sucFun)
         },
         'fail':function(res){
-            if(typeof sucFun == 'function')sucFun(mres);
+          if (typeof sucFun == 'function') sucFun(res);
         }
     })
 }
