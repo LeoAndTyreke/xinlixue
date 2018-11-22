@@ -4,12 +4,14 @@ let mPlaS = require('../../utils/playSend.js');
 let net = require('../../utils/network.js');
 let glo = require('../../utils/gloData.js');
 let WxParse = require('../../wxParse/wxParse.js');
+let mMp3 = require('../../temp/mimp3.js');
 Page({
   data: {
     mObj:{},
     mCObj:{},
     mBs:{mbool:false,num:1.0},
-    mPic:true
+    mPic:true,
+    mCon: {sliderValue: 0,updateState: false,playStates: true,curStr: '00:00', durStr: '00:00',bgimg: ''}
   },
   page:{
     mTyp:'',
@@ -43,19 +45,25 @@ Page({
       myBs.mbool = false;
       this.setData({ mBs: myBs });
     }
-    mPlaS.sendEve();
+    this.playEndSend();
   },
   vidTim:function(e){
     let mTnum = e.detail.currentTime;
+    this.playTimeSend(mTnum);
+  },
+  playEndSend:function(){
+    mPlaS.sendEve();
+  },
+  playTimeSend: function (mTnum) {
     mPlaS.setVidTim(mTnum);
-    if (this.data.mObj.feeFlag != 1 || this.data.mCObj.purchasedFlag == 1){
+    if (this.data.mObj.feeFlag != 1 || this.data.mCObj.purchasedFlag == 1) {
       return;
     }
-    if (mTnum > this.page.mPlT){
+    if (mTnum > this.page.mPlT) {
       this.videoContext.pause();
       wx.showModal({
         content: '试试看结束，喜欢请购买',
-        showCancel:false,
+        showCancel: false,
         success(res) {
           if (res.confirm) {
             wx.navigateBack();
@@ -75,6 +83,11 @@ Page({
   binNote:function(e){
     wx.navigateTo({ url: 'pnote'});
   },
+  updataCon: function (data) {
+    this.setData({
+      mCon: data
+    })
+  },
   onLoad: function (options) {
     let that = this;
     let mChid = options.id;
@@ -84,6 +97,7 @@ Page({
         wx.setNavigationBarTitle({ title: data.cw.name });
         that.setData({ mObj: data.cw });
         that.setData({ mCObj: data.cc });
+        that.setPlayer(data);
         WxParse.wxParse('article', 'html', data.cw.subjectNote, that, 5);
         mPlaS.init(mToken, mChid);
         that.page.mTyp = that.extName(data.cw.fileUrl)
@@ -91,6 +105,20 @@ Page({
       })
     });
     that.page.mPlT = glo.getGlo().trailTime;
+  },
+  setPlayer: function (data){
+    let that = this;
+    if (data.cw.type == 1) {//mp3
+      mMp3.setPthis(that);
+      mMp3.setUpCont(that.updataCon);
+      let myCon = that.data.mCon;
+      myCon.bgimg = data.cc.frontPage;
+      mMp3.init(myCon, {
+        title: data.cw.name,
+        coverImgUrl: data.cc.frontPage,
+        src: data.cw.fileUrl
+      });
+    }
   },
   onShow: function () {
 

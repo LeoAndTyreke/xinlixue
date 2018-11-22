@@ -1,6 +1,9 @@
 <import src="../../temp/pick.wxml"/>
 <import src="../../wxParse/wxParse.wxml"/>
-<video id='myVideo' src='{{mObj.fileUrl}}' poster='{{mCObj.frontPage}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
+<import src="../../temp/mimp3.wxml"/>
+
+<template wx:if="{{mObj.type == 1}}" is="miMp3" data="{{mCon}}"/>
+<video wx:else id='myVideo' src='{{mObj.fileUrl}}' poster='{{mCObj.frontPage}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
     <cover-view wx:if='{{mBs.mbool}}'  bindtap='binBS' class="vid-bs">倍速X{{mBs.num}}</cover-view>
 </video>
 <view class='video-info'>
