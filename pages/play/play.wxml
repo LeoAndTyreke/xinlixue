@@ -29,7 +29,7 @@
   </view>
   <view bindtap='binMen' class='fixed-right-btn bc-blue'>
 	  <image src='../../imgs/mylessons.png' class='mylessons enone'></image>
-	  <view class='lessons enone'>课时{{mObj.showOrder}}/{{mCObj.coursewareCount}}</view>
+	  <view class='lessons enone'>课时{{mObj.totalIdx}}/{{mCObj.coursewareCount}}</view>
   </view>
 </view>
 <template is="playPick" data="{{mPic}}" />

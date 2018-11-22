@@ -5,7 +5,7 @@ let mNote = '';
 
 function getPlayData(mToken, mId, sucFun) {
   mServer.serverReq('cw/get', { token: mToken, uid: mId }, function (data) {
-    console.log('cw/get:' + JSON.stringify(data));
+    //console.log('cw/get:' + JSON.stringify(data));
     if (data.result === 'success') {
       mNote = data.items.cw.note;
       if (typeof sucFun == 'function') sucFun(data.items);
