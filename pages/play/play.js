@@ -126,6 +126,9 @@ Page({
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
   },
+  onUnload:function(res){
+    mMp3.pUnload();
+  },
   extName:function(mUrl){
     let medTyp = '';
     if (mUrl && mUrl != '') {
