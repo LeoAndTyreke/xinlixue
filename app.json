@@ -48,5 +48,8 @@
         "text": "我的"
       }
     ]
-  }
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ]
 }
