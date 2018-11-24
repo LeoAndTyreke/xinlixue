@@ -28,23 +28,23 @@ Page({
         wx.setNavigationBarTitle({ title: data.teacher.name });
         that.setData({ mObj: data.teacher });
         that.setData({ ccList: data.cc });
-        that.ccIdStr(data.cc);
+        that.ccIdStr(data.cc,'');
       })
     });
   },
-  ccIdStr:function(mArr){
+  ccIdStr:function(mArr,mPid){
     let that = this;
     let mIds = '';
     let mMoney = 0;
     mArr.forEach(function (val, ind) {
-      if (val.purchasedFlag == 0){
+      if (val.purchasedFlag == 0 && val.uid != mPid){
         mIds += val.uid + ',';
-        mMoney += parseFloat(val.priceInfo);
+        mMoney += parseInt(val.price);
       }
     })
     mIds = mIds.substr(0, mIds.length - 1);
     that.setData({ ccIds:mIds});
-    that.page.myMon = mMoney;
+    that.page.myMon = parseFloat(Math.round(mMoney)/100);
   },
   updataPay:function(mNum){
     this.setData({ ccIds: '' });
@@ -52,8 +52,12 @@ Page({
   onShow: function () {
     let that = this;
     let mPIds = mPay.getPayId();
-    if (mPIds == that.data.ccIds) {
+    let mAllStr = that.data.ccIds;
+    if (mPIds == mAllStr) {
       that.updataPay('1');
+    } else if (mPIds != '') {
+      //mAllStr = mAllStr.replace(mPIds + ',', '');
+      that.ccIdStr(that.data.ccList, mPIds);
     }
   },
   onShareAppMessage: function () {

@@ -21,9 +21,9 @@
   </view>
   <view class='price'>￥<text class='priceT'>{{mObj.priceInfo}}</text></view>
 </view>
-<view class='tabs'>
-  <view class='tab tab-left {{showDetail ? "active" : ""}}' bindtap='toggleTab'>课程详情</view>
-  <view class='tab tab-right {{showDetail ? "" : "active"}}' bindtap='toggleTab'>课程目录</view>
+<view bindtap='toggleTab' class='tabs'>
+  <view id='tabLef' class='tab tab-left {{showDetail ? "active" : ""}}'>课程详情</view>
+  <view id='tabRig' class='tab tab-right {{showDetail ? "" : "active"}}'>课程目录</view>
 </view>
 <view class='tab-content' wx:if='{{showDetail}}'>
   <view class='detail'>

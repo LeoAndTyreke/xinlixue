@@ -60,6 +60,7 @@ Page({
       return;
     }
     if (mTnum > this.page.mPlT) {
+      mMp3.pUnload();
       this.videoContext.pause();
       wx.showModal({
         content: '试试看结束，喜欢请购买',
@@ -121,7 +122,12 @@ Page({
     }
   },
   onShow: function () {
-
+    
+  },
+  onHide:function(res){
+    if (this.data.mObj.feeFlag == 1 && this.data.mCObj.purchasedFlag != 1) {
+      mMp3.pUnload();
+    }
   },
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')

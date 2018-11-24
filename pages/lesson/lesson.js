@@ -11,10 +11,13 @@ Page({
     wcList:[],
     mPic: true
   },
-  toggleTab: function () {
-    this.setData({
-      showDetail: !this.data.showDetail
-    })
+  toggleTab: function (e) {
+    let mTag = e.target;
+    if (mTag.id == 'tabLef'){
+      this.setData({showDetail: true})
+    } else if (mTag.id == 'tabRig'){
+      this.setData({showDetail: false})
+    }
   },
   binPlay:function(e){
     let mObj = this.data.wcList[0].children[0];

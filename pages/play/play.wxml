@@ -3,7 +3,7 @@
 <import src="../../temp/mimp3.wxml"/>
 <view class='video'>
   <template wx:if="{{mObj.type == 1}}" is="miMp3" data="{{mCon}}"/>
-  <video class='video' wx:elif="{{mObj.type == 2}}" id='myVideo' src='{{mObj.fileUrl}}' poster='{{mCObj.frontPage}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
+  <video class='video' wx:elif="{{mObj.type == 2}}" id='myVideo' src='{{mObj.fileUrl}}' bindplay='vidEve' bindpause='vidEve' bindended='vidEve' bindtimeupdate='vidTim' controls>
       <cover-view wx:if='{{mBs.mbool}}'  bindtap='binBS' class="vid-bs">倍速X{{mBs.num}}</cover-view>
   </video>
 </view>
