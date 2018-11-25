@@ -3,7 +3,7 @@
   <block wx:for='{{mList}}' wx:key='wcLeList' data="{{item}}">
     <view id='wcchbt' data-uid='{{item.uid}}' data-fee='{{item.feeFlag}}' data-url='{{item.fileUrl}}' class='menu-item menu-title'>
       <view class='title-txt enone'>{{item.name}}</view>
-      <image  wx:if="{{item.feeFlag != 1 && mObj.purchasedFlag != 1}}" src='../../imgs/locked.png' class='locked enone'></image>
+      <image  wx:if="{{item.feeFlag == 1 && mObj.purchasedFlag != 1}}" src='../../imgs/locked.png' class='locked enone'></image>
     </view>
     <template is="men" wx:for='{{item.children}}' wx:for-index="idx" wx:key='wcChLeList' data="{{item,flag:mObj.purchasedFlag}}"/>
   </block>
