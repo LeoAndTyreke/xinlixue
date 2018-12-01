@@ -41,10 +41,7 @@ function setBgOnFun(){
   });
   bgAud.onTimeUpdate(function (e) {
     miCont.curStr = formatTim(bgAud.currentTime);
-    if (mDurB){
-      mDurB = false; 
-      miCont.durStr = formatTim(bgAud.duration);
-    }
+    miCont.durStr = formatTim(bgAud.duration);
     if (miCont.updateState) {
       let sliderValue = bgAud.currentTime / bgAud.duration * 100;
       miCont.sliderValue = sliderValue;

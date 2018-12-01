@@ -146,8 +146,9 @@ page {
 }
 
 .tab-content {
-    width: 100%;
-    margin-bottom: 110rpx;
+  position: relative;
+  width: 100%;
+  padding-bottom: 110rpx;
 }
 
 .detail {
