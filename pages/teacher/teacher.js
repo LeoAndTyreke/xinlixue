@@ -45,6 +45,9 @@ Page({
     mIds = mIds.substr(0, mIds.length - 1);
     that.setData({ ccIds:mIds});
     that.page.myMon = parseFloat(Math.round(mMoney)/100);
+    if (that.page.myMon <= 0){
+      that.setData({ ccIds: '' });
+    }
   },
   updataPay:function(mNum){
     this.setData({ ccIds: '' });

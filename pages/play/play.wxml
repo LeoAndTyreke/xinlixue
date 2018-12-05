@@ -29,7 +29,8 @@
 <view class='fixed-btns'>
   <view wx:if='{{mCObj.commissionInfo}}' bindtap='binSha' class='fixed-left-btn'>
     <image src='../../imgs/money.png' class='money-icon enone'></image>
-    <view class='money-num'>赚<text class='orange enone'>{{mCObj.commissionInfo}}</text>元</view>
+    <view  wx:if="{{mCObj.commissionInfo != '0.00'}}" class='money-num'>赚<text class='orange enone'>{{mCObj.commissionInfo}}</text>元</view>
+    <view wx:else class='money-num enone'>暂无</view>
   </view>
   <view bindtap='binMen' class='fixed-right-btn bc-blue'>
 	  <image src='../../imgs/mylessons.png' class='mylessons enone'></image>

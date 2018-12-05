@@ -19,7 +19,8 @@
       收藏
     </view>
   </view>
-  <view class='price'>￥<text class='priceT'>{{mObj.priceInfo}}</text></view>
+  <view wx:if="{{mObj.priceInfo != '0.00'}}" class='price'>￥<text class='priceT'>{{mObj.priceInfo}}</text></view>
+  <view wx:else class='price'>免费</view>
 </view>
 <view bindtap='toggleTab' class='tabs'>
   <view id='tabLef' class='tab tab-left {{showDetail ? "active" : ""}}'>课程详情</view>
@@ -50,11 +51,12 @@
 <view class='fixed-btns'>
   <view wx:if='{{mObj.commissionInfo}}' bindtap='binSha' class='fixed-left-btn'>
     <image src='../../imgs/money.png' class='money-icon enone'></image>
-    <view class='money-num enone'>赚
+    <view wx:if="{{mObj.commissionInfo != '0.00'}}" class='money-num enone'>赚
       <text class='orange'>{{mObj.commissionInfo}}</text>元
     </view>
+    <view wx:else class='money-num enone'>暂无</view>
   </view>
-  <view wx:if="{{mObj.purchasedFlag == 1}}" bindtap='binPlay' class='fixed-right-btn bc-blue'>立即播放</view>
+  <view wx:if="{{mObj.purchasedFlag == 1 || mObj.priceInfo == '0.00'}}" bindtap='binPlay' class='fixed-right-btn bc-blue'>立即播放</view>
   <view wx:else bindtap='binPay' class='fixed-right-btn bc-orange'>购买</view>
 </view>
 <template is="playPick" data="{{mPic}}" />

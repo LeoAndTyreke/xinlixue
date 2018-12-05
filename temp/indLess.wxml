@@ -10,7 +10,8 @@
         <image src='../../imgs/time-icon.png' class='time-icon'></image>
         {{item.coursewareCount}}课时
       </view>
-      <view class='lesson-price enone'>￥<text class='lesson-price2'>{{item.priceInfo}}</text></view>
+      <view wx:if="{{item.priceInfo != '0.00'}}" class='lesson-price enone'>￥<text class='lesson-price2'>{{item.priceInfo}}</text></view>
+      <view wx:else class='lesson-price enone'>免费</view>
   </view>
 </template>
 <template name="myLess">
@@ -30,7 +31,8 @@
           上次观看到第{{item.lastPsRate.showOrder}}课时 {{item.lastPsRate.psRate}}
         </block> 
       </view>
-      <view class='lesson-price enone' wx:else>￥<text class='lesson-price2'>{{item.priceInfo}}</text></view>
+      <view wx:elif="{{item.priceInfo != '0.00'}}" class='lesson-price enone'>￥<text class='lesson-price2'>{{item.priceInfo}}</text></view>
+      <view wx:else class='lesson-price enone'>免费</view>
   </view>
 </template>
 <template name="list0">
