@@ -1,5 +1,8 @@
 let user = require('../../utils/user.js');
 Page({
+  nimingTap:function(e){
+    wx.switchTab({ url: '/pages/index/index' });
+  },
   getphonenumber: function (e) {
     let that = this;
     wx.showToast({ title: '请求处理中……', mask: true, icon: 'loading', duration: 10000 });
