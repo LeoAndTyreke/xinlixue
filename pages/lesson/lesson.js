@@ -78,7 +78,6 @@ Page({
       mLesD.getLesData(mToken, mLid,function(data){
         wx.setNavigationBarTitle({ title: data.cc.name });
         that.setData({ mObj: data.cc});
-        console.log(data.cc.note)
         WxParse.wxParse('article', 'html', data.cc.note, that, 5);
         that.setData({ wcList: data.cwList });
       })

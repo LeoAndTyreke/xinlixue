@@ -23,7 +23,6 @@ wx.getSystemInfo({
   success: function (res) {
     realWindowWidth = res.windowWidth/750*690
     realWindowHeight = res.windowHeight
-    console.log(res.windowWidth)
   }
 })
 /**
