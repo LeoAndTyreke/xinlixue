@@ -162,6 +162,7 @@ page {
     letter-spacing: 0.5rpx;
     margin-bottom: 9rpx;
     background-color: #fff;
+    overflow: hidden;
 }
 
 .notice {
