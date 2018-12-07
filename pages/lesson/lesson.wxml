@@ -36,7 +36,7 @@
       <image src='../../imgs/notice-icon.png' class='notice-icon'></image>
       <view class='notice-title'>购买须知</view>
     </view>
-    <view class='notice-content'>本产品为购买实物产品附赠的音/视频资料，支付完成后，我们会寄送实物资料给您</view>
+    <view class='notice-content'>本小程序为您提供免费的在线音/视频学习资料</view>
   </view>
 </view>
 <view bindtap='binWCList' class='tab-content' wx:else>
