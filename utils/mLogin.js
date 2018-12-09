@@ -30,7 +30,7 @@ function loginCode(sucFun) {
         let mSendObj = { code: res.code};
         mUserCode(mSendObj, sucFun);
       } else {
-        console.log('获取用户登录态失败！' + res.errMsg)
+        //console.log('获取用户登录态失败！' + res.errMsg)
       }
     }
   });
@@ -70,7 +70,7 @@ function mUserToken(mToken, sucFun) {
         }
       }
     } else {
-      console.log('重新授权');
+      //console.log('重新授权');
       loginCode(sucFun);
     }
   });
@@ -99,7 +99,7 @@ function bGUinfo(detail, sucFun) {
         mSendObj.code = res.code;
         mUserCode(mSendObj, sucFun);
       } else {
-        console.log('获取用户登录态失败！' + res.errMsg)
+        //console.log('获取用户登录态失败！' + res.errMsg)
       }
     }
   });

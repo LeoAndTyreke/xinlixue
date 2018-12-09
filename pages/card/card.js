@@ -15,7 +15,6 @@ Page({
       couB: mBgArr[mDet.current],
       couE: that.data.mEr
     });
-    console.log(mDet.current)
   },
   savebind: function (e) {
     let that = this;

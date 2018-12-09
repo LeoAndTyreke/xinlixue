@@ -9,9 +9,9 @@
 </view>
 <view class='video-info'>
     <view class='video-title'>{{mObj.name}}</view>
-    <view class='teacher'>
+    <view wx:if="{{mCObj.teacherVO && mCObj.teacherVO.name && mCObj.teacherVO.name != ''}}" class='teacher'>
         <image src='../../imgs/teacher-icon.png' class='teacher-icon'></image>
-        <view class='teacher-name'>孙老师</view>
+        <view class='teacher-name'>{{mCObj.teacherVO.name}}</view>
     </view>
 </view>
 <view class='framework'>

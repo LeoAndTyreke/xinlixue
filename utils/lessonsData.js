@@ -16,7 +16,7 @@ function seaInit(){
 }
 function searchServer(value, sucFun){
   mServer.serverReq('resources/search', { keyword: value, start: jiaZai.jNum, count:10}, function (data) {
-    console.log('listSea:'+JSON.stringify(data));
+    //console.log('listSea:'+JSON.stringify(data));
     if (data.result === 'success') {
       if (data.items && data.items.cc){
         let mArr = data.items.cc;
@@ -55,7 +55,7 @@ function getSeList(){
 //更多接口//////////////////////////////////////////////
 function moreServer(mToken, mTagId,sucFun) {
   mServer.serverReq('cc/list', { token: mToken, tagIds: mTagId, start: jiaZai.jNum, count: 10 }, function (data) {
-    console.log('listMore:' + JSON.stringify(data));
+    //console.log('listMore:' + JSON.stringify(data));
     if (data.result === 'success') {
       if (data.items && data.items.cc) {
         let mArr = data.items.cc;
