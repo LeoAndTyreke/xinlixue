@@ -1,4 +1,4 @@
-let mServer = require('server.js');
+let mSr = require('server.js');
 let err = require('inteError.js');
 
 let mOrder = '';

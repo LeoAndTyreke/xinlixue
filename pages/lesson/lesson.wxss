@@ -23,7 +23,7 @@ page {
 
 .info {
     width: 750rpx;
-    height: 26rpx;
+    height: 32rpx;
 }
 
 .teacher-icon {
@@ -61,8 +61,8 @@ page {
 }
 
 .info-txt {
-    height: 26rpx;
-    line-height: 26rpx;
+    height: 32rpx;
+    line-height: 32rpx;
     font-size: 26rpx;
     color: #666;
 }
