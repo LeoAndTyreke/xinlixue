@@ -1,4 +1,4 @@
-let bgAud = wx.getBackgroundAudioManager();
+const bgAud = wx.getBackgroundAudioManager();
 
 let miCont = null;
 let miObj= null;
@@ -97,7 +97,6 @@ function setPthis(that) {
 }
 
 function pUnload(){
-  miObj = null;
   bgAud.stop();
 }
 
