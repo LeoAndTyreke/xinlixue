@@ -2,5 +2,5 @@
   <image src='../../imgs/log_lo.png' class='log-himg' mode='widthFix'></image>
   <text class='log-ht'>心理轻松学\n<text class='log-htn'>Rogers带你轻松学心理</text></text>
   <button class='log-but' open-type="getPhoneNumber" bindgetphonenumber="getphonenumber"><image src='../../imgs/log_we.png' class='log-bimg' mode='widthFix'></image>微信手机号授权</button>
-  <button bindtap='nimingTap' class='log-but'>匿 名</button>
+  <button bindtap='nimingTap' class='log-but'>暂不授权</button>
  </view>

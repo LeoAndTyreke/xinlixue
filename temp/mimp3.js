@@ -1,4 +1,4 @@
-const bgAud = wx.getBackgroundAudioManager();
+let bgAud = wx.getBackgroundAudioManager();
 
 let miCont = null;
 let miObj= null;
@@ -35,7 +35,7 @@ function setBgOnFun(){
     miCont.playStates = false;
     if (typeof mUpCon == 'function') mUpCon(miCont);
   });
-  bgAud.onError(function () {
+  bgAud.onError(function (e) {
     miCont.playStates = false;
     if (typeof mUpCon == 'function') mUpCon(miCont);
   });
@@ -54,7 +54,6 @@ function setBgAuInit(mObj){
   bgAud.title = mObj.title;
   bgAud.coverImgUrl = mObj.coverImgUrl;
   bgAud.src = mObj.src;
-
   miCont.updateState = true;
   if (typeof mUpCon == 'function') mUpCon(miCont);
 }
@@ -98,6 +97,7 @@ function setPthis(that) {
 }
 
 function pUnload(){
+  miObj = null;
   bgAud.stop();
 }
 

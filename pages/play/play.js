@@ -93,6 +93,8 @@ Page({
     let that = this;
     let mChid = options.id;
 
+    that.page.mPlT = glo.getGlo().trailTime;
+    
     mLogin.getUserInfo(function (mToken) {
       mPlaD.getPlayData(mToken, mChid, function (data) {
         wx.setNavigationBarTitle({ title: data.cw.name });
@@ -105,10 +107,13 @@ Page({
         that.autoplay(that.page.mTyp);
       })
     });
-    that.page.mPlT = glo.getGlo().trailTime;
   },
   setPlayer: function (data){
     let that = this;
+    if (that.page.mPlT <= 0) {
+      that.playTimeSend(1);
+      return;
+    }
     if (data.cw.type == 1) {//mp3
       mMp3.setPthis(that);
       mMp3.setUpCont(that.updataCon);

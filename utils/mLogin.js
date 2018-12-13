@@ -59,20 +59,18 @@ function mUserToken(mToken, sucFun) {
     //console.log('getUser:' +JSON.stringify(data));
     if (data.result === 'success') {
       mUser = data.items;
-      if (typeof sucFun == 'function') sucFun(mToken);
-      if (data.items.authedFlag != '1'){
-        if (getCurrentPages().length >= 1) {
-          let mCur = getCurrentPages()[(getCurrentPages().length - 1)];
-          if (mCur.route !== 'pages/login/login' && pageLogin) {
-            pageLogin = false;
-            wx.reLaunch({ url: '/pages/login/login' });
-          }
+    }
+    if (typeof sucFun == 'function') sucFun(mToken);
+    if (!data.items || !data.items.authedFlag || data.items.authedFlag != '1') {
+      if (getCurrentPages().length >= 1) {
+        let mCur = getCurrentPages()[(getCurrentPages().length - 1)];
+        if (mCur.route !== 'pages/login/login' && pageLogin) {
+          pageLogin = false;
+          wx.reLaunch({ url: '/pages/login/login' });
         }
       }
-    } else {
-      //console.log('重新授权');
-      loginCode(sucFun);
     }
+
   });
 }
 

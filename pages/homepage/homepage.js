@@ -11,6 +11,9 @@ Page({
       wx.navigateTo({ url: '/pages/bought/bought'});
     }
   },
+  loginTap:function(){
+    wx.navigateTo({ url: '/pages/login/login' });
+  },
   onLoad: function (options) {
     let that = this;
     mLogin.getUserInfo(function (mToken) {

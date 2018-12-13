@@ -1,4 +1,4 @@
-let mSr = require('server.js');
+let mServer = require('server.js');
 let err = require('inteError.js');
 
 let mOrder = '';
@@ -15,8 +15,9 @@ function getOrders(mToken,mSpIds,mAdd,mshaid,sucFun){
   if (mshaid != ''){
     mSend.refId = mshaid;
   }
+
   mServer.serverReq('order/create', mSend, function (data){
-    //console.log(JSON.stringify(data))
+    console.log(JSON.stringify(data))
     if (data.result === 'success') {
       mOrder = data.items.order.orderNO;
       if (data.items.order.cFlag == 1){
@@ -38,6 +39,7 @@ function hyPay(mObj,mToken,sucFun){
         'signType': mObj.signType,
         'paySign': mObj.sign,
         'success':function(res){
+          console.log(res)
           pollingPay(mToken, sucFun)
         },
         'fail':function(res){

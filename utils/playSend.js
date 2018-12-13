@@ -13,6 +13,7 @@ function init(mToken, mChid){
 }
 
 function getPlaySend(mToken, mId,pStr, sucFun) {
+  if (!mId||mToken == '' || mId=='')return;
   mServer.serverReq('userResPsRate/send', { token: mToken, targetId: mId, psRate:pStr }, function (data) {
     //console.log('userResPsRate:' + JSON.stringify(data));
     if (data.result === 'success') {

@@ -1,6 +1,6 @@
 <view class='header'>
-	<image src='{{mObj.avatarUrl}}' class='avatar'></image>
-	<text class='username'>{{mObj.nickName}}</text>
+	<image bindtap='loginTap' src='{{mObj.avatarUrl}}' class='avatar'></image>
+	<text bindtap='loginTap' class='username'>{{mObj.nickName}}</text>
 </view>
 <view bindtap='binMlist' class='items'>
 	<view class='item'>
