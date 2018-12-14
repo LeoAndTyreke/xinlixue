@@ -1,4 +1,6 @@
-const bgAud = wx.getBackgroundAudioManager();
+const bgAudBG = wx.getBackgroundAudioManager();
+const audMim = wx.createInnerAudioContext();
+var bgAud = null;
 
 let miCont = null;
 let miObj= null;
@@ -6,12 +8,19 @@ let mUpCon = null;
 let mDurB = true;
 let mStop = false;
 let mTimFun = null;
+let mMimBool = false;
 
-function init(myCon,mObj) {
+function init(myCon,mObj,mBool) {
   miCont = myCon;
   miObj = mObj;
   mDurB = true;
   mStop = false;
+  if (mBool){
+    mMimBool = true;
+    bgAud = audMim;
+  }else{
+    bgAud = bgAudBG;
+  }
 
   setBgOnFun();
   setBgAuInit(mObj);
@@ -51,9 +60,14 @@ function setBgOnFun(){
   })
 }
 function setBgAuInit(mObj){
-  bgAud.title = mObj.title;
-  bgAud.coverImgUrl = mObj.coverImgUrl;
+  if (mMimBool) {
+    bgAud.autoplay = true
+  }else{
+    bgAud.title = mObj.title;
+    bgAud.coverImgUrl = mObj.coverImgUrl;
+  }
   bgAud.src = mObj.src;
+  
   miCont.updateState = true;
   if (typeof mUpCon == 'function') mUpCon(miCont);
 }

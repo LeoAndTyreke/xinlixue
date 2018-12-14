@@ -110,10 +110,6 @@ Page({
   },
   setPlayer: function (data){
     let that = this;
-    if (that.page.mPlT <= 0) {
-      that.playTimeSend(1);
-      return;
-    }
     if (data.cw.type == 1) {//mp3
       mMp3.setPthis(that);
       mMp3.setUpCont(that.updataCon);
@@ -123,7 +119,7 @@ Page({
         title: data.cw.name,
         coverImgUrl: data.cc.frontPage,
         src: data.cw.fileUrl
-      });
+      }, (that.data.mObj.feeFlag == 1 && that.data.mCObj.purchasedFlag != 1));
     }
   },
   onShow: function () {
